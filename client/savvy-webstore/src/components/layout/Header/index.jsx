@@ -1,20 +1,23 @@
 import { Link } from "react-router-dom";
+import logo from "../../../assets/logos/savvy-top-logo.svg";
 
 import { BsBag, BsHeart, BsPerson, BsTextLeft } from "react-icons/bs";
 
-import * as styles from "./index.css";
+import * as styles from "./Header.css";
 const Header = () => {
   return (
-    <header >
-      <div>
-        <div>
+    <header className={styles.header}>
+      <div className={styles.topHeader}>
+        <div className={styles.searchBar}>
           <label htmlFor="searchItems">Search Items</label>
           <input type="text" id="gsearch" name="searchItems" />
         </div>
         <div>
-          <Link to="/">Hello</Link>
+          <Link to="/">
+            <img src={logo} alt="Savvy Webstore" />
+          </Link>
         </div>
-        <nav>
+        <nav className={styles.accountLinks}>
           <ul>
             <li>
               <Link to="/wishlist">
@@ -34,7 +37,7 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      <div>
+      <div className={styles.bottomHeader}>
         <nav>
           <ul>
             <li>
