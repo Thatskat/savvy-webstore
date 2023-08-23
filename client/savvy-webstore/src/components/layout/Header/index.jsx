@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logos/savvy-top-logo.svg";
 
-import { BsBag, BsHeart, BsPerson, BsTextLeft } from "react-icons/bs";
+import { BsBag, BsHeart, BsPerson, BsTextLeft, BsSearch } from "react-icons/bs";
 
 import * as styles from "./Header.css";
 const Header = () => {
@@ -10,7 +10,8 @@ const Header = () => {
       <div className={styles.topHeader}>
         <div className={styles.searchBar}>
           <label htmlFor="searchItems">Search Items</label>
-          <input type="text" id="gsearch" name="searchItems" />
+          <div><BsSearch /></div>
+          <input type="text" id="gsearch" name="searchItems" aria-label="Search Items"/>
         </div>
         <div>
           <Link to="/">

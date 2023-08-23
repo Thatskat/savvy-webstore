@@ -34,6 +34,7 @@ export const root = createGlobalTheme(":root", {
     brand: "#c2410c",
     lightBrand: "#f97316",
     darkBrand: "#9a3412",
-    lightGrey: "#EAEAEA"
+    lightGrey: "#EAEAEA",
+    grey: "#F5F5F5"
   }
 });
