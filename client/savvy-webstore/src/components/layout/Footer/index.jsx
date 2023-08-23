@@ -1,5 +1,6 @@
 import * as styles from "./Footer.css";
 import { Link } from "react-router-dom";
+import logo from "../../../assets/logos/savvy-footer-heading.svg";
 
 import { BsInstagram, BsFacebook, BsTwitter } from "react-icons/bs";
 
@@ -18,6 +19,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
                 title="Instagram"
+                className="instagram"
               >
                 <BsInstagram />
               </a>
@@ -28,6 +30,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
                 title="Facebook"
+                className="facebook"
               >
                 <BsFacebook />
               </a>
@@ -38,6 +41,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
                 title="Twitter"
+                className="twitter"
               >
                 <BsTwitter />
               </a>
@@ -92,6 +96,13 @@ const Footer = () => {
         <div></div>
       </div>
       <div className={styles.bottomFooter}>
+        <img src={logo} alt="Our Promise" />
+        <p>
+          At Savvy, we&apos;re redefining the way you shop for secondhand
+          treasures. Our online store is a haven for fashion-forward individuals
+          who embrace both style and sustainability. Unearth unique pieces that
+          tell stories of the past while making a positive impact on the future.
+        </p>
         <h5>Savvy WebStore &copy; {year}</h5>
       </div>
     </footer>
