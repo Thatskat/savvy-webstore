@@ -10,10 +10,17 @@ const Header = () => {
       <div className={styles.topHeader}>
         <div className={styles.searchBar}>
           <label htmlFor="searchItems">Search Items</label>
-          <div><BsSearch /></div>
-          <input type="text" id="gsearch" name="searchItems" aria-label="Search Items"/>
+          <div className={styles.searchIcon}>
+            <BsSearch />
+          </div>
+          <input
+            type="text"
+            id="gsearch"
+            name="searchItems"
+            aria-label="Search Items"
+          />
         </div>
-        <div>
+        <div className={styles.siteLogo}>
           <Link to="/">
             <img src={logo} alt="Savvy Webstore" />
           </Link>
@@ -21,12 +28,12 @@ const Header = () => {
         <nav className={styles.accountLinks}>
           <ul>
             <li>
-              <Link to="/wishlist">
+              <Link to="/wishlist" title="Wishlist">
                 <BsHeart />
               </Link>
             </li>
             <li>
-              <Link to="/cart">
+              <Link to="/cart" title="Cart">
                 <BsBag />
               </Link>
             </li>

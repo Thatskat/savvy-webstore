@@ -8,16 +8,20 @@ export const header = style({
 
 export const topHeader = style({
   display: "grid",
-  gridTemplateColumns: "1rem 2rem",
-  borderBottom: `${root.colours.lightGrey} 1px solid`,
+  gridTemplateColumns: "repeat(3, 1fr)",
+  width: "90%",
+  margin: "auto",
+  padding: `${root.spacing.none} ${root.spacing["4x"]}`,
 });
 
-export const accountLinks = style({});
+export const accountLinks = style({
+  width: "70%",
+});
 
 globalStyle(`${accountLinks} ul`, {
   listStyle: "none",
   display: "flex",
-  justifyContent: "space-evenly",
+  margin: `${root.spacing["1x"]} auto`,
 });
 
 globalStyle(`${accountLinks} ul li`, {
@@ -29,9 +33,14 @@ globalStyle(`${accountLinks} ul li a`, {
   fontSize: root.fontSizes["3x"],
 });
 
+globalStyle(`${accountLinks} ul li a svg`, {
+  width: "1.3rem",
+  height: "1.3rem",
+});
+
 export const searchBar = style({});
 globalStyle(`${searchBar} label`, {
-  display: "none"
+  display: "none",
 });
 
 globalStyle(`${searchBar} input`, {
@@ -41,10 +50,29 @@ globalStyle(`${searchBar} input`, {
   color: root.colours.secondary,
   fontFamily: root.fonts.body,
   padding: "8px",
-  width: "20rem",
-  outline: "none"
+  width: "18rem",
+  outline: "none",
+});
+export const searchIcon = style({
+  position: "absolute",
+  padding: `${root.spacing["1x"]}`,
+});
+export const siteLogo = style({
+  margin: "auto",
+  paddingRight: "45px",
+  paddingBottom: root.spacing["2x"],
 });
 export const bottomHeader = style({
   display: "flex",
   justifyContent: "space-between",
+  borderTop: `${root.colours.lightGrey} 1px solid`,
+  borderBottom: `${root.colours.lightGrey} 1px solid`,
+});
+globalStyle(`${bottomHeader} nav ul`, {
+  listStyle: "none",
+  display: "flex",
+});
+globalStyle(`${bottomHeader} nav ul li a`, {
+ textDecoration: "none",
+ color: root.colours.secondary
 });
