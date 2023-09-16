@@ -27,6 +27,8 @@ export const root = createGlobalTheme(":root", {
     "2x": "15px",
     "3x": "20px",
     "4x": "25px",
+    "5x": "30px",
+    "6x": "35px",
   },
   colours: {
     primary: "#FFFFFF",
@@ -35,6 +37,6 @@ export const root = createGlobalTheme(":root", {
     lightBrand: "#f97316",
     darkBrand: "#9a3412",
     lightGrey: "#EAEAEA",
-    grey: "#F5F5F5"
-  }
+    grey: "#F5F5F5",
+  },
 });
