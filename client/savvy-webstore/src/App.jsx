@@ -9,6 +9,8 @@ import CartPage from "./pages/Cart";
 import StoresPage from "./pages/Stores";
 import CareersPage from "./pages/Careers";
 import AboutUsPage from "./pages/AboutUs";
+import ReturnsPage from './pages/Returns';
+import ContactUsPage from "./pages/ContactUs";
 
 // SHOP PAGES - MAIN
 import ShopPage from "./pages/Shop";
@@ -29,6 +31,8 @@ function App() {
         <Route path="/stores" element={<StoresPage />} />
         <Route path="/careers" element={<CareersPage />} />
         <Route path="/about" element={<AboutUsPage />}/>
+        <Route path="/returns" element={<ReturnsPage />}/>
+        <Route path="/contact" element={<ContactUsPage />}/>
         {/* SHOP PAGES - MAIN */}
         <Route path="/shop" element={<ShopPage />} />
         <Route path="/shop/womens" element={<WomensPage />} />
