@@ -4,6 +4,7 @@ import { root } from "../../../styles/themes.css";
 export const header = style({
   padding: `${root.spacing["3x"]} ${root.spacing.none} `,
   fontFamily: root.fonts.body,
+  paddingBottom: "0"
 });
 
 export const topHeader = style({

@@ -42,11 +42,13 @@ const HomePage = () => {
         <div className="categoryCollection"></div>
       </div>
       <div className={styles.reviewHighlight}>
-        <h3>Lorem ipsum dolor sit.</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
-          quis?
-        </p>
+        <div>
+          <h3>Lorem ipsum dolor sit.</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
+            quis?
+          </p>
+        </div>
       </div>
       <div className={styles.catchPhrase}>
         <img src={catchPhrase} alt="Smart" />
@@ -76,7 +78,6 @@ const HomePage = () => {
       <div className="stores">
         <h2 className={styles.headingH2}>Find your Store</h2>
         <p>Lorem ipsum dolor sit amet.</p>
-
       </div>
     </div>
   );

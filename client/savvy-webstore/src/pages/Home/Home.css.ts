@@ -3,6 +3,9 @@ import { root } from "../../styles/themes.css";
 
 export const header = style({
   fontSize: root.fontSizes["7x"],
+  background:
+    "url('https://images.unsplash.com/photo-1682695797221-8164ff1fafc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')",
+    height: "80vh"
 });
 
 globalStyle(`${header} h1`, {
@@ -15,6 +18,7 @@ globalStyle(`${header} h1`, {
 export const overviewCategories = style({
   display: "grid",
   gridTemplateColumns: "repeat(3, 1fr)",
+  margin: `${root.spacing["4x"]}`
 });
 
 export const headingH2 = style({
@@ -52,6 +56,17 @@ globalStyle(`${catchPhrase} p`, {
   borderBottom: `solid 3px ${root.colours.grey} `,
 });
 
-export const reviewHightlight = style({
-  
-})
+export const reviewHighlight = style({});
+
+globalStyle(`${reviewHighlight} div`, {
+  background: root.colours.brand,
+  width: "40%",
+});
+
+globalStyle(`${reviewHighlight} h3`, {
+  fontSize: root.fontSizes["7x"],
+  color: root.colours.lightBrand,
+});
+globalStyle(`${reviewHighlight} p`, {
+  color: root.colours.lightBrand,
+});
