@@ -18,6 +18,7 @@ const Header = () => {
             id="gsearch"
             name="searchItems"
             aria-label="Search Items"
+            placeholder="Search our products"
           />
         </div>
         <div className={styles.siteLogo}>
@@ -48,7 +49,7 @@ const Header = () => {
       <div className={styles.bottomHeader}>
         <nav>
           <ul>
-            <li>
+            <li className="textHighlight">
               <Link to="/shop">
                 <BsTextLeft />
                 Shop Online
@@ -71,10 +72,10 @@ const Header = () => {
               <Link to="/stores">Find a Store</Link>
             </li>
             <li>
-              <Link to="/shop/mens">Mens</Link>
+              <Link to="/careers">Careers</Link>
             </li>
             <li>
-              <Link to="/shop/kids">Kids</Link>
+              <Link to="/about">About Us</Link>
             </li>
           </ul>
         </nav>

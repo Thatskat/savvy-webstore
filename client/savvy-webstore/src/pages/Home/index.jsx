@@ -1,4 +1,10 @@
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
+import * as styles from "./Home.css";
+
+// COMPONENTS
+import Card from "../../components/common/Card";
+import Button from "../../components/common/Button";
 
 const HomePage = () => {
   return (
@@ -6,7 +12,39 @@ const HomePage = () => {
       <Helmet>
         <title>Home | Savvy WebStore</title>
       </Helmet>
-      Home
+      <div className={styles.header}>
+        <h1>
+          Your<br></br>One-Stop Shop
+        </h1>
+        <Button link="/shop" title="Shop" />
+      </div>
+      <div className={styles.overviewCategories}>
+        <Card
+          title="Womens"
+          link="/shop/womens"
+          image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
+        />
+        <Card
+          title="Mens"
+          link="/shop/mens"
+          image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
+        />
+        <Card
+          title="Kids"
+          link="/shop/kids"
+          image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
+        />
+      </div>
+      <div className={styles.byCategory}>
+        <h2>By Category</h2>
+        <div className="categoryCollection">
+
+        </div>
+      </div>
+      <div>
+        <h3>Lorem ipsum dolor sit.</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quis?</p>
+      </div>
     </div>
   );
 };

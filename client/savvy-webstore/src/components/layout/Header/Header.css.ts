@@ -71,8 +71,22 @@ export const bottomHeader = style({
 globalStyle(`${bottomHeader} nav ul`, {
   listStyle: "none",
   display: "flex",
+  padding: `${root.spacing["2x"]} ${root.spacing["4x"]}`,
+});
+globalStyle(`${bottomHeader} nav ul li`, {
+  padding: ` ${root.spacing.none} ${root.spacing["2x"]}`,
 });
 globalStyle(`${bottomHeader} nav ul li a`, {
- textDecoration: "none",
- color: root.colours.secondary
+  textDecoration: "none",
+  color: root.colours.secondary,
+  fontSize: root.fontSizes["3x"],
+});
+globalStyle(`${bottomHeader} nav ul .textHighlight a`, {
+  fontWeight: root.fontWeights.bold,
+});
+
+globalStyle(`${bottomHeader} nav ul .textHighlight svg`, {
+  width: "1.5rem",
+  height: "1.5rem",
+  marginRight: root.spacing["1x"],
 });

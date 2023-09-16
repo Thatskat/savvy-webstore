@@ -31,7 +31,7 @@ export const root = createGlobalTheme(":root", {
   colours: {
     primary: "#FFFFFF",
     secondary: "#2C4259",
-    brand: "#c2410c",
+    brand: "#6D1E1B",
     lightBrand: "#f97316",
     darkBrand: "#9a3412",
     lightGrey: "#EAEAEA",
