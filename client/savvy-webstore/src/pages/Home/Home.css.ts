@@ -14,24 +14,25 @@ globalStyle(`${header} h1`, {
 
 export const overviewCategories = style({
   display: "grid",
-  gridTemplateColumns: "repeat(3, 1fr)"
-})
+  gridTemplateColumns: "repeat(3, 1fr)",
+});
 
-
-
-export const byCategory = style({});
-
-globalStyle(`${byCategory} h2`, {
+export const headingH2 = style({
   color: "#2C4259",
   fontSize: root.fontSizes["7x"],
   textTransform: "uppercase",
   padding: `${root.spacing["3x"]} 0`,
+});
+
+export const byCategory = style({});
+
+globalStyle(`${byCategory} h2`, {
   borderBottom: `solid 3px ${root.colours.grey} `,
 });
 
 globalStyle(`${byCategory} .categoryCollection`, {
-    margin: `${root.spacing["4cx"]} 0`
-  });
+  margin: `${root.spacing["4cx"]} 0`,
+});
 globalStyle(`${byCategory} .categoryCollection a`, {
   textDecoration: "none",
 });
@@ -44,3 +45,13 @@ globalStyle(`${byCategory} .categoryCollection img`, {
   width: "13rem",
   borderRadius: 10,
 });
+
+export const catchPhrase = style({});
+
+globalStyle(`${catchPhrase} p`, {
+  borderBottom: `solid 3px ${root.colours.grey} `,
+});
+
+export const reviewHightlight = style({
+  
+})

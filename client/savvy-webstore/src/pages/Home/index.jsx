@@ -1,6 +1,8 @@
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
 import * as styles from "./Home.css";
+
+// ASSETS
+import catchPhrase from "../../assets/savvy-catchphrase.svg";
 
 // COMPONENTS
 import Card from "../../components/common/Card";
@@ -36,14 +38,45 @@ const HomePage = () => {
         />
       </div>
       <div className={styles.byCategory}>
-        <h2>By Category</h2>
-        <div className="categoryCollection">
-
-        </div>
+        <h2 className={styles.headingH2}>By Category</h2>
+        <div className="categoryCollection"></div>
       </div>
-      <div>
+      <div className={styles.reviewHighlight}>
         <h3>Lorem ipsum dolor sit.</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quis?</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
+          quis?
+        </p>
+      </div>
+      <div className={styles.catchPhrase}>
+        <img src={catchPhrase} alt="Smart" />
+        <h2 className={styles.headingH2}>Shopping Starts</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione,
+          voluptatem!
+        </p>
+      </div>
+      <div className={styles.overviewCategories}>
+        <Card
+          title="Kids"
+          link="/shop/kids"
+          image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
+        />
+        <Card
+          title="Womens"
+          link="/shop/womens"
+          image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
+        />
+        <Card
+          title="Mens"
+          link="/shop/mens"
+          image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
+        />
+      </div>
+      <div className="stores">
+        <h2 className={styles.headingH2}>Find your Store</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+
       </div>
     </div>
   );
