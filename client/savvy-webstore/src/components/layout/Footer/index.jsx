@@ -61,7 +61,7 @@ const Footer = () => {
               <Link to="/careers">Careers</Link>
             </li>
             <li>
-              <Link to="/privacy">Privacy Policy</Link>
+              <Link to="/privacy-policy">Privacy Policy</Link>
             </li>
           </ul>
         </div>
@@ -89,7 +89,7 @@ const Footer = () => {
               <Link to="/returns">Returns</Link>
             </li>
             <li>
-              <Link to="/terms">Terms & Conditions</Link>
+              <Link to="/terms-conditions">Terms & Conditions</Link>
             </li>
           </ul>
         </div>

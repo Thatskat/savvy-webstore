@@ -11,6 +11,7 @@ import CareersPage from "./pages/Careers";
 import AboutUsPage from "./pages/AboutUs";
 import ReturnsPage from './pages/Returns';
 import ContactUsPage from "./pages/ContactUs";
+import PrivacyPolicyPage from "./pages/PrivacyPolicy";
 
 // SHOP PAGES - MAIN
 import ShopPage from "./pages/Shop";
@@ -33,6 +34,7 @@ function App() {
         <Route path="/about" element={<AboutUsPage />}/>
         <Route path="/returns" element={<ReturnsPage />}/>
         <Route path="/contact" element={<ContactUsPage />}/>
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />}/>
         {/* SHOP PAGES - MAIN */}
         <Route path="/shop" element={<ShopPage />} />
         <Route path="/shop/womens" element={<WomensPage />} />
