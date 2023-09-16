@@ -8,5 +8,6 @@ globalStyle("*, *::before, *::after", {
 })
 
 globalStyle('body', {
-  fontFamily: root.fonts.body
+  fontFamily: root.fonts.body,
 })
+

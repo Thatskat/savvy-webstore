@@ -2,12 +2,12 @@ import { style, globalStyle } from "@vanilla-extract/css";
 import { root } from "../../../styles/themes.css";
 
 export const card = style({
-    width: "33%",
+    width: "40%",
     textDecoration: "none",
   });
   
   globalStyle(`${card} img`, {
-    width: "20rem",
+    width: "21rem",
     borderRadius: 10,
     boxShadow: "  -2px 9px 41px -4px rgba(81,81,81,0.75)",
   });

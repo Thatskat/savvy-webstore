@@ -18,8 +18,9 @@ globalStyle(`${header} h1`, {
 export const overviewCategories = style({
   display: "grid",
   gridTemplateColumns: "repeat(3, 1fr)",
-  margin: `${root.spacing["4x"]}`
-});
+  margin: `${root.spacing["8x"]} auto`,
+  padding: `0 200px`,
+  textAlign: "center"})
 
 export const headingH2 = style({
   color: "#2C4259",

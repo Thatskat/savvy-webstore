@@ -29,6 +29,9 @@ export const root = createGlobalTheme(":root", {
     "4x": "25px",
     "5x": "30px",
     "6x": "35px",
+    "7x": "40px",
+    "8x": "45px",
+    "9x": "50px"
   },
   colours: {
     primary: "#FFFFFF",
