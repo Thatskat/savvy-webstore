@@ -6,6 +6,7 @@ import catchPhrase from "../../assets/savvy-catchphrase.svg";
 
 // COMPONENTS
 import Card from "../../components/common/Card";
+import HighlightCard from "../../components/common/HighlightCard";
 import Button from "../../components/common/Button";
 
 const HomePage = () => {
@@ -39,7 +40,43 @@ const HomePage = () => {
       </div>
       <div className={styles.byCategory}>
         <h2 className={styles.headingH2}>By Category</h2>
-        <div className="categoryCollection"></div>
+        <div className="categoryCollection">
+          <HighlightCard
+            title="Womens"
+            link="/shop/womens"
+            image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
+          />
+          <HighlightCard
+            title="Womens"
+            link="/shop/womens"
+            image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
+          />
+          <HighlightCard
+            title="Womens"
+            link="/shop/womens"
+            image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
+          />
+          <HighlightCard
+            title="Womens"
+            link="/shop/womens"
+            image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
+          />
+          <HighlightCard
+            title="Womens"
+            link="/shop/womens"
+            image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
+          />
+          <HighlightCard
+            title="Womens"
+            link="/shop/womens"
+            image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
+          />
+          <HighlightCard
+            title="Womens"
+            link="/shop/womens"
+            image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
+          />
+        </div>
       </div>
       <div className={styles.reviewHighlight}>
         <div>
