@@ -1,12 +1,17 @@
 import shopSVG from "../../assets/savvy-shop.svg";
 import * as styles from "./Shop.css";
+import { Helmet } from "react-helmet";
 import ItemCard from "../../components/common/ItemCard";
 
 import { BsShuffle } from "react-icons/bs";
+import { RiExpandUpDownFill } from "react-icons/ri";
 
 const ShopPage = () => {
   return (
     <div>
+      <Helmet>
+        <title>Shop All Categories | Savvy WebStore</title>
+      </Helmet>
       <div className={styles.shopHeader}>
         <div className="heading">
           <img src={shopSVG} alt="Shop" />
@@ -15,17 +20,34 @@ const ShopPage = () => {
       </div>
       <div className={styles.optionsBar}>
         <div className="selectionOverview">
-          <button>Category</button>
-          <button>Price</button>
-          <button>Condition</button>
-          <button>Brand</button>
-          <button>Size</button>
-          <button>Colour</button>
-          <button>Material</button>
-          <button>Location</button>
-        </div>
-        <div>
           <button>
+            Category <RiExpandUpDownFill />
+          </button>
+          <button>
+            Price <RiExpandUpDownFill />
+          </button>
+          <button>
+            Condition <RiExpandUpDownFill />
+          </button>
+          <button>
+            Brand <RiExpandUpDownFill />
+          </button>
+          <button>
+            Size <RiExpandUpDownFill />
+          </button>
+          <button>
+            Colour <RiExpandUpDownFill />
+          </button>
+          <button>
+            Material <RiExpandUpDownFill />
+          </button>
+          <button>
+            Location <RiExpandUpDownFill />
+          </button>
+        </div>
+        <div className="salesShuffle">
+          <button>Sale Items</button>
+          <button className="shuffle">
             <BsShuffle />
             Stock Shuffle
           </button>
