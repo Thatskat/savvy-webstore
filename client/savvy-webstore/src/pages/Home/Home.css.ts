@@ -6,6 +6,7 @@ export const header = style({
   background:
     "url('https://images.unsplash.com/photo-1682695797221-8164ff1fafc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')",
   height: "77vh",
+  marginBottom: "90px",
 });
 
 globalStyle(`${header} h1`, {
@@ -13,7 +14,7 @@ globalStyle(`${header} h1`, {
   textTransform: "uppercase",
   textShadow: `2px 4px 4px ${root.colours.lightGrey}`,
   color: root.colours.primary,
-  padding: `${root.spacing["8x"]} 200px`
+  padding: `${root.spacing["8x"]} 200px`,
 });
 
 export const overviewCategories = style({
@@ -22,6 +23,7 @@ export const overviewCategories = style({
   margin: `${root.spacing["8x"]} auto`,
   padding: `0 200px`,
   textAlign: "center",
+  marginBottom: "90px",
 });
 
 export const headingH2 = style({
@@ -33,6 +35,7 @@ export const headingH2 = style({
 
 export const byCategory = style({
   padding: "0 200px",
+  marginBottom: "90px",
 });
 
 globalStyle(`${byCategory} h2`, {
@@ -57,10 +60,27 @@ globalStyle(`${byCategory} .categoryCollection img`, {
   borderRadius: 10,
 });
 
-export const catchPhrase = style({});
+export const catchPhrase = style({
+  padding: `0 200px`,
+  margin: `90px 0`,
+});
 
+globalStyle(`${catchPhrase} img`, {
+  width: "10rem",
+  textAlign: "center",
+  marginLeft: `30rem`,
+  marginBottom: "-2rem",
+});
+
+globalStyle(`${catchPhrase} h2`, {
+  textAlign: "center",
+});
 globalStyle(`${catchPhrase} p`, {
   borderBottom: `solid 3px ${root.colours.grey} `,
+  textAlign: "center",
+  color: root.colours.secondary,
+  fontWeight: root.fontWeights.bold,
+  paddingBottom: "2rem",
 });
 
 export const reviewHighlight = style({
@@ -82,3 +102,12 @@ globalStyle(`${reviewHighlight} h3`, {
 globalStyle(`${reviewHighlight} p`, {
   color: root.colours.lightBrand,
 });
+
+export const stores = style({
+  margin: "90px 0",
+  padding: "0 200px",
+});
+
+globalStyle(`${stores} p`, {
+  color: root.colours.secondary
+})

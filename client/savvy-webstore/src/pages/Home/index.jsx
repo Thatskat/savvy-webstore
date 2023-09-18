@@ -97,24 +97,25 @@ const HomePage = () => {
       </div>
       <div className={styles.overviewCategories}>
         <Card
-          title="Kids"
-          link="/shop/kids"
+          title="Careers"
+          link="/careers"
           image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
         />
         <Card
-          title="Womens"
-          link="/shop/womens"
+          title="About"
+          link="/about"
           image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
         />
         <Card
-          title="Mens"
-          link="/shop/mens"
+          title="Contact"
+          link="/contact"
           image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
         />
       </div>
-      <div className="stores">
+      <div className={styles.stores}>
         <h2 className={styles.headingH2}>Find your Store</h2>
         <p>Lorem ipsum dolor sit amet.</p>
+        <Button title="Stores"/>
       </div>
     </div>
   );
