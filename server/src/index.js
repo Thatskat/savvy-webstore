@@ -5,12 +5,16 @@ const helmet = require("helmet");
 
 const { databaseConnect } = require("./configuration/databaseConnection");
 
+const ErrorsApi = require("./utilities/ErrorsApi");
+const ErrorHandlerAPI = require("./middleware/ErrorHandlerApi");
+
 require("dotenv").config();
 
 const startUp = require("debug")("startup:app");
 const portSuccess = require("debug")("portSuccess");
 
 const app = express();
+const routes = require("./routes/routes");
 
 // MIDDLEWARE
 app.use(helmet());
@@ -22,6 +26,12 @@ startUp("Middleware has been enabled.");
 
 app.use(morgan("dev"));
 app.use("./api", routes());
+
+app.use((req, res, next) => {
+  next(ErrorsApi.notFound());
+});
+
+app.use(ErrorHandlerAPI);
 
 databaseConnect.then(() => {
   app.listen(config.port, () =>

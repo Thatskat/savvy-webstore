@@ -1,6 +1,6 @@
 const internalErr = require("debug")("internalError");
 
-class ErrorApi {
+class ErrorsApi {
   constructor(code, message, err) {
     this.code = code;
     this.message = message;
@@ -14,6 +14,11 @@ class ErrorApi {
   }
   static internalError(message, err) {
     internalErr(err);
-    return new 
+    return new ErrorApi(
+      500,
+      `An internal server error has occurred: ${message}`
+    );
   }
 }
+
+module.exports = ErrorsApi;
