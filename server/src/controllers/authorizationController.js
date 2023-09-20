@@ -30,8 +30,43 @@ module.exports = {
           username: document.data().username,
         });
       });
-      res.send(users)
+      res.send(users);
     }
   },
-  
+  async registerUser(req, res, next) {
+    try {
+      const { email, firstName, lastName, password, username } = req.body;
+
+      const userMatch = await findUser(username, email);
+
+      if (userMatch.length === 1 || userMatch > 1) {
+        return next(
+          ErrorsApi.badRequest(
+            "An account with this email or username already exists."
+          )
+        );
+      }
+      const usersRef = database.collection("users");
+      const response = await usersRef.add({
+        email: email,
+        firstName: firstName,
+        lastName: lastName,
+        password: await encryptedPassword(password),
+        username: username,
+        isAdmin: false,
+      });
+
+      const userJson = await convertUserDetailsToJson(response.id);
+      res.send({
+        token: jsonWebTokenSignUser(userJson),
+      });
+    } catch (err) {
+      return next(
+        ErrorsApi.internalError(
+          "Your profile could not be created at this time.",
+          err
+        )
+      );
+    }
+  },
 };
