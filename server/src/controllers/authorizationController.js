@@ -69,4 +69,41 @@ module.exports = {
       );
     }
   },
+  async loginUser(req, res, next) {
+    try {
+      const { email, username, password } = req.body;
+
+      const userMatch = await findUser(username, email);
+
+      if (userMatch.length === 0 || userMatch.length < 1) {
+        return next(
+          ErrorsApi.badRequest(
+            "The details entered are not correct. (HINT USERNAME/EMAIL)"
+          )
+        );
+      }
+
+      const passwordMatch = await compareHashedPassword(userMatch, password);
+
+      if (!passwordMatch) {
+        return next(
+          ErrorsApi.badRequest(
+            "The details entered are not correct. (HINT PASSWORD)"
+          )
+        );
+      }
+
+      const userJson = await convertUserDetailsToJson(userMatch[0].id);
+      res.send({
+        token: jsonWebTokenSignUser(userJson),
+      });
+    } catch (err) {
+      return next(
+        ErrorsApi.internalError(
+          "Your profile could not be logged into at this time.",
+          err
+        )
+      );
+    }
+  },
 };
