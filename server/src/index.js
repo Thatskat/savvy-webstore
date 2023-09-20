@@ -5,8 +5,8 @@ const helmet = require("helmet");
 
 const { databaseConnect } = require("./configuration/databaseConnection");
 
-const ErrorsApi = require("./utilities/ErrorsApi");
-const ErrorHandlerAPI = require("./middleware/ErrorHandlerApi");
+const ErrorsApi = require("./utilities/errorsApi");
+const ErrorHandlerAPI = require("./middleware/errorHandlerApi");
 
 require("dotenv").config();
 
