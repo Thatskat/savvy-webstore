@@ -48,7 +48,7 @@ module.exports = {
     return matchPasswords;
   },
   async convertUserDetailsToJson(id) {
-    const userRef = database.collection("users");
+    const usersRef = database.collection("users");
     const user = await usersRef.doc(id).get();
 
     const userJson = _.omit(
@@ -60,8 +60,12 @@ module.exports = {
     );
     return userJson;
   },
-  jsonWebTokenSignUser (user){
+  jsonWebTokenSignUser(user) {
     const payload = user;
-    const secret = config
-  }
+    const secret = config.jsonWebToken.secret;
+    const expireTimeToken = 60 * 60 * 24;
+
+    const token = jwt.sign(payload, secret, { expiresIn: expireTimeToken });
+    return token;
+  },
 };
