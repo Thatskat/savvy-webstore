@@ -19,3 +19,14 @@ apiInstance.interceptors.response.use(null, (err) => {
 
   return Promise.reject(err);
 });
+
+export function setHeaderToken() {
+  const token = localStorage.getItem("userToken");
+  if (token) {
+    apiInstance.defaults.headers.common["Authorization"] = "Bearer " + token;
+  } else {
+    delete apiInstance.defaults.headers.common["Authorization"];
+  }
+}
+setHeaderToken();
+export default apiInstance;
