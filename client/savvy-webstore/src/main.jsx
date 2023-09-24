@@ -6,6 +6,8 @@ import { AuthProvider } from "./contexts/AuthorizationContext.jsx";
 
 // CSS RESET
 import "./styles/resets.css";
+// THIRD PARTY STYLING
+import "react-toastify/dist/ReactToastify.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
