@@ -8,14 +8,21 @@ import { BsBag, BsHeart, BsPerson, BsTextLeft, BsSearch } from "react-icons/bs";
 
 import { AiOutlineClose } from "react-icons/ai";
 
+// IMPORT MODALS
+import EmailModal from "../../modals/Login/EmailModal";
+import UsernameModal from "../../modals/Login/UsernameModal";
+import SignUpModal from "../../modals/SignUp";
+
 import * as styles from "./Header.css";
 const Header = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [signUpModalIsOpen, signUpSetIsOpen] = useState(false);
+  const [emailModalIsOpen, emailSetIsOpen] = useState(false);
 
   function openModal() {
     setIsOpen(true);
     signUpSetIsOpen(false);
+    emailSetIsOpen(false);
   }
 
   function closeModal() {
@@ -25,94 +32,44 @@ const Header = () => {
   function openSignUpModal() {
     setIsOpen(false);
     signUpSetIsOpen(true);
+    emailSetIsOpen(false);
   }
 
   function closeSignUpModal() {
     signUpSetIsOpen(false);
   }
+
+  function openEmailModal() {
+    setIsOpen(false);
+    signUpSetIsOpen(false);
+    emailSetIsOpen(true);
+  }
+
+  function closeEmailModal() {
+    emailSetIsOpen(false);
+  }
   return (
     <header className={styles.header}>
       {/* LOGIN WITH USERNAME MODAL */}
-      <Modal
-        isOpen={modalIsOpen}
-        // onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        contentLabel="Login Modal"
-        shouldCloseOnOverlayClick={true}
-      >
-        <button onClick={closeModal}>
-          <AiOutlineClose />
-        </button>
-        <h2>Login</h2>
-        <button onClick={openSignUpModal}>Login with you email?</button>
-        <form>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            placeholder="Username"
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Password"
-          />
-          <button type="submit">Login</button>
-        </form>
-        <a>I&apos;ve lost my password</a>
-        <p>Don&apos;t have an account? <button onClick={openSignUpModal}>Sign up here</button></p>
-      </Modal>
-          {/* LOGIN WITH USERNAME MODAL */}
-          <Modal
-        isOpen={modalIsOpen}
-        // onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        contentLabel="Login Modal"
-        shouldCloseOnOverlayClick={true}
-      >
-        <button onClick={closeModal}>
-          <AiOutlineClose />
-        </button>
-        <h2>Login</h2>
-        <button onClick={openSignUpModal}>Login with you email?</button>
-        <form>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            placeholder="Username"
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Password"
-          />
-          <button type="submit">Login</button>
-        </form>
-        <a>I&apos;ve lost my password</a>
-        <p>Don&apos;t have an account? <button onClick={openSignUpModal}>Sign up here</button></p>
-      </Modal>
+      <UsernameModal
+        modalIsOpen={modalIsOpen}
+        closeModal={closeModal}
+        openEmailModal={openEmailModal}
+        openSignUpModal={openSignUpModal}
+      />
+      <EmailModal
+        closeModal={closeModal}
+        openModal={openModal}
+        openSignUpModal={openSignUpModal}
+        closeEmailModal={closeEmailModal}
+        emailModalIsOpen={emailModalIsOpen}
+      />
       {/* SIGN UP MODAL */}
-      <Modal
-        isOpen={signUpModalIsOpen}
-        // onAfterOpen={afterOpenModal}
-        onRequestClose={closeSignUpModal}
-        contentLabel="Login Modal"
-        shouldCloseOnOverlayClick={true}
-      >
-        <button onClick={closeSignUpModal}>
-          <AiOutlineClose />
-        </button>
-        <h2>Login</h2>
-        <button>Login with you email?</button>
-        Hello!
-      </Modal>
+      <SignUpModal
+        signUpModalIsOpen={signUpModalIsOpen}
+        closeSignUpModal={closeSignUpModal}
+        openModal={openModal}
+      />
       <div className={styles.topHeader}>
         <div className={styles.searchBar}>
           <label htmlFor="searchItems">Search Items</label>
