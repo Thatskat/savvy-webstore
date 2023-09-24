@@ -1,5 +1,5 @@
 import Modal from "react-modal";
-
+import * as styles from "../ModalStyles.css"
 import { AiOutlineClose } from "react-icons/ai";
 
 const EmailModal = ({
@@ -15,13 +15,13 @@ const EmailModal = ({
       // onAfterOpen={afterOpenModal}
       onRequestClose={closeEmailModal}
       contentLabel="Login with Email Modal"
-      shouldCloseOnOverlayClick={true}
+      className={styles.modal}
     >
-      <button onClick={closeModal}>
+      <button onClick={closeModal} className="closeButton">
         <AiOutlineClose />
       </button>
       <h2>Login</h2>
-      <button onClick={openModal}>Login with your username?</button>
+      <button onClick={openModal} className="subTextButton">Login with your username?</button>
       <form>
         <label htmlFor="email">Email</label>
         <input type="email" id="email" name="email" placeholder="Email" />
@@ -34,7 +34,7 @@ const EmailModal = ({
         />
         <button type="submit">Login</button>
       </form>
-      <a>I&apos;ve lost my password</a>
+      <a className="subTextButton">I&apos;ve lost my password</a>
       <p>
         Don&apos;t have an account?{" "}
         <button onClick={openSignUpModal}>Sign up here</button>

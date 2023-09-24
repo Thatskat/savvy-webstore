@@ -14,7 +14,6 @@ const UsernameModal = ({
       // onAfterOpen={afterOpenModal}
       onRequestClose={closeModal}
       contentLabel="Login with Username Modal"
-      shouldCloseOnOverlayClick={true}
     >
       <button onClick={closeModal}>
         <AiOutlineClose />

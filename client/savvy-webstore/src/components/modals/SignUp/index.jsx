@@ -1,6 +1,7 @@
 import Modal from "react-modal";
-
+import * as styles from "../ModalStyles.css";
 import { AiOutlineClose } from "react-icons/ai";
+import Button from '../../common/Button'
 
 const SignUpModal = ({ signUpModalIsOpen, closeSignUpModal, openModal }) => {
   return (
@@ -9,9 +10,9 @@ const SignUpModal = ({ signUpModalIsOpen, closeSignUpModal, openModal }) => {
       // onAfterOpen={afterOpenModal}
       onRequestClose={closeSignUpModal}
       contentLabel="Sign Up Modal"
-      shouldCloseOnOverlayClick={true}
+      className={styles.modal}
     >
-      <button onClick={closeSignUpModal}>
+      <button onClick={closeSignUpModal} className="closeButton">
         <AiOutlineClose />
       </button>
       <h2>Sign Up</h2>
@@ -53,9 +54,9 @@ const SignUpModal = ({ signUpModalIsOpen, closeSignUpModal, openModal }) => {
           name="confirmPassword"
           placeholder="Confirm Password"
         />
-        <button type="submit">Sign up</button>
+        <Button type="submit" title={"Sign up"} />
       </form>
-      <button onClick={openModal}>
+      <button onClick={openModal} className="subTextButton">
         Sign in if you already have an account
       </button>
     </Modal>
