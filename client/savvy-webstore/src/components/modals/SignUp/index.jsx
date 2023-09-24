@@ -1,7 +1,11 @@
 import Modal from "react-modal";
 import * as styles from "../ModalStyles.css";
 import { AiOutlineClose } from "react-icons/ai";
-import Button from '../../common/Button'
+
+import { Link, useNavigate } from "react-router-dom";
+import { useState, useRef } from "react";
+import authorizationServices from "../../../services/authorizationService";
+
 
 const SignUpModal = ({ signUpModalIsOpen, closeSignUpModal, openModal }) => {
   return (
@@ -54,7 +58,7 @@ const SignUpModal = ({ signUpModalIsOpen, closeSignUpModal, openModal }) => {
           name="confirmPassword"
           placeholder="Confirm Password"
         />
-        <Button type="submit" title={"Sign up"} />
+        <button type="submit">Sign Up</button>
       </form>
       <button onClick={openModal} className="subTextButton">
         Sign in if you already have an account

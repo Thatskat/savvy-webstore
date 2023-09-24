@@ -9,7 +9,45 @@ export function AuthProvider({ children }) {
   let navigate = useNavigate();
   const [user, setUser] = useState(null);
 
-  useEffect(()=> {
-    const userData = getCurrentUser();
-  })
+  useEffect(() => {
+    const userData = getCurrentUserFromLocal();
+    setUser(userData);
+  }, []);
+
+  const loginSaveUser = async (data) => {
+    const { token } = data.localStorage.setItem(
+      "userToken",
+      JSON.stringify(token)
+    );
+    setUser(jwtDecode(token));
+    setHeaderToken();
+  };
+
+  function getCurrentUserFromLocal() {
+    try {
+      const token = localStorage.getItem("userToken");
+      const savedUser = jwtDecode(token);
+      return savedUser;
+    } catch (err) {
+      return null;
+    }
+  }
+  const logout = () => {
+    localStorage.removeItem("userToken");
+    setUser(null);
+    navigate("/");
+    setHeaderToken();
+  };
+
+  const value = {
+    user,
+    loginSaveUser,
+    getCurrentUserFromLocal,
+    logout,
+  };
+  return (
+    <AuthProvider.Provider value={value}>{children}</AuthProvider.Provider>
+  );
 }
+
+export default AuthContext;
