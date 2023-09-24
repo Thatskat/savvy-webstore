@@ -1,6 +1,6 @@
 import { useState, useEffect, createContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { jwtDecode } from "jwt-decode";
+import jwtDecode  from "jwt-decode";
 import { setHeaderToken } from "../services/apiService";
 
 const AuthContext = createContext();
@@ -46,7 +46,7 @@ export function AuthProvider({ children }) {
     logout,
   };
   return (
-    <AuthProvider.Provider value={value}>{children}</AuthProvider.Provider>
+    <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
   );
 }
 

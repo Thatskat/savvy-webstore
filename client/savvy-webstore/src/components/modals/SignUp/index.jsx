@@ -5,9 +5,49 @@ import { AiOutlineClose } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useRef } from "react";
 import authorizationServices from "../../../services/authorizationService";
-
+import useAuth from "../../../hooks/useAuth";
 
 const SignUpModal = ({ signUpModalIsOpen, closeSignUpModal, openModal }) => {
+  const navigate = useNavigate();
+  const confirmPasswordRef = useRef();
+  const { loginSaveUser } = useAuth();
+  const [user, setUser] = useState({
+    email: "",
+    firstName: "",
+    lastName: "",
+    password: "",
+    username: "",
+  });
+  const { email, firstName, lastName, password, username } = user;
+  const [loading, setLoading] = useState(false);
+
+  const handleTextChange = (e) => {
+    setUser({
+      ...user,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    if (password !== confirmPasswordRef.current.value) {
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
+      return;
+    }
+    try {
+      const res = await authorizationServices.registerUser(user);
+      loginSaveUser(res);
+      navigate("/");
+    } catch (err) {
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
+    }
+  };
   return (
     <Modal
       isOpen={signUpModalIsOpen}
@@ -55,7 +95,7 @@ const SignUpModal = ({ signUpModalIsOpen, closeSignUpModal, openModal }) => {
         <input
           type="password"
           id="confirmPassword"
-          name="confirmPassword"
+          ref={confirmPasswordRef}
           placeholder="Confirm Password"
         />
         <button type="submit">Sign Up</button>

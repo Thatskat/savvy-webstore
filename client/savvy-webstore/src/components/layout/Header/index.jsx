@@ -2,11 +2,9 @@ import { Link } from "react-router-dom";
 import logo from "../../../assets/logos/savvy-top-logo.svg";
 
 import { useState } from "react";
-import Modal from "react-modal";
+import useAuth from "../../../hooks/useAuth";
 
 import { BsBag, BsHeart, BsPerson, BsTextLeft, BsSearch } from "react-icons/bs";
-
-import { AiOutlineClose } from "react-icons/ai";
 
 // IMPORT MODALS
 import EmailModal from "../../modals/Login/EmailModal";
@@ -15,6 +13,7 @@ import SignUpModal from "../../modals/SignUp";
 
 import * as styles from "./Header.css";
 const Header = () => {
+  const { user, logout } = useAuth();
   const [modalIsOpen, setIsOpen] = useState(false);
   const [signUpModalIsOpen, signUpSetIsOpen] = useState(false);
   const [emailModalIsOpen, emailSetIsOpen] = useState(false);
@@ -102,9 +101,12 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <button onClick={openModal}>
-                <BsPerson /> Login/Signup
-              </button>
+              {!user && (
+                <button onClick={openModal}>
+                  <BsPerson /> Login/Signup
+                </button>
+              )}
+              {user && <button onClick={logout}>Logout</button>}
             </li>
           </ul>
         </nav>
