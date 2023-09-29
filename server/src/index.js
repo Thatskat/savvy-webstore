@@ -34,7 +34,7 @@ app.use((req, res, next) => {
 app.use(ErrorHandlerAPI);
 
 databaseConnect.then(() => {
-  app.listen(config.port, () =>
+  app.listen(3001, () =>
     portSuccess(
       `Server has been officially established on Port: ${config.port}`
     )

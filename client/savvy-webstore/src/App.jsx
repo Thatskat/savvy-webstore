@@ -4,7 +4,7 @@ import Layout from "./components/layout/Layout";
 // PAGES IMPORTS
 import HomePage from "./pages/Home";
 import CartPage from "./pages/Cart";
-import WishlistPage from './pages/Wishlist'
+import WishlistPage from "./pages/Wishlist";
 
 // STATIC PAGES
 import StoresPage from "./pages/Stores";
@@ -20,6 +20,7 @@ import ShopPage from "./pages/Shop";
 import WomensPage from "./pages/Shop/Womens";
 import MensPage from "./pages/Shop/Mens";
 import KidsPage from "./pages/Shop/Kids";
+import ItemInfo from "./pages/Shop/ItemInfo";
 
 // PAGE NOT FOUND
 import PageNotFound from "./pages/NotFound";
@@ -31,7 +32,7 @@ function App() {
         <Route index element={<HomePage />} />
         {/* CART AND WISHLIST */}
         <Route path="/cart" element={<CartPage />} />
-        <Route path="/wishlist" element={<WishlistPage />}/>
+        <Route path="/wishlist" element={<WishlistPage />} />
         {/* STATIC PAGES */}
         <Route path="/stores" element={<StoresPage />} />
         <Route path="/careers" element={<CareersPage />} />
@@ -45,6 +46,7 @@ function App() {
         <Route path="/shop/womens" element={<WomensPage />} />
         <Route path="/shop/mens" element={<MensPage />} />
         <Route path="/shop/kids" element={<KidsPage />} />
+        <Route path="/shop/:id" element={<ItemInfo />} />
         {/* PAGE NOT FOUNF */}
         <Route path="*" element={<PageNotFound />} />
       </Route>

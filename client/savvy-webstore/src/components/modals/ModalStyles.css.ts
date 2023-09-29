@@ -56,4 +56,5 @@ globalStyle(`${modal} .subTextButton`, {
   textAlign: "center",
   margin: "auto",
   cursor: "pointer",
+ alignContent: "center"
 });
