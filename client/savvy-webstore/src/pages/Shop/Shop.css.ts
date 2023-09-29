@@ -48,3 +48,15 @@ globalStyle(`${optionsBar} .salesShuffle`, {
   display: "grid",
   gridTemplateColumns: "repeat(2, 1fr)",
 })
+
+export const itemShow = style({
+  margin: `${root.spacing.none} 200px`,
+  color: "#a3a3a3",
+  textTransform: "uppercase",
+  fontSize: root.fontSizes["2x"],
+  fontWeight: root.fontWeights.bold
+})
+
+globalStyle(`${itemShow} span`, {
+  color: root.colours.secondary
+})

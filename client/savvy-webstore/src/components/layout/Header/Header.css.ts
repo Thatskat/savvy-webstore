@@ -34,7 +34,20 @@ globalStyle(`${accountLinks} ul li a`, {
   fontSize: root.fontSizes["3x"],
 });
 
+globalStyle(`${accountLinks} ul li button`, {
+  textDecoration: "none",
+  color: root.colours.secondary,
+  fontSize: root.fontSizes["3x"],
+  background: "none",
+  border: "none"
+});
+
 globalStyle(`${accountLinks} ul li a svg`, {
+  width: "1.3rem",
+  height: "1.3rem",
+});
+
+globalStyle(`${accountLinks} ul li button svg`, {
   width: "1.3rem",
   height: "1.3rem",
 });
