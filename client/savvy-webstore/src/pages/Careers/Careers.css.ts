@@ -27,12 +27,24 @@ globalStyle(`${grid} .generalInfo p`, {
 globalStyle(`${grid} .generalInfo .staffProfiles`, {
   display: "grid",
   gridTemplateColumns: "repeat(2, 1fr)",
+  margin: `${root.spacing["1x"]} auto`,
+  gap: root.spacing["3x"],
 });
 globalStyle(`${grid} .generalInfo .staffProfiles img`, {
   borderRadius: "100%",
-  width: "4rem",
+  width: "10rem",
+  height: "10rem",
+  margin: "auto"
 });
 
+globalStyle(`${grid} .generalInfo .staffProfiles h3`, {
+fontSize: root.fontSizes["4x"],
+margin: `${root.spacing["4x"]} auto`
+});
+globalStyle(`${grid} .generalInfo .staffProfiles p`, {
+  margin: `${root.spacing["2x"]} 0`,
+  width: "80%"
+});
 export const formBox = style({
   background: root.colours.primary,
   borderRadius: 10,

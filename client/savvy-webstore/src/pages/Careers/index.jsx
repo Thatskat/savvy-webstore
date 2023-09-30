@@ -19,32 +19,26 @@ const CareersPage = () => {
             customer demand and enhance the quality of service provided.
           </p>
           <div className="staffProfiles">
-            <div>
-              {" "}
-              <h3>Front of House</h3>
-              <img
-                src={staffPlaceholder}
-                alt="Front of House Staff at Savvy WebStore"
-              />
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque,
-                quae.
-              </p>
-            </div>
-       <StaffProfiles role="Back of House" image={staffPlaceholder} description="lorem20"/>
-            <div>
-              {" "}
-              <h3>Front of House</h3>
-              <img
-                src={staffPlaceholder}
-                alt="Front of House Staff at Savvy WebStore"
-              />
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque,
-                quae.
-              </p>
-            </div>
-       
+            <StaffProfiles
+              role="Front of House"
+              image={staffPlaceholder}
+              description="Front of house roles at Savvy WebStore involve providing excellent customer service, managing inquiries, and ensuring a seamless shopping experience for online customers."
+            />
+            <StaffProfiles
+              role="Back of House"
+              image={staffPlaceholder}
+              description="Back of house roles at Savvy WebStore are responsible for tasks such as inventory management, order fulfillment, and website maintenance to ensure the smooth operation of the online store."
+            />
+            <StaffProfiles
+              role="Warehousing"
+              image={staffPlaceholder}
+              description="Warehousing roles at Savvy WebStore entail efficiently organizing, storing, and managing the inventory to guarantee timely order fulfillment and minimize product handling errors."
+            />
+            <StaffProfiles
+              role="Administration"
+              image={staffPlaceholder}
+              description="Administration roles at Savvy WebStore involve overseeing crucial behind-the-scenes tasks, such as payroll, record-keeping, and ensuring compliance with regulations, to keep the business operations running smoothly."
+            />
           </div>
         </div>
         <div className={styles.formBox}>
