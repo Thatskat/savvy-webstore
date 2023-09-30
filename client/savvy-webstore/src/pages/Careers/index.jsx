@@ -1,10 +1,11 @@
 import { Helmet } from "react-helmet";
-import Button from "../../components/common/Button";
 import * as styles from "./Careers.css";
 
 import StaffProfiles from "../../components/features/StaffProfiles";
 
 import staffPlaceholder from "../../assets/staff-placeholder.jpg";
+import savvyJoin from "../../assets/savvy-join.svg";
+import savvyWantTo from "../../assets/savvy-want-to.svg";
 const CareersPage = () => {
   return (
     <div className={styles.careersPage}>
@@ -37,19 +38,46 @@ const CareersPage = () => {
             <StaffProfiles
               role="Administration"
               image={staffPlaceholder}
-              description="Administration roles at Savvy WebStore involve overseeing crucial behind-the-scenes tasks, such as payroll, record-keeping, and ensuring compliance with regulations, to keep the business operations running smoothly."
+              description="Administration roles at Savvy WebS
+              tore involve overseeing crucial behind-the-scenes tasks, such as payroll, record-keeping, and ensuring compliance with regulations, to keep the business operations running smoothly."
             />
           </div>
         </div>
         <div className={styles.formBox}>
-          <div>
+          <div className="applyNow">
+            <img src={savvyJoin} alt="Join our friendly team" />
             <h2>Apply Now</h2>
             <p>Click below to see our current position vacancies.</p>
-            <Button />
+            <a href="#" target="_blank" rel="noreferrer">
+              Apply Now
+            </a>
           </div>
           <div>
-            <h2>Want to find out more?</h2>
-            <p></p>
+            <img src={savvyWantTo} alt="Want to" />
+            <h2>Find out more?</h2>
+            <p>
+              If you&apos;re interested in learning more about working at Savvy
+              WebStore, please don&apos;t hesitate to reach out to our HR
+              department for additional information and job inquiries.
+            </p>
+            <form>
+              <label htmlFor="firstName">First Name</label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                placeholder="First Name"
+              />
+              <label htmlFor="lastName">Last Name</label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                placeholder="Last Name"
+              />
+              <label htmlFor="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Email" />
+            </form>
           </div>
         </div>
       </div>

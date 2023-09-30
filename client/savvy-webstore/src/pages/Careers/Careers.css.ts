@@ -34,16 +34,16 @@ globalStyle(`${grid} .generalInfo .staffProfiles img`, {
   borderRadius: "100%",
   width: "10rem",
   height: "10rem",
-  margin: "auto"
+  margin: "auto",
 });
 
 globalStyle(`${grid} .generalInfo .staffProfiles h3`, {
-fontSize: root.fontSizes["4x"],
-margin: `${root.spacing["4x"]} auto`
+  fontSize: root.fontSizes["4x"],
+  margin: `${root.spacing["4x"]} auto`,
 });
 globalStyle(`${grid} .generalInfo .staffProfiles p`, {
   margin: `${root.spacing["2x"]} 0`,
-  width: "80%"
+  width: "80%",
 });
 export const formBox = style({
   background: root.colours.primary,
@@ -51,5 +51,21 @@ export const formBox = style({
   boxShadow: "  -2px 9px 41px -4px rgba(81,81,81,0.75)",
   padding: root.spacing["5x"],
   margin: `${root.spacing["4x"]} auto`,
-  width: "70%",
+  width: "80%",
+});
+
+globalStyle(`${formBox} h2`, {
+  textTransform: "uppercase",
+});
+
+globalStyle(`${formBox} p`, {
+  fontSize: root.fontSizes["2x"]
+});
+
+globalStyle(`${formBox} .applyNow`, {
+  borderBottom: `3px solid ${root.colours.grey}`,
+});
+
+globalStyle(`${formBox} .applyNow`, {
+  borderBottom: `3px solid ${root.colours.grey}`,
 });
