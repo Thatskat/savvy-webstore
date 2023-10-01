@@ -1,7 +1,11 @@
 import { Helmet } from "react-helmet";
+import * as styles from "./Returns.css";
+
+import blueBlob from "../../assets/blobs/blue-blob.svg";
+import greenBlob from "../../assets/blobs/green-blob.svg";
 const ReturnsPage = () => {
   return (
-    <div>
+    <div className={styles.returnsPage}>
       <Helmet>
         <title>Returns | Savvy WebStore</title>
       </Helmet>
@@ -93,7 +97,15 @@ const ReturnsPage = () => {
           don&apos;t hesitate to contact us.
         </li>
       </ul>
-      <p>We value your business and strive to provide the best shopping experience at Savvy WebStore. Thank you for choosing us for your online shopping needs.</p>
+      <img src={blueBlob} alt="Blue Blob SVG" className={styles.blueBlob}/>
+      <img src={greenBlob} alt="Green Blob SVG" className={styles.greenBlob}/>
+      <div className={styles.highlightBox}>
+        <p>
+          We value your business and strive to provide the best shopping
+          experience at Savvy WebStore. Thank you for choosing us for your
+          online shopping needs.
+        </p>
+      </div>
     </div>
   );
 };

@@ -1,12 +1,13 @@
 import { Helmet } from "react-helmet";
+import * as styles from "./PrivacyPolicy.css";
 const PrivacyPolicyPage = () => {
   return (
-    <div>
+    <div className={styles.privacyPolicy}>
       <Helmet>
         <title>Privacy Policy | Savvy WebStore</title>
       </Helmet>
-      <h1>Privacy Policy</h1>
-      <p>Effective Date: 1st of October, 2023</p>
+      <h1>Our Privacy Policy</h1>
+      <p className="date">Effective Date: 1st of October, 2023</p>
       <h3>1. Introduction</h3>
       <p>
         At Savvy WebStore, we are committed to protecting your privacy and
@@ -94,11 +95,13 @@ const PrivacyPolicyPage = () => {
         We will notify you of any material changes by posting the updated policy
         on our webstore.
       </p>
+      <div className="contactUsHighlight"></div>
       <h3>9. Contact Us</h3>
       <p>
         If you have any questions, concerns, or requests regarding this Privacy
         Policy or your personal information, please contact us at{" "}
-        <a>enquires@savvywebStore.com.au</a> or <a>1300 472 293</a>.
+        <a href="#">enquires@savvywebStore.com.au</a> or{" "}
+        <a href="#">1300 472 293</a>.
       </p>
     </div>
   );

@@ -1,9 +1,11 @@
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
+import * as styles from './TermsConditions.css'
+
 const TermsConditionsPage = () => {
   return (
-    <div>
+    <div className={styles.termsConditionsPage}>
       <Helmet>
         <title>Terms & Conditions | Savvy WebStore</title>
       </Helmet>

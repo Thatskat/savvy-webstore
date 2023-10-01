@@ -14,6 +14,8 @@ import ReturnsPage from "./pages/Returns";
 import ContactUsPage from "./pages/ContactUs";
 import PrivacyPolicyPage from "./pages/PrivacyPolicy";
 import TermsConditionsPage from "./pages/TermsConditions";
+import ShippingPage from "./pages/Shipping";
+import StoreInfo from "./pages/Stores/StoreInfo";
 
 // SHOP PAGES - MAIN
 import ShopPage from "./pages/Shop";
@@ -35,12 +37,14 @@ function App() {
         <Route path="/wishlist" element={<WishlistPage />} />
         {/* STATIC PAGES */}
         <Route path="/stores" element={<StoresPage />} />
+        <Route path="/stores/:id" element={<StoreInfo />}/>
         <Route path="/careers" element={<CareersPage />} />
         <Route path="/about" element={<AboutUsPage />} />
         <Route path="/returns" element={<ReturnsPage />} />
         <Route path="/contact" element={<ContactUsPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/terms-conditions" element={<TermsConditionsPage />} />
+        <Route path="/shipping" element={<ShippingPage />}/>
         {/* SHOP PAGES - MAIN */}
         <Route path="/shop" element={<ShopPage />} />
         <Route path="/shop/womens" element={<WomensPage />} />
