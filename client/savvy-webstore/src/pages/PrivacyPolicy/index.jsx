@@ -95,14 +95,15 @@ const PrivacyPolicyPage = () => {
         We will notify you of any material changes by posting the updated policy
         on our webstore.
       </p>
-      <div className="contactUsHighlight"></div>
-      <h3>9. Contact Us</h3>
-      <p>
-        If you have any questions, concerns, or requests regarding this Privacy
-        Policy or your personal information, please contact us at{" "}
-        <a href="#">enquires@savvywebStore.com.au</a> or{" "}
-        <a href="#">1300 472 293</a>.
-      </p>
+      <div className="contactUsHighlight">
+        <h2>Contact Us</h2>
+        <p>
+          If you have any questions, concerns, or requests regarding this
+          Privacy Policy or your personal information, please contact us at{" "}
+          <a href="#">enquires@savvywebStore.com.au</a> or{" "}
+          <a href="#">1300 472 293</a>.
+        </p>
+      </div>
     </div>
   );
 };

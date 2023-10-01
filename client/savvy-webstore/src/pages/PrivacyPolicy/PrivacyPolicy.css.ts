@@ -37,3 +37,18 @@ globalStyle(`${privacyPolicy} p`, {
     fontSize: root.fontSizes["2x"],
     margin: `0 ${root.spacing["4x"]}`,
   });
+
+  globalStyle(`${privacyPolicy} .contactUsHighlight`, {
+    background: root.colours.primary,
+    borderRadius: 10,
+    boxShadow: "  -2px 9px 41px -4px rgba(81,81,81,0.75)",
+    padding: root.spacing["5x"],
+    margin: `${root.spacing["4x"]} auto`,
+    marginBottom: root.spacing["8x"],
+    textAlign: "center"
+  })
+
+  globalStyle(`${privacyPolicy} .contactUsHighlight h2`, {
+    fontSize: root.fontSizes["6x"],
+    marginBottom: root.spacing["2x"]
+  })
