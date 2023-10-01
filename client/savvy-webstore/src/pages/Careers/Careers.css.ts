@@ -56,6 +56,8 @@ export const formBox = style({
 
 globalStyle(`${formBox} h2`, {
   textTransform: "uppercase",
+  fontSize: root.fontSizes["5x"],
+  margin: `${root.spacing["2x"]} 0.4rem`
 });
 
 globalStyle(`${formBox} p`, {
@@ -64,8 +66,15 @@ globalStyle(`${formBox} p`, {
 
 globalStyle(`${formBox} .applyNow`, {
   borderBottom: `3px solid ${root.colours.grey}`,
+  paddingBottom: root.spacing["6x"]
 });
 
-globalStyle(`${formBox} .applyNow`, {
-  borderBottom: `3px solid ${root.colours.grey}`,
+globalStyle(`${formBox} .applyNow img`, {
+ width: "20rem",
+ paddingTop: root.spacing["3x"],
+ marginBottom: `-2.5rem`,
 });
+
+export const button = style({
+
+})

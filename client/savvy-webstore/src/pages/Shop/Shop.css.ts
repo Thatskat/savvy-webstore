@@ -8,7 +8,18 @@ export const shopHeader = style({
 });
 
 globalStyle(`${shopHeader} .heading`, {
-  padding: `${root.spacing["8x"]} 200px`,
+  padding: `${root.spacing["9x"]} 200px`,
+});
+
+globalStyle(`${shopHeader} .heading img`, {
+  width: "9rem",
+  marginTop: root.spacing["3x"],
+  marginBottom: "-3rem"
+});
+globalStyle(`${shopHeader} .heading h1`, {
+  color: root.colours.primary,
+  fontSize: root.fontSizes["8x"],
+  marginLeft: root.spacing["7x"]
 });
 
 export const itemsGrid = style({
@@ -18,36 +29,7 @@ export const itemsGrid = style({
   gap: "2rem 1rem",
 });
 
-export const optionsBar = style({
-  background: root.colours.primary,
-  margin: `${root.spacing["4x"]} 200px`,
-  display: "grid",
-  gridTemplateColumns: "repeat(2, 1fr)",
-  borderRadius: 10,
-  boxShadow: "  -2px 9px 41px -4px rgba(81,81,81,0.5)",
-  padding: root.spacing["2x"]
-});
 
-globalStyle(`${optionsBar} .selectionOverview`, {
-  display: "grid",
-  gridTemplateColumns: "repeat(4, 1fr)",
-  borderRight: `solid 3px ${root.colours.grey} `,
-  width: "50rem"
-});
-
-globalStyle(`${optionsBar} .selectionOverview button`, {
-  background: "none",
-  border: "none",
-  color: root.colours.secondary,
-  textTransform: "uppercase",
-  textAlign: "left",
-  padding: `${root.spacing["1x"]}`
-});
-
-globalStyle(`${optionsBar} .salesShuffle`, {
-  display: "grid",
-  gridTemplateColumns: "repeat(2, 1fr)",
-})
 
 export const itemShow = style({
   margin: `${root.spacing.none} 200px`,

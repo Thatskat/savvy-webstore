@@ -48,7 +48,7 @@ const CareersPage = () => {
             <img src={savvyJoin} alt="Join our friendly team" />
             <h2>Apply Now</h2>
             <p>Click below to see our current position vacancies.</p>
-            <a href="#" target="_blank" rel="noreferrer">
+            <a href="#" target="_blank" rel="noreferrer" className={styles.button}>
               Apply Now
             </a>
           </div>
