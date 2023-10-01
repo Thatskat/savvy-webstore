@@ -3,21 +3,19 @@ import * as styles from "../ModalStyles.css"
 import { AiOutlineClose } from "react-icons/ai";
 
 const EmailModal = ({
-  closeModal,
-  openModal,
   openSignUpModal,
   closeEmailModal,
   emailModalIsOpen,
+  openModal,
 }) => {
   return (
     <Modal
       isOpen={emailModalIsOpen}
-      // onAfterOpen={afterOpenModal}
       onRequestClose={closeEmailModal}
       contentLabel="Login with Email Modal"
       className={styles.modal}
     >
-      <button onClick={closeModal} className="closeButton">
+      <button onClick={closeEmailModal} className="closeButton">
         <AiOutlineClose />
       </button>
       <h2>Login</h2>
@@ -35,7 +33,7 @@ const EmailModal = ({
         <button type="submit">Login</button>
       </form>
       <a className="subTextButton">I&apos;ve lost my password</a>
-      <p>
+      <p className="noAccount">
         Don&apos;t have an account?{" "}
         <button onClick={openSignUpModal}>Sign up here</button>
       </p>

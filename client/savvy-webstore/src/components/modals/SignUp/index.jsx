@@ -61,13 +61,15 @@ const SignUpModal = ({ signUpModalIsOpen, closeSignUpModal, openModal }) => {
         <AiOutlineClose />
       </button>
       <h2>Sign Up</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="firstName">First Name</label>
         <input
           type="text"
           id="firstName"
           name="firstName"
           placeholder="First Name"
+          value={firstName}
+          onChange={handleTextChange}
         />
         <label htmlFor="lastName">Last Name</label>
         <input
@@ -75,6 +77,8 @@ const SignUpModal = ({ signUpModalIsOpen, closeSignUpModal, openModal }) => {
           id="lastName"
           name="lastName"
           placeholder="Last Name"
+          value={lastName}
+          onChange={handleTextChange}
         />
         <label htmlFor="username">Username</label>
         <input
@@ -82,15 +86,20 @@ const SignUpModal = ({ signUpModalIsOpen, closeSignUpModal, openModal }) => {
           id="username"
           name="username"
           placeholder="Username"
+          value={username}
+          onChange={handleTextChange}
         />
         <label htmlFor="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Email" />
+        <input type="email" id="email" name="email" placeholder="Email" value={email}
+          onChange={handleTextChange}/>
         <label htmlFor="password">Password</label>
         <input
           type="password"
           id="password"
           name="password"
           placeholder="Password"
+          value={password}
+          onChange={handleTextChange}
         />
         <label htmlFor="confirmPassword">Confirm Password</label>
         <input

@@ -39,7 +39,7 @@ const UsernameModal = ({
         <button type="submit">Login</button>
       </form>
       <a className="subTextButton">I&apos;ve lost my password</a>
-      <p>
+      <p className="noAccount">
         Don&apos;t have an account?{" "}
         <button onClick={openSignUpModal}>Sign up here</button>
       </p>

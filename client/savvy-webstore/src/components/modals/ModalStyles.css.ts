@@ -56,5 +56,26 @@ globalStyle(`${modal} .subTextButton`, {
   textAlign: "center",
   margin: "auto",
   cursor: "pointer",
- alignContent: "center"
+  alignContent: "center",
+  width: "100%",
+  display: "block"
 });
+
+globalStyle(`${modal} .noAccount`, {
+color: root.colours.brand,
+fontSize: root.fontSizes["2x"],
+textAlign: "center",
+padding: `${root.spacing["2x"]} 0`
+});
+
+globalStyle(`${modal} .noAccount button`, {
+  color: root.colours.brand,
+  fontSize: root.fontSizes["2x"],
+  textAlign: "center",
+  padding: `${root.spacing["2x"]} 0`,
+  background: "none",
+  border: "none",
+  textDecoration: "underline",
+  cursor: "pointer"
+  });
+

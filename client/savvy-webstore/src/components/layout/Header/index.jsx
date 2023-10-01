@@ -57,7 +57,6 @@ const Header = () => {
         openSignUpModal={openSignUpModal}
       />
       <EmailModal
-        closeModal={closeModal}
         openModal={openModal}
         openSignUpModal={openSignUpModal}
         closeEmailModal={closeEmailModal}

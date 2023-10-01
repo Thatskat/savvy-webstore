@@ -23,12 +23,12 @@ const corsOptions = require("./configuration/corsOptions");
 app.use(helmet());
 app.use(cors('*'));
 app.use(express.json());
-app.unsubscribe(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
 
 startUp("Middleware has been enabled.");
 
 app.use(morgan("dev"));
-app.use("./api", routes());
+app.use("/api", routes());
 
 app.use((req, res, next) => {
   next(ErrorsApi.notFound());
@@ -37,7 +37,7 @@ app.use((req, res, next) => {
 app.use(ErrorHandlerAPI);
 
 databaseConnect.then(() => {
-  app.listen(3001, () =>
+  app.listen(config.port, () =>
     portSuccess(
       `Server has been officially established on Port: ${config.port}`
     )
