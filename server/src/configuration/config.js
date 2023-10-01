@@ -1,4 +1,4 @@
-module.export = {
+module.exports = {
   port: process.env.PORT,
   database: {
     accountKey: process.env.GOOGLE_CREDENTIALS,

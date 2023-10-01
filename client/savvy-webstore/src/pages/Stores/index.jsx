@@ -1,13 +1,24 @@
 import { Helmet } from "react-helmet";
-
+import * as styles from "./Stores.css";
 const StoresPage = () => {
   return (
-    <div>
+    <div className={styles.stores}>
       <Helmet>
-        <title>Stores |Savvy WebStore</title>
+        <title>Stores | Savvy WebStore</title>
       </Helmet>
       <h1>Find a store near you</h1>
+      <form>
+      <label htmlFor="searchStore">Search for a store</label>
+      <input type="text" name="searchStore" id="searchStore" placeholder="Enter an address or suburb" />
+      <button type="submit">Search</button>
+      </form>
 
+      <div className={styles.storeOfferings}>
+        <div>
+          <h3>What our stores </h3>
+        </div>
+      </div>
+      
       <div className="browseByRegion">
         <h2>Browse by region</h2>
         <div className="stateButton">

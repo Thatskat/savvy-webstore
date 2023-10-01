@@ -7,14 +7,14 @@ class ErrorsApi {
     this.err = err;
   }
   static badRequest(message) {
-    return new ErrorApi(400, `Bad Request: ${message}`);
+    return new ErrorsApi(400, `Bad Request: ${message}`);
   }
   static notFound() {
-    return new ErrorApi(404, `API resource could not be found.`);
+    return new ErrorsApi(404, `API resource could not be found.`);
   }
   static internalError(message, err) {
     internalErr(err);
-    return new ErrorApi(
+    return new ErrorsApi(
       500,
       `An internal server error has occurred: ${message}`
     );
