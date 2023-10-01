@@ -16,7 +16,9 @@ const ShopPage = () => {
         </div>
       </div>
       <SearchBar />
-      <p className={styles.itemShow}>Showing <span>#</span> out of # </p>
+      <p className={styles.itemShow}>
+        Showing <span>#</span> out of #{" "}
+      </p>
       <div className={styles.itemsGrid}>
         <ItemCard
           title="Buffy the Vampire Slayer Season One"
