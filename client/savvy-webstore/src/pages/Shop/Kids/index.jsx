@@ -12,7 +12,7 @@ const KidsPage = () => {
       <div className={styles.shopHeader}>
         <div className="heading">
           <img src={shopSVG} alt="Shop" />
-          <h1>Mens</h1>
+          <h1>Kids</h1>
         </div>
       </div>
       <SearchBar />
