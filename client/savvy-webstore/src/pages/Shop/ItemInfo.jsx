@@ -1,24 +1,27 @@
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+import * as styles from "./ItemInfo.css";
+import placeholder from "../../assets/staff-placeholder.jpg";
+import { BsBag, BsHeart } from "react-icons/bs";
 const ItemInfo = () => {
   return (
-    <div>
+    <div className={styles.info}>
       <Helmet>
         <title>Item Name | Savvy WebStore</title>
       </Helmet>
-      <div>
+      <div className="mainGrid">
         <div>
-          <img />
+          <img src={placeholder} />
         </div>
-        <div>
+        <div className="itemDetails">
           <Link to="/stores/location">Store location</Link>
           <h1>Product Name</h1>
-          <p>SKU:</p>
+          <p className="sku">SKU:</p>
           <p>item description</p>
-          <h2>Price</h2>
+          <h2 className="price">Price</h2>
           <div>
-            <button>Add to cart</button>
-            <button>Heart</button>
+            <button>Add to cart <BsBag /></button>
+            <button><BsHeart /></button>
           </div>
           <h4>Delivery options</h4>
           <h3>Condition</h3>

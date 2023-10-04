@@ -84,23 +84,28 @@ globalStyle(`${catchPhrase} p`, {
 });
 
 export const reviewHighlight = style({
-  background:
-    "url('https://images.unsplash.com/photo-1682695797221-8164ff1fafc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')",
+  background: "url(highlight-image-home.webp) center blue",
+  backgroundSize: "cover",
   height: "65vh",
 });
 
 globalStyle(`${reviewHighlight} div`, {
-  background: root.colours.brand,
+  background: root.colours.secondary,
+  opacity: "0.7",
   width: "40%",
   margin: `0 200px`,
+  padding: root.spacing["4x"],
+  borderRadius: 10
 });
 
 globalStyle(`${reviewHighlight} h3`, {
   fontSize: root.fontSizes["7x"],
-  color: root.colours.lightBrand,
+  color: root.colours.primary,
+  opacity: "1 !important",
 });
 globalStyle(`${reviewHighlight} p`, {
   color: root.colours.lightBrand,
+  opacity: "1 !important",
 });
 
 export const stores = style({
@@ -109,5 +114,5 @@ export const stores = style({
 });
 
 globalStyle(`${stores} p`, {
-  color: root.colours.secondary
-})
+  color: root.colours.secondary,
+});
