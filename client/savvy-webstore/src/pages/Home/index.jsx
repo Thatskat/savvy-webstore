@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import * as styles from "./Home.css";
 
@@ -10,6 +11,9 @@ import HighlightCard from "../../components/common/HighlightCard";
 import Button from "../../components/common/Button";
 
 const HomePage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <Helmet>
@@ -19,7 +23,7 @@ const HomePage = () => {
         <h1>
           Your<br></br>One-Stop Shop
         </h1>
-        <Button link="/shop" title="Shop"/>
+        <Button link="/shop" title="Shop" />
       </div>
       <div className={styles.overviewCategories}>
         <Card
