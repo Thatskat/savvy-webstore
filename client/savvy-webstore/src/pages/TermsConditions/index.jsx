@@ -1,9 +1,13 @@
+import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
-import * as styles from './TermsConditions.css'
+import * as styles from "./TermsConditions.css";
 
 const TermsConditionsPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className={styles.termsConditionsPage}>
       <Helmet>
