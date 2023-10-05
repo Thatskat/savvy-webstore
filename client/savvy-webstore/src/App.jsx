@@ -36,22 +36,27 @@ function App() {
         <Route path="/cart" element={<CartPage />} />
         <Route path="/wishlist" element={<WishlistPage />} />
         {/* STATIC PAGES */}
-        <Route path="/stores" element={<StoresPage />} />
-        <Route path="/stores/:id" element={<StoreInfo />}/>
+        <Route path="stores">
+          <Route index element={<StoresPage />} />
+          <Route path=":id" element={<StoreInfo />} />
+        </Route>
         <Route path="/careers" element={<CareersPage />} />
         <Route path="/about" element={<AboutUsPage />} />
         <Route path="/returns" element={<ReturnsPage />} />
         <Route path="/contact" element={<ContactUsPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/terms-conditions" element={<TermsConditionsPage />} />
-        <Route path="/shipping" element={<ShippingPage />}/>
+        <Route path="/shipping" element={<ShippingPage />} />
         {/* SHOP PAGES - MAIN */}
-        <Route path="/shop" element={<ShopPage />} />
-        <Route path="/shop/womens" element={<WomensPage />} />
-        <Route path="/shop/mens" element={<MensPage />} />
-        <Route path="/shop/kids" element={<KidsPage />} />
-        <Route path="/shop/:id" element={<ItemInfo />} />
-        {/* PAGE NOT FOUNF */}
+        <Route path="shop">
+          <Route index element={<ShopPage />} />
+          <Route path="womens" element={<WomensPage />} />
+          <Route path="mens" element={<MensPage />} />
+          <Route path="kids" element={<KidsPage />} />
+          {/* <Route path="entertainment" element={<ItemInfo />} /> */}
+          <Route path=":id" element={<ItemInfo />} />
+        </Route>
+        {/* PAGE NOT FOUND */}
         <Route path="*" element={<PageNotFound />} />
       </Route>
     </Routes>
