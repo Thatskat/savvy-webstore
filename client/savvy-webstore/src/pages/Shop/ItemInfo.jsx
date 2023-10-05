@@ -1,9 +1,13 @@
+import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import * as styles from "./ItemInfo.css";
 import placeholder from "../../assets/staff-placeholder.jpg";
 import { BsBag, BsHeart } from "react-icons/bs";
 const ItemInfo = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className={styles.info}>
       <Helmet>
@@ -20,8 +24,12 @@ const ItemInfo = () => {
           <p>item description</p>
           <h2 className="price">Price</h2>
           <div>
-            <button>Add to cart <BsBag /></button>
-            <button><BsHeart /></button>
+            <button>
+              Add to cart <BsBag />
+            </button>
+            <button>
+              <BsHeart />
+            </button>
           </div>
           <h4>Delivery options</h4>
           <h3>Condition</h3>

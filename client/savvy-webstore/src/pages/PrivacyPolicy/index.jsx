@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import * as styles from "./PrivacyPolicy.css";
 const PrivacyPolicyPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className={styles.privacyPolicy}>
       <Helmet>

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import * as styles from "./AboutUs.css";
 
@@ -7,6 +8,9 @@ import GreenBlob from "../../assets/blobs/green-blob.svg";
 import BlueBlob from "../../assets/blobs/blue-blob.svg";
 
 const AboutUsPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className={styles.aboutUs}>
       <Helmet>

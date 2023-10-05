@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import * as styles from "./Careers.css";
 
@@ -7,6 +8,9 @@ import staffPlaceholder from "../../assets/staff-placeholder.jpg";
 import savvyJoin from "../../assets/savvy-join.svg";
 import savvyWantTo from "../../assets/savvy-want-to.svg";
 const CareersPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div className={styles.careersPage}>
       <Helmet>

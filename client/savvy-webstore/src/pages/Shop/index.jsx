@@ -1,9 +1,13 @@
+import { useEffect } from "react";
 import shopSVG from "../../assets/savvy-shop.svg";
 import * as styles from "./Shop.css";
 import { Helmet } from "react-helmet";
 import ItemCard from "../../components/common/ItemCard";
 import SearchBar from "../../components/features/SearchBar";
 const ShopPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <Helmet>
