@@ -11,8 +11,8 @@ export const footer = style({
 export const topFooter = style({
   display: "grid",
   gridTemplateColumns: "repeat(4, 1fr)",
-  padding: `${root.spacing.none} ${root.spacing["4x"]}`,
-  width: "80%",
+  padding: `${root.spacing.none} 200px`,
+  // width: "80%",
   margin: "auto"
 });
 

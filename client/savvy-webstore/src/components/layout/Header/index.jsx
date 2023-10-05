@@ -79,7 +79,6 @@ const Header = () => {
             id="gsearch"
             name="searchItems"
             aria-label="Search Items"
-            placeholder="Search our products"
           />
         </div>
         <div className={styles.siteLogo}>
@@ -115,7 +114,7 @@ const Header = () => {
           <ul>
             <li className="textHighlight">
               <Link to="/shop">
-                <BsTextLeft />
+                {/* <BsTextLeft /> */}
                 Shop Online
               </Link>
             </li>

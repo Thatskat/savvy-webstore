@@ -2,7 +2,7 @@ import { style, globalStyle } from "@vanilla-extract/css";
 import { root } from "../../../styles/themes.css";
 
 export const header = style({
-  padding: `${root.spacing["3x"]} ${root.spacing.none} `,
+  padding: `${root.spacing["3x"]} 0 `,
   fontFamily: root.fonts.body,
   paddingBottom: "0"
 });
@@ -10,13 +10,12 @@ export const header = style({
 export const topHeader = style({
   display: "grid",
   gridTemplateColumns: "repeat(3, 1fr)",
-  width: "90%",
   margin: "auto",
-  padding: `${root.spacing.none} ${root.spacing["4x"]}`,
+  padding: `${root.spacing.none} 200px`,
 });
 
 export const accountLinks = style({
-  width: "70%",
+ marginLeft: "auto"
 });
 
 globalStyle(`${accountLinks} ul`, {
@@ -73,7 +72,6 @@ export const searchIcon = style({
 });
 export const siteLogo = style({
   margin: "auto",
-  paddingRight: "45px",
   paddingBottom: root.spacing["2x"],
 });
 export const bottomHeader = style({
@@ -85,7 +83,7 @@ export const bottomHeader = style({
 globalStyle(`${bottomHeader} nav ul`, {
   listStyle: "none",
   display: "flex",
-  padding: `${root.spacing["2x"]} ${root.spacing["4x"]}`,
+  padding: `${root.spacing["2x"]} 200px`,
 });
 globalStyle(`${bottomHeader} nav ul li`, {
   padding: ` ${root.spacing.none} ${root.spacing["2x"]}`,
@@ -97,6 +95,10 @@ globalStyle(`${bottomHeader} nav ul li a`, {
 });
 globalStyle(`${bottomHeader} nav ul .textHighlight a`, {
   fontWeight: root.fontWeights.bold,
+});
+
+globalStyle(`${bottomHeader} nav ul .textHighlight`, {
+  paddingLeft: root.spacing.none
 });
 
 globalStyle(`${bottomHeader} nav ul .textHighlight svg`, {
