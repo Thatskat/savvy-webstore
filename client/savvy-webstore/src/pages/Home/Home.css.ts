@@ -17,6 +17,10 @@ globalStyle(`${header} h1`, {
   padding: `${root.spacing["8x"]} 200px`,
 });
 
+globalStyle(`${header} Button`, {
+margin: `${root.spacing["3x"]} 200px`
+});
+
 export const overviewCategories = style({
   display: "grid",
   gridTemplateColumns: "repeat(3, 1fr)",
@@ -106,13 +110,4 @@ globalStyle(`${reviewHighlight} h3`, {
 globalStyle(`${reviewHighlight} p`, {
   color: root.colours.lightBrand,
   opacity: "1 !important",
-});
-
-export const stores = style({
-  margin: "90px 0",
-  padding: "0 200px",
-});
-
-globalStyle(`${stores} p`, {
-  color: root.colours.secondary,
 });
