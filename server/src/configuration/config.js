@@ -5,10 +5,7 @@ module.exports = {
     storageBucket: process.env.STORAGE_BUCKET,
   },
   cors: {
-    whitelistUrls: {
-      development: process.env.CORS_DEVELOPMENT,
-      production: process.env.CORS_PRODUCTION,
-    },
+    whitelistUrls: [process.env.CORS_DEVELOPMENT, process.env.CORS_PRODUCTION],
   },
   jsonWebToken: {
     secret: process.env.JSON_WEB_TOKEN_SECRET,

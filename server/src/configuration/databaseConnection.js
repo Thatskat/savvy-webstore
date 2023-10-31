@@ -1,10 +1,11 @@
 var admin = require("firebase-admin");
 const config = require("./config");
 
-const databaseError = require("debug")("databaseError");
-const databaseSuccess = require("debug")("databaseSuccess");
+const databaseError = require("debug")("app:databaseError");
+const databaseSuccess = require("debug")("app:databaseSuccess");
 
 try {
+  databaseSuccess("Attempting database connection")
   var serviceAccount = require(config.database.accountKey);
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
