@@ -1,7 +1,7 @@
 const ErrorsApi = require("../utilities/errorsApi");
 
-const ErrorHandlerAPI = (error, req, res, next) => {
-  if (error instanceof ErrorsApi) {
+const ErrorHandlerAPI = (err, req, res, next) => {
+  if (err instanceof ErrorsApi) {
     res.status(error.code).json(error.message);
     return;
   } else {
