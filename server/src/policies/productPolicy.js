@@ -18,6 +18,7 @@ module.exports = {
       size: Joi.string().min(0).required(),
       sku: Joi.string().min(1).max(20).required(),
       storeLocation: Joi.string().min(1).max(30).required(),
+      itemType: Joi.string().required(),
       image: Joi.any(),
       uploadedFile: Joi.string(),
     });
@@ -73,6 +74,12 @@ module.exports = {
             )
           );
           break;
+        case "itemType":
+          next(
+            ErrorsApi.badRequest(
+              "You must provide an item type for the product. An item type may include Mens, Womens, Kids, Books, Dvds, etc."
+            )
+          );
         case "onSale":
           next(
             ErrorsApi.badRequest(
