@@ -1,9 +1,9 @@
 import { useState, useEffect, createContext } from "react";
 import { useNavigate } from "react-router-dom";
-import jwtDecode  from "jwt-decode";
+import jwtDecode from "jwt-decode";
 import { setHeaderToken } from "../services/apiService";
 
-const AuthContext = createContext();
+const AuthContext = createContext({});
 
 export function AuthProvider({ children }) {
   let navigate = useNavigate();
@@ -15,28 +15,26 @@ export function AuthProvider({ children }) {
   }, []);
 
   const loginSaveUser = async (data) => {
-    const { token } = data.localStorage.setItem(
-      "userToken",
-      JSON.stringify(token)
-    );
+    const { token } = data;
+    localStorage.setItem("token", token);
     setUser(jwtDecode(token));
     setHeaderToken();
   };
 
   function getCurrentUserFromLocal() {
     try {
-      const token = localStorage.getItem("userToken");
+      const token = localStorage.getItem("token");
       const savedUser = jwtDecode(token);
       return savedUser;
-    } catch (err) {
+    } catch (error) {
       return null;
     }
   }
   const logout = () => {
-    localStorage.removeItem("userToken");
+    localStorage.removeItem("token");
     setUser(null);
-    navigate("/");
     setHeaderToken();
+    navigate("/");
   };
 
   const value = {
@@ -45,9 +43,7 @@ export function AuthProvider({ children }) {
     getCurrentUserFromLocal,
     logout,
   };
-  return (
-    <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 
 export default AuthContext;

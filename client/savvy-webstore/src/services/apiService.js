@@ -21,7 +21,7 @@ apiInstance.interceptors.response.use(null, (err) => {
 });
 
 export function setHeaderToken() {
-  const token = localStorage.getItem("userToken");
+  const token = localStorage.getItem("token");
   if (token) {
     apiInstance.defaults.headers.common["Authorization"] = "Bearer " + token;
   } else {

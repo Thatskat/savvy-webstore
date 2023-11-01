@@ -18,35 +18,38 @@ const Header = () => {
   const [signUpModalIsOpen, signUpSetIsOpen] = useState(false);
   const [emailModalIsOpen, emailSetIsOpen] = useState(false);
 
-  function openModal() {
-    setIsOpen(true);
-    signUpSetIsOpen(false);
-    emailSetIsOpen(false);
-  }
+  
+    function openModal() {
+      setIsOpen(true);
+      signUpSetIsOpen(false);
+      emailSetIsOpen(false);
+    }
 
-  function closeModal() {
-    setIsOpen(false);
-  }
+    function closeModal() {
+      setIsOpen(false);
+    }
 
-  function openSignUpModal() {
-    setIsOpen(false);
-    signUpSetIsOpen(true);
-    emailSetIsOpen(false);
-  }
+    function openSignUpModal() {
+      setIsOpen(false);
+      signUpSetIsOpen(true);
+      emailSetIsOpen(false);
+    }
 
-  function closeSignUpModal() {
-    signUpSetIsOpen(false);
-  }
+    function closeSignUpModal() {
+      signUpSetIsOpen(false);
+    }
 
-  function openEmailModal() {
-    setIsOpen(false);
-    signUpSetIsOpen(false);
-    emailSetIsOpen(true);
-  }
+    function openEmailModal() {
+      setIsOpen(false);
+      signUpSetIsOpen(false);
+      emailSetIsOpen(true);
+    }
 
-  function closeEmailModal() {
-    emailSetIsOpen(false);
-  }
+    function closeEmailModal() {
+      emailSetIsOpen(false);
+    }
+  
+
   return (
     <header className={styles.header}>
       {/* LOGIN WITH USERNAME MODAL */}
@@ -104,6 +107,7 @@ const Header = () => {
                   <BsPerson /> Login/Signup
                 </button>
               )}
+              {user && <li><Link to="/account" title="My Account"><BsPerson />My Account</Link></li>}
               {user && <button onClick={logout}>Logout</button>}
             </li>
           </ul>

@@ -29,8 +29,9 @@ const EmailModal = ({
     setLoading(true);
     try {
       const res = await authorizationServices.loginUser(user);
-      loginSaveUser(res.data);
-      navigate("/profile");
+      console.log(res.data.token);
+      loginSaveUser(res.data)
+      navigate("/");
     } catch (err) {
       console.error(err?.response);
       setTimeout(() => setLoading(false), 500);
