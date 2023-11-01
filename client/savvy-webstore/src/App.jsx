@@ -63,8 +63,9 @@ function App() {
           {/* <Route path="entertainment" element={<ItemInfo />} /> */}
           <Route path=":id" element={<ItemInfo />} />
         </Route>
-        <Route path="account">
+        <Route path="account" element={<PrivateRoutes />}>
           <Route index element={<Account />} />
+          <Route path="add" element={<AddProduct />} />
         </Route>
         {/* PAGE NOT FOUND */}
         <Route path="*" element={<PageNotFound />} />
