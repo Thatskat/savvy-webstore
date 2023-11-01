@@ -22,6 +22,7 @@ module.exports = {
       let users = [];
       snapshot.forEach((document) => {
         users.push({
+          id: document.id,
           email: document.data().email,
           firstName: document.data().firstName,
           isAdmin: document.data().isAdmin,
@@ -37,13 +38,11 @@ module.exports = {
     try {
       const { email, firstName, lastName, password, username } = req.body;
 
-      const userMatch = await findUser(username, email);
+      const userMatch = await findUser(email);
 
-      if (userMatch.length === 1 || userMatch > 1) {
+      if (userMatch) {
         return next(
-          ErrorsApi.badRequest(
-            "An account with this email or username already exists."
-          )
+          ErrorsApi.badRequest("An account with this email already exists.")
         );
       }
       const usersRef = database.collection("users");
@@ -61,6 +60,7 @@ module.exports = {
         token: jsonWebTokenSignUser(userJson),
       });
     } catch (err) {
+      console.log(err);
       return next(
         ErrorsApi.internalError(
           "Your profile could not be created at this time.",
@@ -71,9 +71,9 @@ module.exports = {
   },
   async loginUser(req, res, next) {
     try {
-      const { email, username, password } = req.body;
+      const { email, password } = req.body;
 
-      const userMatch = await findUser(username, email);
+      const userMatch = await findUser(email);
 
       if (userMatch.length === 0 || userMatch.length < 1) {
         return next(

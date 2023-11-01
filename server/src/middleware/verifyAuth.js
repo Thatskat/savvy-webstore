@@ -4,7 +4,7 @@ const config = require("../configuration/config");
 
 const JSONWebTokenDebug = require("debug")("app:JWTDebug");
 
-const auth = (auth, res, next) => {
+const auth = (req, res, next) => {
   let token = req.header("Authorization");
   if (!token) {
     return next(ErrorsApi.denyAccess("No token has been provided."));

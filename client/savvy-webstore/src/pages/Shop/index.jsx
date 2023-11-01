@@ -1,10 +1,20 @@
-import { useEffect } from "react";
-import shopSVG from "../../assets/savvy-shop.svg";
-import * as styles from "./Shop.css";
+import { useEffect, useState, useRef } from "react";
 import { Helmet } from "react-helmet";
+
+import useAuth from "../../hooks/useAuth";
+import productService from "../../services/productService";
+
 import ItemCard from "../../components/common/ItemCard";
 import SearchBar from "../../components/features/SearchBar";
+import shopSVG from "../../assets/savvy-shop.svg";
+import * as styles from "./Shop.css";
+
 const ShopPage = () => {
+  const { user } = useAuth();
+
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

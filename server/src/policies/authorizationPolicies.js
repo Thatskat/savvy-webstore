@@ -6,16 +6,19 @@ module.exports = {
     const schema = Joi.object({
       email: Joi.string()
         .email({
-          maxDomainSegments: 2,
-          tlds: { allow: ["com", "net", "edu", "org"] },
+          minDomainSegments: 2,
+          tlds: { allow: ["com", "net"] },
         })
         .required(),
       firstName: Joi.string().min(2).max(30).trim().lowercase().required(),
       lastName: Joi.string().min(2).max(30).trim().lowercase().required(),
       password: Joi.string()
         .pattern(
-          new RegExp("^(?=.*[A-Z])(?=.*[a-z])(?=.*d)(?=.*[@#$%^&+=!]).{8,}$")
+          new RegExp(
+            `^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{8,}$`
+          )
         )
+        .min(8)
         .required(),
       username: Joi.string()
         .pattern(new RegExp("^[a-zA-Z0-9]+$"))

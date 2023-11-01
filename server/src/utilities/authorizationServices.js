@@ -6,13 +6,14 @@ const _ = require("lodash");
 const bcrypt = require("bcrypt");
 
 module.exports = {
-  async findUser(username, email) {
+  async findUser(email) {
     const userRef = database.collection("users");
     const snapshot = await userRef.get();
 
     let users = [];
     snapshot.forEach((document) => {
       users.push({
+        id: document.id,
         email: document.data().email,
         firstName: document.data().firstName,
         isAdmin: document.data().isAdmin,
@@ -21,19 +22,10 @@ module.exports = {
         username: document.data().username,
       });
 
-      const userMatchEmail = users.filter((user) => {
+      const userMatch = users.filter((user) => {
         email === user.email;
       });
-
-      const userMatchUsername = users.filter((user) => {
-        username === user.username;
-      });
-
-      if (userMatchEmail) {
-        return userMatchEmail;
-      } else if (userMatchUsername) {
-        return userMatchUsername;
-      }
+      return userMatch;
     });
   },
   async encryptedPassword(password) {
