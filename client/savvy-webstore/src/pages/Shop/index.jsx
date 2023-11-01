@@ -15,9 +15,33 @@ const ShopPage = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+
+  const hasRun = useRef(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    if (hasRun.current === false) {
+      fetchProducts();
+      setLoading(false);
+      return () => {
+        hasRun.current = true;
+      };
+    }
   }, []);
+
+  async function fetchProducts() {
+    try {
+      const res = await productService.getAll();
+      const data = await res.data;
+      setData(data);
+    } catch (err) {
+      setError(true);
+      console.error(err?.response);
+    }
+  }
+  if(error){
+    return (<p>error</p>)
+  }
   return (
     <div>
       <Helmet>

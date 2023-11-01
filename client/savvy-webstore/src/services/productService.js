@@ -1,25 +1,25 @@
 import apiInstance from "./apiService";
 
 function getAll() {
-  return apiInstance.get("/api/products");
+  return apiInstance.get("/products");
 }
 
 function getById(id) {
-  return apiInstance.get(`/api/products/${id}`);
+  return apiInstance.get(`/products/${id}`);
 }
 
 function postProduct(data) {
   const formData = prepareFormData(data);
-  return apiInstance.post("/api/products", formData, formConfig);
+  return apiInstance.post("/products", formData, formConfig);
 }
 
 function putProduct(id, data, uploadedFile) {
   const formData = prepareFormData(data, uploadedFile);
-  return apiInstance.put(`/api/products/${id}`, formData, formConfig);
+  return apiInstance.put(`/products/${id}`, formData, formConfig);
 }
 
 function deleteProduct(id) {
-  return apiInstance.delete(`/api/products/${id}`);
+  return apiInstance.delete(`/products/${id}`);
 }
 
 const formConfig = {
