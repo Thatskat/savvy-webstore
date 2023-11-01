@@ -3,6 +3,8 @@ const config = require("../configuration/config");
 const uuid = require("uuid");
 const fs = require("fs");
 
+const debugBucket = require('debug')('app:debugBucket')
+
 module.exports = {
   async storageBucketUpload(filename) {
     const storageToken = uuid.v4();
@@ -29,6 +31,8 @@ module.exports = {
 
     const result = await sBucket.upload(serverFilePath, options);
     const bucketName = result[0].metadata.bucket;
+
+    debugBucket(bucketName)
 
     const downloadUrl = `https://firebasestorage.googleapis.com/v0/b/${bucketName}/o/${filename}?alt=media&token=${storageToken}`;
 

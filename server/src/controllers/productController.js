@@ -76,7 +76,7 @@ module.exports = {
   async postProduct(req, res, next) {
     let downloadUrl = null;
     try {
-      const filename = res.locals.filename;
+      const filename = res.locals.customFileName;
       downloadUrl = await storageBucketUpload(filename);
     } catch (err) {
       return next(
@@ -95,7 +95,7 @@ module.exports = {
         description: req.body.description,
         isAvailable: req.body.isAvailable,
         itemName: req.body.itemName,
-        material: rwq.body.material,
+        material: req.body.material,
         onSale: req.body.onSale,
         price: Number(req.body.price),
         size: req.body.size,
