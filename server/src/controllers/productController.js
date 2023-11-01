@@ -167,5 +167,31 @@ module.exports = {
       );
     }
   },
-//   DELETE REQUESTS
+  //   DELETE REQUESTS
+  async deleteProductById(req, res, next) {
+    try {
+      const productRef = database.collection("storeItems").doc(req.params.id);
+      const doc = await productRef.get();
+      if (!doc.exists) {
+        return next(
+          ErrorsApi.badRequest("The item you were looking for does not exist.")
+        );
+      }
+      const downloadUrl = doc.data().image;
+      const uploadedFile = getFileFromUrl(downloadUrl);
+      const bucketResponse = await deleteFileFromBucket(uploadedFile);
+
+      if (bucketResponse) {
+        const response = await productRef.delete({ exists: true });
+        res.send(response);
+      }
+    } catch (err) {
+      return next(
+        ErrorsApi.internalError(
+          `Your request could not be completed during this time.`,
+          err
+        )
+      );
+    }
+  },
 };
