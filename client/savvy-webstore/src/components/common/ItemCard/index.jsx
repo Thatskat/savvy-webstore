@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 import { AiOutlineHeart } from "react-icons/ai";
 import * as styles from "./ItemCard.css";
 
-const ItemCard = ({ product }) => {
+const ItemCard = ({ product, link }) => {
   return (
-    <Link className={styles.itemCard} title={product.itemName} to={`/shop/${product.id}`}>
+    <div className={styles.itemCard} title={product.itemName} to={`/shop/${product.id}`}>
       <img src={product.image} alt={product.itemName} />
       <div className="cardTextContent">
         <p className="location">{product.storeLocation}</p>
-        <Link><h2>{product.itemName}</h2></Link>
+        <Link to={link}><h2>{product.itemName}</h2></Link>
         <div className="inline">
           <p className="price">${product.price}</p>
           <button className="wishlistHeart">
@@ -16,7 +16,7 @@ const ItemCard = ({ product }) => {
           </button>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 

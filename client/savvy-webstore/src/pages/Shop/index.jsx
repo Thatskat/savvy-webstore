@@ -66,7 +66,7 @@ const ShopPage = () => {
       <div className={styles.itemsGrid}>
         {data &&
           data.map((product) => (
-            <ItemCard key={product.id} product={product} />
+            <ItemCard key={product.id} product={product} link={`/shop/${product.id}`}/>
           ))}
       </div>
     </div>
