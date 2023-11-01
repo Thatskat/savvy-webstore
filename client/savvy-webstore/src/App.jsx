@@ -29,6 +29,7 @@ import ItemInfo from "./pages/Shop/ItemInfo";
 import Account from "./pages/Account";
 import AddProduct from "./pages/Account/AddProduct";
 import EditProduct from "./pages/Account/EditProduct";
+import Edit from "./pages/Account/Edit";
 import DeleteProduct from "./pages/Account/DeleteProduct";
 
 // PAGE NOT FOUND
@@ -66,6 +67,9 @@ function App() {
         <Route path="account" element={<PrivateRoutes />}>
           <Route index element={<Account />} />
           <Route path="add" element={<AddProduct />} />
+          <Route path="edit" element={<EditProduct />}/>
+          <Route path="edit/:id" element={<Edit />} />
+          <Route path="delete" element={<DeleteProduct />}/>
         </Route>
         {/* PAGE NOT FOUND */}
         <Route path="*" element={<PageNotFound />} />

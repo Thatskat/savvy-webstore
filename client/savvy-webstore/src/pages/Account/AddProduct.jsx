@@ -14,7 +14,6 @@ const AddProduct = () => {
     itemName: "",
     material: "",
     onSale: false,
-    price: 0,
     size: "",
     sku: "",
     storeLocation: "",
