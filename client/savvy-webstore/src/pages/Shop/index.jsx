@@ -34,13 +34,19 @@ const ShopPage = () => {
       const res = await productService.getAll();
       const data = await res.data;
       setData(data);
+      console.log(data);
     } catch (err) {
       setError(true);
       console.error(err?.response);
     }
   }
-  if(error){
-    return (<p>error</p>)
+
+  if (error) {
+    return <p>error</p>;
+  }
+
+  if (loading) {
+    return <p>loading...</p>;
   }
   return (
     <div>
@@ -55,16 +61,13 @@ const ShopPage = () => {
       </div>
       <SearchBar />
       <p className={styles.itemShow}>
-        Showing <span>#</span> out of #{" "}
+        Showing <span>#</span> out of {data.length}
       </p>
       <div className={styles.itemsGrid}>
-        <ItemCard
-          title="Buffy the Vampire Slayer Season One"
-          image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
-          id="2"
-          price="10"
-          location="Moorabbin, Vic"
-        />
+        {data &&
+          data.map((product) => (
+            <ItemCard key={product.id} product={product} />
+          ))}
       </div>
     </div>
   );

@@ -2,15 +2,15 @@ import { Link } from "react-router-dom";
 import { AiOutlineHeart } from "react-icons/ai";
 import * as styles from "./ItemCard.css";
 
-const ItemCard = ({ title, image, price, location, id }) => {
+const ItemCard = ({ product }) => {
   return (
-    <Link className={styles.itemCard} title={title} to={`/shop/${id}`}>
-      <img src={image} alt={title} />
+    <Link className={styles.itemCard} title={product.itemName} to={`/shop/${product.id}`}>
+      <img src={product.image} alt={product.itemName} />
       <div className="cardTextContent">
-        <p className="location">{location}</p>
-        <h2>{title}</h2>
+        <p className="location">{product.storeLocation}</p>
+        <h2>{product.itemName}</h2>
         <div className="inline">
-          <p className="price">${price}</p>
+          <p className="price">${product.price}</p>
           <button className="wishlistHeart">
             <AiOutlineHeart />
           </button>
