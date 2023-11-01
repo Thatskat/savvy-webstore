@@ -16,10 +16,40 @@ const ItemInfo = () => {
     id: params.id,
     brand: "",
     colour: "",
+    condition: "",
+    description: "",
+    isAvailable: true,
+    itemName: "",
+    material: "",
+    onSale: false,
+    price: "",
+    size: "",
+    sku: "",
+    storeLocation: "",
+    itemType: "",
+    image: "",
   });
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+
+  const {
+    id,
+    brand,
+    colour,
+    condition,
+    description,
+    isAvailable,
+    itemName,
+    material,
+    onSale,
+    price,
+    size,
+    sku,
+    storeLocation,
+    itemType,
+    image,
+  } = product;
 
   const hasRun = useRef(false);
 
@@ -33,22 +63,35 @@ const ItemInfo = () => {
         hasRun.current = true;
       };
     }
-  }, []);
+  }, [id]);
+
+  async function fetchProduct() {
+    try {
+      const res = await productService.getById(id);
+      const data = await res.data;
+      setProduct((productsOnMount) => ({ ...productsOnMount, ...data }));
+      console.log(data);
+    } catch (err) {
+      setError(true);
+      console.error(err?.response);
+    }
+  }
   return (
     <div className={styles.info}>
       <Helmet>
-        <title>Item Name | Savvy WebStore</title>
+        <title>{`${itemName} | Savvy WebStore`}</title>
       </Helmet>
+      <Link to="/">Back to All Products</Link>
       <div className="mainGrid">
         <div>
-          <img src={placeholder} />
+          <img src={image} alt={`${itemName}`}/>
         </div>
         <div className="itemDetails">
-          <Link to="/stores/location">Store location</Link>
-          <h1>Product Name</h1>
-          <p className="sku">SKU:</p>
-          <p>item description</p>
-          <h2 className="price">Price</h2>
+          <Link to="/stores/location">{storeLocation}</Link>
+          <h1>{itemName}</h1>
+          <p className="sku">SKU: {sku}</p>
+          <p>{description}</p>
+          <h2 className="price">{price}</h2>
           <div>
             <button>
               Add to cart <BsBag />
@@ -59,8 +102,15 @@ const ItemInfo = () => {
           </div>
           <h4>Delivery options</h4>
           <h3>Condition</h3>
+          <p>{condition}</p>
+          <h3>Size</h3>
+          <p>{size}</p>
           <h3>Brands</h3>
+          <p>{brand}</p>
+          <h3>Material</h3>
+          <p>{material}</p>
           <h3>Colour</h3>
+          <p>{colour}</p>
         </div>
       </div>
     </div>

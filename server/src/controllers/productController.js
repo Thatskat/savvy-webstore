@@ -52,7 +52,7 @@ module.exports = {
   async getProductById(req, res, next) {
     readDebug(req.params);
     try {
-      const productRef = database.collection("storeItems").doc(req, params.id);
+      const productRef = database.collection("storeItems").doc(req.params.id);
       const doc = await productRef.get();
       if (!doc.exists) {
         return next(
