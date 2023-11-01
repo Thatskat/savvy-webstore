@@ -10,10 +10,10 @@ const AddProduct = () => {
     colour: "",
     condition: "",
     description: "",
-    isAvailable: true,
+    isAvailable:true,
     itemName: "",
     material: "",
-    onSale: false,
+    onSale: "false",
     size: "",
     sku: "",
     storeLocation: "",
@@ -51,7 +51,7 @@ const AddProduct = () => {
     setLoading(true);
     try {
       const res = productService.postProduct(product);
-    //   console.log(res);
+      console.log(res);
       navigate("/account");
     } catch (err) {
       console.error(err?.response);
@@ -181,8 +181,8 @@ const AddProduct = () => {
           />
           <label>Sale Status</label>
           <select id="onSale" name="onSale" onChange={handleTextChange} value={onSale}>
-            <option value={false}>False</option>
-            <option value={true}>True</option>
+            <option value={"false"}>False</option>
+            <option value={"true"}>True</option>
           </select>
           <label>Is Available</label>
           <select id="isAvailable" name="isAvailable" onChange={handleTextChange} value={isAvailable}>

@@ -14,8 +14,7 @@ module.exports = {
   async getAllProducts(req, res, next) {
     try {
       const productRef = database.collection("storeItems");
-      const snapshot = await productRef
-        .get();
+      const snapshot = await productRef.get();
       if (snapshot.empty) {
         return next(
           ErrorsApi.badRequest(`The products you were looking for do no exist`)
@@ -93,10 +92,10 @@ module.exports = {
         colour: req.body.colour,
         condition: req.body.condition,
         description: req.body.description,
-        isAvailable: req.body.isAvailable,
+        isAvailable: Boolean(req.body.isAvailable),
         itemName: req.body.itemName,
         material: req.body.material,
-        onSale: req.body.onSale,
+        onSale: Boolean(req.body.onSale),
         price: Number(req.body.price),
         size: req.body.size,
         sku: req.body.sku,
@@ -119,12 +118,11 @@ module.exports = {
     let downloadUrl = null;
     try {
       if (req.files) {
-        const filename = res.locals.filename;
+        const filename = res.locals.customFileName;
         downloadUrl = await storageBucketUpload(filename);
         if (req.body.uploadedFile) {
           const bucketResponse = await deleteFileFromBucket(
-            req,
-            body.uploadedFile
+            req.body.uploadedFile
           );
         }
       } else {
@@ -145,10 +143,10 @@ module.exports = {
         colour: req.body.colour,
         condition: req.body.condition,
         description: req.body.description,
-        isAvailable: req.body.isAvailable,
+        isAvailable: Boolean(req.body.isAvailable),
         itemName: req.body.itemName,
-        material: rwq.body.material,
-        onSale: req.body.onSale,
+        material: req.body.material,
+        onSale: Boolean(req.body.onSale),
         price: Number(req.body.price),
         size: req.body.size,
         sku: req.body.sku,
