@@ -1,12 +1,38 @@
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+
+import useAuth from "../../hooks/useAuth";
+import productService from "../../services/productService";
+
 import * as styles from "./ItemInfo.css";
 import placeholder from "../../assets/staff-placeholder.jpg";
 import { BsBag, BsHeart } from "react-icons/bs";
 const ItemInfo = () => {
+  const { user } = useAuth();
+  const params = useParams();
+
+  const [product, setProduct] = useState({
+    id: params.id,
+    brand: "",
+    colour: "",
+  });
+
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  const hasRun = useRef(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    if (hasRun.current === false) {
+      fetchProduct();
+      setLoading(false);
+
+      return () => {
+        hasRun.current = true;
+      };
+    }
   }, []);
   return (
     <div className={styles.info}>

@@ -24,6 +24,9 @@ import MensPage from "./pages/Shop/Mens";
 import KidsPage from "./pages/Shop/Kids";
 import ItemInfo from "./pages/Shop/ItemInfo";
 
+// PROFILE PAGE
+import Account from "./pages/Account";
+
 // PAGE NOT FOUND
 import PageNotFound from "./pages/NotFound";
 
@@ -55,6 +58,9 @@ function App() {
           <Route path="kids" element={<KidsPage />} />
           {/* <Route path="entertainment" element={<ItemInfo />} /> */}
           <Route path=":id" element={<ItemInfo />} />
+        </Route>
+        <Route path="account">
+          <Route index element={<Account />} />
         </Route>
         {/* PAGE NOT FOUND */}
         <Route path="*" element={<PageNotFound />} />
