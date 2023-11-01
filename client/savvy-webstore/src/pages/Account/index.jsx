@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import useAuth from "../../hooks/useAuth";
-import jwtDecode from "jwt-decode";
 
 import * as styles from "./Account.css";
 

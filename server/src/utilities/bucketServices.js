@@ -3,7 +3,7 @@ const config = require("../configuration/config");
 const uuid = require("uuid");
 const fs = require("fs");
 
-const debugBucket = require('debug')('app:debugBucket')
+const debugBucket = require("debug")("app:debugBucket");
 
 module.exports = {
   async storageBucketUpload(filename) {
@@ -32,7 +32,7 @@ module.exports = {
     const result = await sBucket.upload(serverFilePath, options);
     const bucketName = result[0].metadata.bucket;
 
-    debugBucket(bucketName)
+    debugBucket(bucketName);
 
     const downloadUrl = `https://firebasestorage.googleapis.com/v0/b/${bucketName}/o/${filename}?alt=media&token=${storageToken}`;
 
@@ -49,12 +49,14 @@ module.exports = {
     });
     return downloadUrl;
   },
-  getFileFormUrl(downloadUrl) {
+  getFileFromUrl(downloadUrl) {
+    console.log(downloadUrl);
     const baseUrl = `https://firebasestorage.googleapis.com/v0/b/${config.database.storageBucket}/o/`;
     let fileGlob = downloadUrl.replace(baseUrl, "");
 
     const indexOfEndPath = fileGlob.indexOf("?");
-    fileGlob = fileGlob.subString(0, indexOfEndPath);
+    fileGlob = fileGlob.substring(0, indexOfEndPath);
+
     return fileGlob;
   },
   async deleteFileFromBucket(uploadedFile) {

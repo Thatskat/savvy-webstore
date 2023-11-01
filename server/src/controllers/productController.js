@@ -174,6 +174,7 @@ module.exports = {
           ErrorsApi.badRequest("The item you were looking for does not exist.")
         );
       }
+  
       const downloadUrl = doc.data().image;
       const uploadedFile = getFileFromUrl(downloadUrl);
       const bucketResponse = await deleteFileFromBucket(uploadedFile);
