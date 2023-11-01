@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 // LAYOUT COMPONENT
 import Layout from "./components/layout/Layout";
+import PrivateRoutes from "./components/PrivateRoutes";
 // PAGES IMPORTS
 import HomePage from "./pages/Home";
 import CartPage from "./pages/Cart";
@@ -26,6 +27,9 @@ import ItemInfo from "./pages/Shop/ItemInfo";
 
 // PROFILE PAGE
 import Account from "./pages/Account";
+import AddProduct from "./pages/Account/AddProduct";
+import EditProduct from "./pages/Account/EditProduct";
+import DeleteProduct from "./pages/Account/DeleteProduct";
 
 // PAGE NOT FOUND
 import PageNotFound from "./pages/NotFound";
