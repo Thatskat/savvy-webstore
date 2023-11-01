@@ -8,7 +8,7 @@ const ItemCard = ({ product }) => {
       <img src={product.image} alt={product.itemName} />
       <div className="cardTextContent">
         <p className="location">{product.storeLocation}</p>
-        <h2>{product.itemName}</h2>
+        <Link><h2>{product.itemName}</h2></Link>
         <div className="inline">
           <p className="price">${product.price}</p>
           <button className="wishlistHeart">

@@ -10,8 +10,8 @@ module.exports = {
           tlds: { allow: ["com", "net"] },
         })
         .required(),
-      firstName: Joi.string().min(2).max(30).trim().lowercase().required(),
-      lastName: Joi.string().min(2).max(30).trim().lowercase().required(),
+      firstName: Joi.string().min(2).max(30).trim().lowercase(),
+      lastName: Joi.string().min(2).max(30).trim().lowercase(),
       password: Joi.string()
         .pattern(
           new RegExp(
@@ -23,8 +23,7 @@ module.exports = {
       username: Joi.string()
         .pattern(new RegExp("^[a-zA-Z0-9]+$"))
         .min(3)
-        .max(30)
-        .required(),
+        .max(30),
     });
 
     const { error, value } = schema.validate(req.body);

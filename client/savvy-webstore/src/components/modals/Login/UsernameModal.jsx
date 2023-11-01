@@ -1,4 +1,10 @@
+import { useState } from "react";
 import Modal from "react-modal";
+import { Link, useNavigate } from "react-router-dom";
+
+import authorizationServices from "../../../services/authorizationService";
+import useAuth from "../../../hooks/useAuth";
+
 import * as styles from "../ModalStyles.css";
 import { AiOutlineClose } from "react-icons/ai";
 
@@ -8,6 +14,9 @@ const UsernameModal = ({
   openEmailModal,
   openSignUpModal,
 }) => {
+  const { loginSaveUser } = useAuth();
+  const navigate = useNavigate();
+  
   return (
     <Modal
       isOpen={modalIsOpen}
@@ -20,7 +29,9 @@ const UsernameModal = ({
         <AiOutlineClose />
       </button>
       <h2>Login</h2>
-      <button onClick={openEmailModal} className="subTextButton">Login with your email?</button>
+      <button onClick={openEmailModal} className="subTextButton">
+        Login with your email?
+      </button>
       <form>
         <label htmlFor="username">Username</label>
         <input

@@ -4,7 +4,7 @@ const ErrorsApi = require("../utilities/errorsApi");
 const {
   findUser,
   encryptedPassword,
-  compareHashedPassword,
+  compareHashedPasswords,
   convertUserDetailsToJson,
   jsonWebTokenSignUser,
 } = require("../utilities/authorizationServices");
@@ -83,9 +83,9 @@ module.exports = {
         );
       }
 
-      const passwordMatch = await compareHashedPassword(userMatch, password);
+      const matchPasswords = await compareHashedPasswords(userMatch, password);
 
-      if (!passwordMatch) {
+      if (!matchPasswords) {
         return next(
           ErrorsApi.badRequest(
             "The details entered are not correct. (HINT PASSWORD)"
@@ -94,7 +94,9 @@ module.exports = {
       }
 
       const userJson = await convertUserDetailsToJson(userMatch[0].id);
+      console.log(userJson)
       res.send({
+
         token: jsonWebTokenSignUser(userJson),
       });
     } catch (err) {

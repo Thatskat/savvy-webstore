@@ -21,12 +21,9 @@ module.exports = {
         password: document.data().password,
         username: document.data().username,
       });
-
-      const userMatch = users.filter((user) => {
-        email === user.email;
-      });
-      return userMatch;
     });
+    const userMatch = users.filter((user) => email === user.email);
+    return userMatch;
   },
   async encryptedPassword(password) {
     const salt = await bcrypt.genSalt(10);
