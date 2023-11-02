@@ -15,7 +15,7 @@ module.exports = {
     try {
       const productRef = database.collection("storeItems");
       const snapshot = await productRef
-        .where("isAvailable", "===", "true")
+        .where("isAvailable", "==", true)
         .get();
       if (snapshot.empty) {
         return next(
