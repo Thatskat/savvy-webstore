@@ -44,7 +44,7 @@ const EditProduct = () => {
     try {
       const res = await productService.deleteProduct(id);
       setLoading(false);
-      fetchProducts()
+      fetchProducts();
     } catch (err) {
       console.error(err?.response);
       setError(true);
@@ -59,21 +59,29 @@ const EditProduct = () => {
     return <p>loading...</p>;
   }
   return (
-    <div>
+    <div className={styles.overview}>
       <Helmet>
         <title>Product Overview | Savvy WebStore</title>
       </Helmet>
-      <h1>Edit Products</h1>
+      <h1>Product Overview</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, culpa!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi veritatis
+        architecto labore? Porro maiores iure assumenda ea obcaecati atque eos,
+        neque quos aspernatur totam ipsa ab odio veritatis reiciendis harum nisi
+        quibusdam earum dolorem culpa fugiat quisquam doloremque quas quod.
       </p>
       <div className={styles.itemsGrid}>
         {data &&
           data.map((product) => (
-            <div key={product.id}>
-              <p>{product.itemName}</p>
-              <button onClick={() => handleDelete(product.id)}>delete</button>
-              <Link to={`/account/products/edit/${product.id}`}>Edit</Link>
+            <div key={product.id} className={styles.card}>
+              <img src={product.image} />
+              <h2>{product.itemName}</h2>
+              <button onClick={() => handleDelete(product.id)} className="btn">
+                Delete
+              </button>
+              <Link to={`/account/products/edit/${product.id}`} className="btn">
+                Edit
+              </Link>
             </div>
           ))}
       </div>

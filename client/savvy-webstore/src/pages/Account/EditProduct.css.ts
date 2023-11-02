@@ -19,3 +19,27 @@ globalStyle(`${overview} h1`, {
   marginBottom: root.spacing["2x"],
   textAlign: "center",
 });
+
+globalStyle(`${overview} p`, {
+  textAlign: "center",
+});
+
+export const card = style({
+  background: root.colours.primary,
+  borderRadius: 10,
+  boxShadow: "  -2px 9px 41px -4px rgba(81,81,81,0.75)",
+  padding: root.spacing["1x"],
+});
+
+globalStyle(`${card} img`, {
+  borderRadius: 10,
+  width: "12rem",
+});
+
+globalStyle(`${card} h2`, {
+  textAlign: "center",
+});
+
+globalStyle(`${card} .btn`, {
+  textDecoration: "none",
+});

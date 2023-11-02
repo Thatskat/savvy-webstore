@@ -104,6 +104,16 @@ const Footer = () => {
           tell stories of the past while making a positive impact on the future.
         </p>
         <h5>Savvy WebStore &copy; {year}</h5>
+        <h6>
+          Site inspired by{" "}
+          <a
+            href="https://www.salvosstores.com.au/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Salvos Stores
+          </a>
+        </h6>
       </div>
     </footer>
   );

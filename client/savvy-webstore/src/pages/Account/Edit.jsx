@@ -19,10 +19,10 @@ const Edit = () => {
     colour: "",
     condition: "",
     description: "",
-    isAvailable: "",
+    isAvailable: true,
     itemName: "",
     material: "",
-    onSale: "",
+    onSale:false,
     price: "",
     size: "",
     sku: "",
@@ -112,7 +112,7 @@ const Edit = () => {
       </Helmet>
       <Link to="/account/products/overview">Back to product overview</Link>
       <h1>Edit {itemName}</h1>
-      <p>{description}</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores vitae dolor fuga aliquid voluptatibus hic, autem ducimus porro? Eum, reiciendis.</p>
       <form onSubmit={handleSubmit}>
         <div className={styles.formGrid}>
         <label htmlFor="itemName">Product Name</label>
