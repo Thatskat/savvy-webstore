@@ -39,17 +39,37 @@ globalStyle(`${info} .mainGrid .itemDetails p`, {
 });
 
 globalStyle(`${info} .mainGrid .itemDetails .description`, {
-  margin: `${root.spacing["2x"]} 0`
-})
+  margin: `${root.spacing["2x"]} 0`,
+});
 globalStyle(`${info} .mainGrid .itemDetails .price`, {
-  fontWeight: root.fontWeights.regular,
-  fontSize: root.fontSizes["8x"],
-  margin: `${root.spacing["2x"]} 0`
+  fontWeight: root.fontWeights.bold,
+  fontSize: root.fontSizes["6x"],
+  margin: `${root.spacing["2x"]} 0`,
 });
 
 globalStyle(`${info} .mainGrid .itemDetails button`, {
-  border: "none"
-})
+  border: "none",
+  fontSize: root.fontSizes["4x"],
+  margin: `${root.spacing["3x"]} 0`,
+  fontFamily: root.fonts.body,
+  background: "none"
+});
+
+globalStyle(`${info} .mainGrid .itemDetails .blue`, {
+  background: root.colours.secondary,
+  padding: `${root.spacing["2x"]} ${root.spacing["8x"]}`,
+  borderRadius: 20,
+  color: root.colours.primary,
+  fontWeight: root.fontWeights.bold,
+  textTransform: "uppercase",
+  fontSize: root.fontSizes["3x"],
+});
+
+globalStyle(`${info} .mainGrid .itemDetails .blue svg`, {
+color: root.colours.brand,
+});
+
+
 globalStyle(`${info} .mainGrid .itemDetails .productOverview`, {
   background: root.colours.primary,
   borderRadius: 10,
@@ -58,10 +78,20 @@ globalStyle(`${info} .mainGrid .itemDetails .productOverview`, {
   margin: `${root.spacing["3x"]} auto`,
   display: "grid",
   gridTemplateColumns: "repeat(2, 1fr)",
-  gap: root.spacing["2x"]
+  gap: root.spacing["2x"],
 });
 
 export const svgColour = style({
   color: root.colours.brand,
-  fontSize: root.fontSizes["6x"]
-})
+  fontSize: root.fontSizes["6x"],
+});
+
+globalStyle(`${info} .mainGrid .itemDetails .deliveryOptions`, {
+  display: "grid",
+  gridTemplateColumns: "repeat(2, 1fr)",
+  margin: `${root.spacing["1x"]} 0`,
+});
+
+globalStyle(`${info} .mainGrid .itemDetails .deliveryOptions .bold`, {
+  fontWeight: root.fontWeights.bold,
+});

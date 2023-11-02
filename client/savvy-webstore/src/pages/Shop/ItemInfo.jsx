@@ -93,18 +93,18 @@ const ItemInfo = () => {
           <p className="description">{description}</p>
           <h2 className="price">{priceFormatter(price)}</h2>
           <div>
-            <button>
+            <button className="blue" title="Add to Cart">
               Add to cart <BsBag />
             </button>
-            <button>
+            <button title="Add to Wishlist" className="wishlist">
               <BsHeart />
             </button>
           </div>
           <h4>Delivery options</h4>
           <div className="deliveryOptions">
-            <BsTruck  className={styles.svgColour}/>
+            <BsTruck className={styles.svgColour} />
             <div>
-              <p>AusPost Parcel</p>
+              <p className="bold">AusPost Parcel</p>
               <p>From $7.00</p>
             </div>
           </div>
