@@ -44,6 +44,7 @@ const EditProduct = () => {
     try {
       const res = await productService.deleteProduct(id);
       setLoading(false);
+      fetchProducts()
     } catch (err) {
       console.error(err?.response);
       setError(true);

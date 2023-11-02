@@ -63,7 +63,7 @@ const Edit = () => {
         hasRun.current = true;
       };
     }
-  }, [id]);
+  }, []);
   async function fetchProduct() {
     try {
       const res = await productService.getById(id);
@@ -99,7 +99,7 @@ const Edit = () => {
     try {
       const res = await productService.putProduct(id, product, uploadedFile);
       console.log(res);
-      navigate("/account/products/overview");
+      navigate("/account/products/overview")
     } catch (err) {
       console.error(err?.response);
       setTimeout(() => setLoading(false), 500);
