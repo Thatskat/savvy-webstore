@@ -1,7 +1,8 @@
 import { Helmet } from "react-helmet";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import productService from "../../services/productService";
+import uuidv4 from "uuid/v4";
 
 import * as styles from "./AddProduct.css";
 
@@ -34,10 +35,10 @@ const AddProduct = () => {
     onSale,
     price,
     size,
-    sku,
     storeLocation,
     itemType,
     image,
+    sku,
   } = product;
 
   const handleTextChange = (e) => {
@@ -50,10 +51,14 @@ const AddProduct = () => {
 
   const handleOptionChange = (e) => {
     const boolString = "true";
-    let boolValue = (boolString === e.target.value);
-    console.log(new Boolean(boolValue))
-    setProduct({...product, [e.target.name]: new Boolean(boolValue)})
-  }
+    let boolValue = boolString === e.target.value;
+    console.log(new Boolean(boolValue));
+    setProduct({ ...product, [e.target.name]: new Boolean(boolValue) });
+  };
+
+  const handleSku = () => {
+    setProduct({ ...product, sku: uuidv4() });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -67,6 +72,10 @@ const AddProduct = () => {
       setTimeout(() => setLoading(false), 500);
     }
   };
+
+  useEffect(() => {
+    handleSku();
+  }, []);
   return (
     <div className={styles.productPage}>
       <Helmet>
@@ -108,6 +117,7 @@ const AddProduct = () => {
               placeholder="Product Price"
               onChange={handleTextChange}
               value={price}
+              min={0}
             />
             <label htmlFor="brand">Brand</label>
             <input
@@ -160,7 +170,6 @@ const AddProduct = () => {
               id="sku"
               name="sku"
               placeholder="SKU"
-              onChange={handleTextChange}
               value={sku}
             />
             <label htmlFor="storeLocation">Store Location</label>
@@ -173,14 +182,18 @@ const AddProduct = () => {
               value={storeLocation}
             />
             <label htmlFor="itemType">Item type</label>
-            <input
-              type="text"
+            <select
               id="itemType"
               name="itemType"
               placeholder="Item Type"
               onChange={handleTextChange}
               value={itemType}
-            />
+            >
+              <option value="Mens">Mens</option>
+              <option value="Womens">Womens</option>
+              <option value="Kids">Kids</option>
+            <option value="Entertainment">Entertainment</option>
+            </select>
           </div>
           <label htmlFor="image">Product Image</label>
           <input

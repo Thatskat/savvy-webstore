@@ -1,10 +1,10 @@
 import { useEffect, useState, useRef } from "react";
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 
 import useAuth from "../../hooks/useAuth";
 import productService from "../../services/productService";
 
-import ItemCard from "../../components/common/ItemCard";
 import * as styles from "./EditProduct.css";
 
 const EditProduct = () => {
@@ -25,7 +25,7 @@ const EditProduct = () => {
         hasRun.current = true;
       };
     }
-  }, []);
+  }, [data]);
 
   async function fetchProducts() {
     try {
@@ -39,6 +39,17 @@ const EditProduct = () => {
     }
   }
 
+  const handleDelete = async (id) => {
+    setLoading(true);
+    try {
+      const res = await productService.deleteProduct(id);
+      setLoading(false);
+    } catch (err) {
+      console.error(err?.response);
+      setError(true);
+    }
+  };
+
   if (error) {
     return <p>error</p>;
   }
@@ -49,7 +60,7 @@ const EditProduct = () => {
   return (
     <div>
       <Helmet>
-        <title>Edit Products | Savvy WebStore</title>
+        <title>Edit & Delete Products | Savvy WebStore</title>
       </Helmet>
       <h1>Edit Products</h1>
       <p>
@@ -58,11 +69,11 @@ const EditProduct = () => {
       <div className={styles.itemsGrid}>
         {data &&
           data.map((product) => (
-            <ItemCard
-              key={product.id}
-              product={product}
-              link={`/account/edit/${product.id}`}
-            />
+            <div key={product.id}>
+              <p>{product.itemName}</p>
+              <button onClick={() => handleDelete(product.id)}>delete</button>
+              <Link to={`/account/edit/${product.id}`}>Edit</Link>
+            </div>
           ))}
       </div>
     </div>
