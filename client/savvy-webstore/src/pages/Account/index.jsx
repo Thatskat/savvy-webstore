@@ -18,23 +18,20 @@ const Account = () => {
         </div>
         <div className="adminBtn">
           {user?.isAdmin === true ? (
-            <Link to="/account/add" className="btn">
+            <Link to="/account/products/overview" className="btn">
+              Product Overview
+            </Link>
+          ) : null}
+          {user?.isAdmin === true ? (
+            <Link to="/account/products/add" className="btn">
               Add Product
             </Link>
           ) : null}
-          {user?.isAdmin === true ? (
+          {user && (
             <Link to="/account/edit" className="btn">
-              Edit Product
-            </Link>
-          ) : null}
-          {user?.isAdmin === true ? (
-            <Link to="/account/delete" className="btn">
-              Delete Product
-            </Link>
-          ) : null}
-          {user && <Link to="/account/edit-account" className="btn">
               Edit Account
-            </Link>}
+            </Link>
+          )}
         </div>
       </div>
     </div>

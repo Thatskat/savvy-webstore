@@ -19,10 +19,10 @@ const Edit = () => {
     colour: "",
     condition: "",
     description: "",
-    isAvailable: true,
+    isAvailable: "",
     itemName: "",
     material: "",
-    onSale: false,
+    onSale: "",
     price: "",
     size: "",
     sku: "",
@@ -87,14 +87,19 @@ const Edit = () => {
   const handleFileChange = (e) => {
     setProduct({ ...product, image: e.target.files[0] });
   };
-
+  const handleOptionChange = (e) => {
+    const boolString = "true";
+    let boolValue = boolString === e.target.value;
+    console.log(new Boolean(boolValue));
+    setProduct({ ...product, [e.target.name]: new Boolean(boolValue) });
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
       const res = await productService.putProduct(id, product, uploadedFile);
       console.log(res);
-      navigate("/account/edit");
+      navigate("/account/products/overview");
     } catch (err) {
       console.error(err?.response);
       setTimeout(() => setLoading(false), 500);
@@ -105,7 +110,7 @@ const Edit = () => {
       <Helmet>
         <title>{`Edit ${itemName} | Savvy WebStore`}</title>
       </Helmet>
-      <Link to="/account/edit">Back to edit overview</Link>
+      <Link to="/account/products/overview">Back to product overview</Link>
       <h1>Edit {itemName}</h1>
       <p>{description}</p>
       <form onSubmit={handleSubmit}>
@@ -223,17 +228,17 @@ const Edit = () => {
         <select
           id="onSale"
           name="onSale"
-          onChange={handleTextChange}
+          onChange={handleOptionChange}
           value={onSale}
         >
-          <option value={"false"}>False</option>
-          <option value={"true"}>True</option>
+          <option value={false}>False</option>
+          <option value={true}>True</option>
         </select>
         <label className={styles.show}>Is Available</label>
         <select
           id="isAvailable"
           name="isAvailable"
-          onChange={handleTextChange}
+          onChange={handleOptionChange}
           value={isAvailable}
         >
           <option value={false}>False</option>

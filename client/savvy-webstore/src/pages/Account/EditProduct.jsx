@@ -60,7 +60,7 @@ const EditProduct = () => {
   return (
     <div>
       <Helmet>
-        <title>Edit & Delete Products | Savvy WebStore</title>
+        <title>Product Overview | Savvy WebStore</title>
       </Helmet>
       <h1>Edit Products</h1>
       <p>
@@ -72,7 +72,7 @@ const EditProduct = () => {
             <div key={product.id}>
               <p>{product.itemName}</p>
               <button onClick={() => handleDelete(product.id)}>delete</button>
-              <Link to={`/account/edit/${product.id}`}>Edit</Link>
+              <Link to={`/account/products/edit/${product.id}`}>Edit</Link>
             </div>
           ))}
       </div>
