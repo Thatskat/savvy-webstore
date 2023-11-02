@@ -10,7 +10,7 @@ module.exports = {
       colour: Joi.string().min(1).max(20).required(),
       condition: Joi.string().min(3).max(20).required(),
       description: Joi.string().min(1).max(1024).required(),
-      isAvailable: Joi.boolean(),
+      isAvailable: Joi.boolean().required(),
       itemName: Joi.string().min(1).max(100).required(),
       material: Joi.string().min(3).max(50).required(),
       onSale: Joi.boolean().required(),
