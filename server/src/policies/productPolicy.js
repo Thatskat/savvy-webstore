@@ -16,7 +16,7 @@ module.exports = {
       onSale: Joi.boolean().required(),
       price: Joi.number().min(0).required(),
       size: Joi.string().min(0).required(),
-      sku: Joi.string().min(1).max(20).required(),
+      sku: Joi.string().min(1).max(100).required(),
       storeLocation: Joi.string().min(1).max(30).required(),
       itemType: Joi.string().required(),
       image: Joi.any(),
