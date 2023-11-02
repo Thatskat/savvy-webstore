@@ -34,7 +34,7 @@ function prepareFormData(data, uploadedFile) {
   formData.append("colour", data.colour);
   formData.append("condition", data.condition);
   formData.append("description", data.description);
-  formData.append("isAvailable", data.iaAvailable);
+  formData.append("isAvailable", data.isAvailable);
   formData.append("itemType", data.itemType);
   formData.append("itemName", data.itemName);
   formData.append("material", data.material);

@@ -17,3 +17,27 @@ export const grid = style({
   gridTemplateColumns: "repeat(2, 1fr)",
   gap: root.spacing["9x"],
 });
+
+globalStyle(`${account} .btn`, {
+  fontFamily: root.fonts.body,
+  fontWeight: root.fontWeights.bold,
+  fontSize: root.fontSizes["3x"],
+  color: root.colours.primary,
+  background: root.colours.brand,
+  border: "none",
+  borderRadius: 60,
+  padding: root.spacing["2x"],
+  width: "10rem",
+  transition: "all ease-in-out 1s",
+  cursor: "pointer",
+  textDecoration: "none",
+  display: "block"
+});
+
+globalStyle(`${account} .btn:hover`, {
+  background: root.colours.darkBrand,
+});
+
+globalStyle(`${account} .adminBtn`, {
+ 
+})

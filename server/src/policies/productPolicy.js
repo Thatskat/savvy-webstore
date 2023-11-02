@@ -10,7 +10,7 @@ module.exports = {
       colour: Joi.string().min(1).max(20).required(),
       condition: Joi.string().min(3).max(20).required(),
       description: Joi.string().min(1).max(1024).required(),
-      isAvailable: Joi.boolean().required(),
+      isAvailable: Joi.boolean(),
       itemName: Joi.string().min(1).max(100).required(),
       material: Joi.string().min(3).max(50).required(),
       onSale: Joi.boolean().required(),
@@ -24,7 +24,7 @@ module.exports = {
     });
     const { error, value } = schema.validate(req.body);
     if (error) {
-      joiDebug(error);
+      joiDebug(error, value);
       switch (error.details[0].context.key) {
         case "brand":
           next(
@@ -54,7 +54,7 @@ module.exports = {
             )
           );
           break;
-        case "iaAvailable":
+        case "isAvailable":
           next(
             ErrorsApi.badRequest(
               "You must provide whether or not the product is available."

@@ -14,9 +14,7 @@ module.exports = {
   async getAllProducts(req, res, next) {
     try {
       const productRef = database.collection("storeItems");
-      const snapshot = await productRef
-        .where("isAvailable", "==", true)
-        .get();
+      const snapshot = await productRef.orderBy("itemName", "desc").get();
       if (snapshot.empty) {
         return next(
           ErrorsApi.badRequest(`The products you were looking for do no exist`)
@@ -76,7 +74,11 @@ module.exports = {
   async getOnSaleItems(req, res, next) {
     try {
       const productRef = database.collection("storeItems");
-      const snapshot = await productRef.where("onSale", "===", "true").get();
+      const snapshot = await productRef
+        .where("onSale", "==", true)
+        .orderBy("price")
+        .limit(20)
+        .get();
 
       if (snapshot.empty) {
         return next(ErrorsApi.badRequest(`Sale items do not exist.`));
@@ -113,7 +115,8 @@ module.exports = {
     try {
       const productRef = database.collection("storeItems");
       const snapshot = await productRef
-        .where(req.params.type, "===", req.body.itemType)
+        .where(req.params.type, "==", req.body.itemType)
+        .limit(20)
         .get();
       if (snapshot.empty) {
         return next(
@@ -172,7 +175,7 @@ module.exports = {
         colour: req.body.colour,
         condition: req.body.condition,
         description: req.body.description,
-        isAvailable: Boolean(req.body.isAvailable),
+        isAvailable: req.body.isAvailable,
         itemName: req.body.itemName,
         material: req.body.material,
         onSale: Boolean(req.body.onSale),
@@ -223,10 +226,10 @@ module.exports = {
         colour: req.body.colour,
         condition: req.body.condition,
         description: req.body.description,
-        isAvailable: Boolean(req.body.isAvailable),
+        isAvailable: req.body.isAvailable,
         itemName: req.body.itemName,
         material: req.body.material,
-        onSale: Boolean(req.body.onSale),
+        onSale: req.body.onSale,
         price: Number(req.body.price),
         size: req.body.size,
         sku: req.body.sku,

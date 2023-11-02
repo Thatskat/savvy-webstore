@@ -15,7 +15,7 @@ const AddProduct = () => {
     isAvailable: true,
     itemName: "",
     material: "",
-    onSale: "false",
+    onSale: false,
     size: "",
     sku: "",
     storeLocation: "",
@@ -47,6 +47,13 @@ const AddProduct = () => {
   const handleFileChange = (e) => {
     setProduct({ ...product, image: e.target.files[0] });
   };
+
+  const handleOptionChange = (e) => {
+    const boolString = "true";
+    let boolValue = (boolString === e.target.value);
+    console.log(new Boolean(boolValue))
+    setProduct({...product, [e.target.name]: new Boolean(boolValue)})
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -187,17 +194,17 @@ const AddProduct = () => {
           <select
             id="onSale"
             name="onSale"
-            onChange={handleTextChange}
+            onChange={handleOptionChange}
             value={onSale}
           >
-            <option value={"false"}>False</option>
-            <option value={"true"}>True</option>
+            <option value={false}>False</option>
+            <option value={true}>True</option>
           </select>
           <label className={styles.show}>Is Available</label>
           <select
             id="isAvailable"
             name="isAvailable"
-            onChange={handleTextChange}
+            onChange={handleOptionChange}
             value={isAvailable}
           >
             <option value={false}>False</option>
