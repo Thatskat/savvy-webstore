@@ -4,7 +4,7 @@ import { root } from "../../styles/themes.css";
 export const info = style({
   padding: "0 200px",
   color: root.colours.secondary,
-  margin: `${root.spacing["4x"]} 0`
+  margin: `${root.spacing["4x"]} 0`,
 });
 
 globalStyle(`${info} .mainGrid`, {
@@ -25,7 +25,7 @@ globalStyle(`${info} .mainGrid .itemDetails a`, {
 });
 globalStyle(`${info} .mainGrid .itemDetails h1`, {
   fontSize: root.fontSizes["7x"],
-  margin: `${root.spacing["2x"]} 0`
+  marginTop: root.spacing["2x"],
 });
 
 globalStyle(`${info} .mainGrid .itemDetails .sku`, {
@@ -35,8 +35,33 @@ globalStyle(`${info} .mainGrid .itemDetails .sku`, {
 });
 
 globalStyle(`${info} .mainGrid .itemDetails p`, {
-    fontSize: root.fontSizes["2x"]
-  });
+  fontSize: root.fontSizes["2x"],
+});
+
+globalStyle(`${info} .mainGrid .itemDetails .description`, {
+  margin: `${root.spacing["2x"]} 0`
+})
 globalStyle(`${info} .mainGrid .itemDetails .price`, {
-    fontWeight: root.fontWeights.regular
+  fontWeight: root.fontWeights.regular,
+  fontSize: root.fontSizes["8x"],
+  margin: `${root.spacing["2x"]} 0`
+});
+
+globalStyle(`${info} .mainGrid .itemDetails button`, {
+  border: "none"
+})
+globalStyle(`${info} .mainGrid .itemDetails .productOverview`, {
+  background: root.colours.primary,
+  borderRadius: 10,
+  boxShadow: "  -2px 9px 41px -4px rgba(81,81,81,0.75)",
+  padding: root.spacing["3x"],
+  margin: `${root.spacing["3x"]} auto`,
+  display: "grid",
+  gridTemplateColumns: "repeat(2, 1fr)",
+  gap: root.spacing["2x"]
+});
+
+export const svgColour = style({
+  color: root.colours.brand,
+  fontSize: root.fontSizes["6x"]
 })

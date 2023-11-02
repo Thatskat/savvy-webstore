@@ -1,6 +1,6 @@
 function priceFormatter(number) {
-  let decimalNumber = number.toFixed(2);
-  let string = decimalNumber.toString().split(".");
+  
+  let string = number.toString().split(".");
   string[0] = string[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   return "$" + string.join(".");
 }
