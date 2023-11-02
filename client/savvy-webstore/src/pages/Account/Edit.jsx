@@ -6,6 +6,8 @@ import useAuth from "../../hooks/useAuth";
 import { getFileFromUrl } from "../../utilities/write";
 import productService from "../../services/productService";
 
+import * as styles from "./AddProduct.css"
+
 const Edit = () => {
   const { user } = useAuth();
   const params = useParams();
@@ -99,13 +101,15 @@ const Edit = () => {
     }
   };
   return (
-    <div>
+    <div className={styles.productPage}>
       <Helmet>
         <title>{`Edit ${itemName} | Savvy WebStore`}</title>
       </Helmet>
+      <Link to="/account/edit">Back to edit overview</Link>
       <h1>Edit {itemName}</h1>
       <p>{description}</p>
       <form onSubmit={handleSubmit}>
+        <div className={styles.formGrid}>
         <label htmlFor="itemName">Product Name</label>
         <input
           type="text"
@@ -205,6 +209,8 @@ const Edit = () => {
           onChange={handleTextChange}
           value={itemType}
         />
+        </div>
+  
         <label htmlFor="image">Product Image</label>
         <input
           type="file"
@@ -213,7 +219,7 @@ const Edit = () => {
           placeholder="Product Image"
           onChange={handleFileChange}
         />
-        <label>Sale Status</label>
+        <label className={styles.show}>Sale Status</label>
         <select
           id="onSale"
           name="onSale"
@@ -223,7 +229,7 @@ const Edit = () => {
           <option value={"false"}>False</option>
           <option value={"true"}>True</option>
         </select>
-        <label>Is Available</label>
+        <label className={styles.show}>Is Available</label>
         <select
           id="isAvailable"
           name="isAvailable"

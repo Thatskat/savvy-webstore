@@ -14,7 +14,9 @@ module.exports = {
   async getAllProducts(req, res, next) {
     try {
       const productRef = database.collection("storeItems");
-      const snapshot = await productRef.get();
+      const snapshot = await productRef
+        .where("isAvailable", "===", "true")
+        .get();
       if (snapshot.empty) {
         return next(
           ErrorsApi.badRequest(`The products you were looking for do no exist`)
@@ -66,6 +68,84 @@ module.exports = {
       return next(
         ErrorsApi.internalError(
           "Your request could not be processed during this time.",
+          err
+        )
+      );
+    }
+  },
+  async getOnSaleItems(req, res, next) {
+    try {
+      const productRef = database.collection("storeItems");
+      const snapshot = await productRef.where("onSale", "===", "true").get();
+
+      if (snapshot.empty) {
+        return next(ErrorsApi.badRequest(`Sale items do not exist.`));
+      } else {
+        let docs = [];
+        snapshot.forEach((doc) => {
+          docs.push({
+            id: doc.id,
+            brand: doc.data().brand,
+            colour: doc.data().colour,
+            condition: doc.data().condition,
+            description: doc.data().description,
+            isAvailable: doc.data().isAvailable,
+            itemName: doc.data().itemName,
+            material: doc.data().material,
+            onSale: doc.data().onSale,
+            price: doc.data().price,
+            size: doc.data().size,
+            sku: doc.data().sku,
+            storeLocation: doc.data().storeLocation,
+            image: doc.data().image,
+            itemType: doc.data().itemType,
+          });
+        });
+        res.send(docs);
+      }
+    } catch (err) {
+      return next(
+        ErrorsApi.internalError(`Sale items could not be found.`, err)
+      );
+    }
+  },
+  async getItemByCategory(req, res, next) {
+    try {
+      const productRef = database.collection("storeItems");
+      const snapshot = await productRef
+        .where(req.params.type, "===", req.body.itemType)
+        .get();
+      if (snapshot.empty) {
+        return next(
+          ErrorsApi.badRequest("The items of that type could not be found.")
+        );
+      } else {
+        let docs = [];
+        snapshot.forEach((doc) => {
+          docs.push({
+            id: doc.id,
+            brand: doc.data().brand,
+            colour: doc.data().colour,
+            condition: doc.data().condition,
+            description: doc.data().description,
+            isAvailable: doc.data().isAvailable,
+            itemName: doc.data().itemName,
+            material: doc.data().material,
+            onSale: doc.data().onSale,
+            price: doc.data().price,
+            size: doc.data().size,
+            sku: doc.data().sku,
+            storeLocation: doc.data().storeLocation,
+            image: doc.data().image,
+            itemType: doc.data().itemType,
+          });
+        });
+        res.send(docs);
+      }
+    } catch (err) {
+      return next(
+        ErrorsApi.internalError(
+          `An error has occurred finding products in that type.`,
           err
         )
       );
@@ -174,7 +254,7 @@ module.exports = {
           ErrorsApi.badRequest("The item you were looking for does not exist.")
         );
       }
-  
+
       const downloadUrl = doc.data().image;
       const uploadedFile = getFileFromUrl(downloadUrl);
       const bucketResponse = await deleteFileFromBucket(uploadedFile);
