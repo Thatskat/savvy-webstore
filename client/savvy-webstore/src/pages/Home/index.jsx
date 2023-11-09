@@ -10,6 +10,15 @@ import Card from "../../components/common/Card";
 import HighlightCard from "../../components/common/HighlightCard";
 import Button from "../../components/common/Button";
 
+// HIGHLIGHT IMAGES
+import womenHighlight from "../../assets/highlights/womens-highlight.webp";
+import menHighlight from "../../assets/highlights/mens-highlight.webp";
+import kidHighlight from "../../assets/highlights/kids-highlight.webp";
+import homewaresHighlight from "../../assets/highlights/homewares-highlight.webp";
+import toysHighlight from "../../assets/highlights/toys-highlight.webp";
+import entertainmentHighlight from "../../assets/highlights/entertainment-highlight.webp";
+import booksHighlight from "../../assets/highlights/books-highlight.webp"
+
 const HomePage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -48,36 +57,61 @@ const HomePage = () => {
           <HighlightCard
             title="Womens"
             link="/shop/womens"
+            image={womenHighlight}
+          />
+          <HighlightCard
+            title="Mens"
+            link="/shop/mens"
+            image={menHighlight}
+          />
+          <HighlightCard
+            title="Kids"
+            link="/shop/kids"
+            image={kidHighlight}
+          />
+          <HighlightCard
+            title="Homewares"
+            link="/shop/homewares"
+            image={homewaresHighlight}
+          />
+          <HighlightCard
+            title="Entertainment"
+            link="/shop/entertainment"
+            image={entertainmentHighlight}
+          />
+          <HighlightCard
+            title="Toys"
+            link="/shop/toys"
+            image={toysHighlight}
+          />
+          <HighlightCard
+            title="Books"
+            link="/shop/books"
+            image={booksHighlight}
+          />
+          <HighlightCard
+            title="Collectables"
+            link="/shop/collectables"
             image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
           />
           <HighlightCard
-            title="Womens"
-            link="/shop/womens"
+            title="Outdoor & Sport"
+            link="/shop/outdoor-sport"
             image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
           />
           <HighlightCard
-            title="Womens"
-            link="/shop/womens"
+            title="Health & Beauty"
+            link="/shop/health-beauty"
             image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
           />
           <HighlightCard
-            title="Womens"
-            link="/shop/womens"
+            title="Home Electrical"
+            link="/shop/electrical"
             image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
           />
           <HighlightCard
-            title="Womens"
-            link="/shop/womens"
-            image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
-          />
-          <HighlightCard
-            title="Womens"
-            link="/shop/womens"
-            image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
-          />
-          <HighlightCard
-            title="Womens"
-            link="/shop/womens"
+            title="Furniture"
+            link="/shop/furniture"
             image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
           />
         </div>

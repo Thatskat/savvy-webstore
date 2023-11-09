@@ -192,7 +192,15 @@ const AddProduct = () => {
               <option value="Mens">Mens</option>
               <option value="Womens">Womens</option>
               <option value="Kids">Kids</option>
-            <option value="Entertainment">Entertainment</option>
+              <option value="Homewares">Homewares</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Toys">Toys</option>
+              <option value="Books">Books</option>
+              <option value="Collectables">Collectables</option>
+              <option value="Outdoor & Sport">Outdoor & Sport</option>
+              <option value="Health & Beauty">Health & Beauty</option>
+              <option value="Home Electrical">Home Electrical</option>
+              <option value="Furniture">Furniture</option>
             </select>
           </div>
           <label htmlFor="image">Product Image</label>
