@@ -15,7 +15,6 @@ export const wishlist = style({
   
   globalStyle(`${wishlist} p`, {
     textAlign: "center",
-    marginBottom: root.spacing["5x"]
   });
 
   globalStyle(`${wishlist} .itemList`, {

@@ -79,7 +79,7 @@ globalStyle(`${modal} .noAccount button`, {
   cursor: "pointer"
   });
 
-  globalStyle(`.btn-small`, {
+  globalStyle(`${modal }.btn-small`, {
     fontFamily: root.fonts.body,
     fontWeight: root.fontWeights.bold,
     fontSize: root.fontSizes["2x"],
@@ -97,11 +97,11 @@ globalStyle(`${modal} .noAccount button`, {
     margin: `${root.spacing["1x"]} auto !important`,
   });
   
-  globalStyle(`.btn-small:hover`, {
+  globalStyle(`${modal} .btn-small:hover`, {
     background: root.colours.darkBrand,
   });
 
-  globalStyle('.bold', {
+  globalStyle(`${modal} .bold`, {
     fontWeight: root.fontWeights.bold,
     textDecoration: "none !important"
   })
