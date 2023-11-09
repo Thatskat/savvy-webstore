@@ -9,7 +9,7 @@ const WomansPage = () => {
       <Helmet>
         <title>Shop Womens | Savvy WebStore</title>
       </Helmet>
-      <div className={styles.shopHeader}>
+      <div className={`${styles.shopHeader} ${styles.womensHeader}`}>
         <div className="heading">
           <img src={shopSVG} alt="Shop" />
           <h1>Womens</h1>
