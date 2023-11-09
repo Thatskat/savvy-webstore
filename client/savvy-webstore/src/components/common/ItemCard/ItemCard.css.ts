@@ -26,11 +26,12 @@ export const itemCard = style({
     color: "#A9A9A9",
   });
   
-  globalStyle(`${itemCard} h2`, {
+  globalStyle(`${itemCard} a h2`, {
       fontWeight: root.fontWeights.light,
       color: root.colours.secondary,
       fontSize: root.fontSizes["4x"],
-      marginTop: root.spacing["2x"]
+      marginTop: root.spacing["2x"],
+      textDecoration: "none !important"
   })
   globalStyle(`${itemCard} .price`, {
       fontWeight: root.fontWeights.bold,
