@@ -52,11 +52,11 @@ const EditProduct = () => {
   };
 
   if (error) {
-    return <p>error</p>;
+    return <p className="error">Error - An unexpected error has occurred</p>;
   }
 
   if (loading) {
-    return <p>loading...</p>;
+    return <h1 className="loading">Loading...</h1>;
   }
   return (
     <div className={styles.overview}>

@@ -11,3 +11,10 @@ globalStyle('body', {
   fontFamily: root.fonts.body,
 })
 
+globalStyle(".loading", {
+  textAlign: "center",
+  color: root.colours.secondary,
+  fontSize: root.fontSizes['6x'],
+  margin: `${root.spacing['4x']} auto`
+})
+
