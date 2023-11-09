@@ -30,34 +30,36 @@ globalStyle(`${socialMedia} ul`, {
 
 globalStyle(`${socialMedia} ul li`, {
   listStyle: "none",
-  // padding: root.spacing["1x"],
   fontSize: "2rem",
 
 
 });
 
 globalStyle(`${socialMedia} ul li a`, {
-    // padding: "20rem",
  
   borderRadius: "100%",
 });
 
 globalStyle(`${socialMedia} ul li .instagram`, {
-   background: " #8a3ab9"
+   background: " #8a3ab9",
+   padding: root.spacing["1x"],
 });
 
 globalStyle(`${socialMedia} ul li .facebook`, {
-    background: "#4267B2"
+    background: "#4267B2",
+    padding: root.spacing["1x"],
  });
 
  globalStyle(`${socialMedia} ul li .twitter`, {
-    background: "#1DA1F2"
+    background: "#1DA1F2",
+    padding: root.spacing["1x"],
  });
 
 globalStyle(`${socialMedia} ul li a svg`, {
     color: root.colours.primary,
     width: "1.5rem",
-    height: "1.5rem"
+    height: "1.5rem",
+    paddingTop: '0.7rem'
 });
 
 globalStyle(`${topFooter} h5`, {

@@ -104,8 +104,8 @@ const PrivacyPolicyPage = () => {
         <p>
           If you have any questions, concerns, or requests regarding this
           Privacy Policy or your personal information, please contact us at{" "}
-          <a href="#">enquires@savvywebStore.com.au</a> or{" "}
-          <a href="#">1300 472 293</a>.
+          <a href="mailto:enquires@savvywebstore.com.au">enquires@savvywebstore.com.au</a> or{" "}
+          <a href="tel:1300 472 293">1300 472 293</a>.
         </p>
       </div>
     </div>
