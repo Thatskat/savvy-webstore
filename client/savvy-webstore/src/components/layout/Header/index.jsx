@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logos/savvy-top-logo.svg";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useAuth from "../../../hooks/useAuth";
 
-import { BsBag, BsHeart, BsPerson, BsTextLeft, BsSearch } from "react-icons/bs";
+import { BsBag, BsHeart, BsPerson, BsSearch } from "react-icons/bs";
 
 // IMPORT MODALS
 import EmailModal from "../../modals/Login/EmailModal";
@@ -13,42 +13,48 @@ import SignUpModal from "../../modals/SignUp";
 
 import * as styles from "./Header.css";
 const Header = () => {
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
   const [modalIsOpen, setIsOpen] = useState(false);
   const [signUpModalIsOpen, signUpSetIsOpen] = useState(false);
   const [emailModalIsOpen, emailSetIsOpen] = useState(false);
 
-  
-    function openModal() {
-      setIsOpen(true);
+  function openModal() {
+    setIsOpen(true);
+    signUpSetIsOpen(false);
+    emailSetIsOpen(false);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openSignUpModal() {
+    setIsOpen(false);
+    signUpSetIsOpen(true);
+    emailSetIsOpen(false);
+  }
+
+  function closeSignUpModal() {
+    signUpSetIsOpen(false);
+  }
+
+  function openEmailModal() {
+    setIsOpen(false);
+    signUpSetIsOpen(false);
+    emailSetIsOpen(true);
+  }
+
+  function closeEmailModal() {
+    emailSetIsOpen(false);
+  }
+
+  useEffect(() => {
+    if (user) {
       signUpSetIsOpen(false);
       emailSetIsOpen(false);
-    }
-
-    function closeModal() {
       setIsOpen(false);
     }
-
-    function openSignUpModal() {
-      setIsOpen(false);
-      signUpSetIsOpen(true);
-      emailSetIsOpen(false);
-    }
-
-    function closeSignUpModal() {
-      signUpSetIsOpen(false);
-    }
-
-    function openEmailModal() {
-      setIsOpen(false);
-      signUpSetIsOpen(false);
-      emailSetIsOpen(true);
-    }
-
-    function closeEmailModal() {
-      emailSetIsOpen(false);
-    }
-  
+  }, [user]);
 
   return (
     <header className={styles.header}>
@@ -107,8 +113,14 @@ const Header = () => {
                   <BsPerson /> Login/Signup
                 </button>
               )}
-              {user && <li><Link to="/account" title="My Account"><BsPerson />My Account</Link></li>}
-              {user && <button onClick={logout}>Logout</button>}
+              {user && (
+                <li>
+                  <Link to="/account" title="My Account">
+                    <BsPerson />
+                    My Account
+                  </Link>
+                </li>
+              )}
             </li>
           </ul>
         </nav>
@@ -117,10 +129,7 @@ const Header = () => {
         <nav>
           <ul>
             <li className="textHighlight">
-              <Link to="/shop">
-                {/* <BsTextLeft /> */}
-                Shop Online
-              </Link>
+              <Link to="/shop">Shop Online</Link>
             </li>
             <li>
               <Link to="/shop/womens">Womens</Link>

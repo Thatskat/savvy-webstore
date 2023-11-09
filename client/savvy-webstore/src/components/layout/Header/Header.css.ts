@@ -15,7 +15,7 @@ export const topHeader = style({
 });
 
 export const accountLinks = style({
- marginLeft: "auto"
+ marginLeft: "auto",
 });
 
 globalStyle(`${accountLinks} ul`, {

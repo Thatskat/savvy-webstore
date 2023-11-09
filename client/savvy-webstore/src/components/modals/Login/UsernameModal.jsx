@@ -47,12 +47,12 @@ const UsernameModal = ({
           name="password"
           placeholder="Password"
         />
-        <button type="submit">Login</button>
+        <button type="submit" className="btn-small">Login</button>
       </form>
       <a className="subTextButton">I&apos;ve lost my password</a>
       <p className="noAccount">
         Don&apos;t have an account?{" "}
-        <button onClick={openSignUpModal}>Sign up here</button>
+        <button onClick={openSignUpModal} className="bold">Sign up here</button>
       </p>
     </Modal>
   );

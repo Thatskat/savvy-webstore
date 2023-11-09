@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import Modal from "react-modal";
 import * as styles from "../ModalStyles.css";
 import { AiOutlineClose } from "react-icons/ai";
@@ -108,7 +107,7 @@ const SignUpModal = ({ signUpModalIsOpen, closeSignUpModal, openModal }) => {
           ref={confirmPasswordRef}
           placeholder="Confirm Password"
         />
-        <button type="submit">Sign Up</button>
+        <button type="submit" className="btn-small">Sign Up</button>
       </form>
       <button onClick={openModal} className="subTextButton">
         Sign in if you already have an account

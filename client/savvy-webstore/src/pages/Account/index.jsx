@@ -5,7 +5,7 @@ import useAuth from "../../hooks/useAuth";
 import * as styles from "./Account.css";
 
 const Account = () => {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
   return (
     <div className={styles.account}>
       <Helmet>
@@ -15,6 +15,7 @@ const Account = () => {
         <div className="userInfo">
           <h1>My Account</h1>
           <p>Welcome back, {user?.firstName}!</p>
+          <button onClick={logout} className="btn-small">Logout?</button>
           <p className="mt-3">What are you looking for today?</p>
         </div>
         <div className="adminBtn">
