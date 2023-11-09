@@ -23,7 +23,18 @@ export const kidsHeader = style( {
   background: "url('/shopHeader/kids-shop-header.webp') no-repeat center",
   backgroundSize: "cover"
 });
-
+export const booksHeader = style( {
+  background: "url('/shopHeader/books-shop-header.webp') no-repeat center",
+  backgroundSize: "cover"
+});
+export const collectablesHeader = style( {
+  background: "url('/shopHeader/collectables-shop-header.webp') no-repeat center",
+  backgroundSize: "cover"
+});
+export const electricalsHeader = style( {
+  background: "url('/shopHeader/electricals-shop-header.webp') no-repeat center",
+  backgroundSize: "cover"
+});
 globalStyle(`${shopHeader} .heading`, {
   padding: `${root.spacing["9x"]} 200px`,
 });
