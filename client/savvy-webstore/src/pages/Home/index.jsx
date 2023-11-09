@@ -17,7 +17,12 @@ import kidHighlight from "../../assets/highlights/kids-highlight.webp";
 import homewaresHighlight from "../../assets/highlights/homewares-highlight.webp";
 import toysHighlight from "../../assets/highlights/toys-highlight.webp";
 import entertainmentHighlight from "../../assets/highlights/entertainment-highlight.webp";
-import booksHighlight from "../../assets/highlights/books-highlight.webp"
+import booksHighlight from "../../assets/highlights/books-highlight.webp";
+import collectablesHighlight from "../../assets/highlights/collectables-highlight.webp";
+import sportHighlight from "../../assets/highlights/sport-highlight.webp";
+import beautyHighlight from "../../assets/highlights/beauty-highlight.webp";
+import electricalHighlight from "../../assets/highlights/electrical-highlight.webp";
+import furnitureHighlight from "../../assets/highlights/furniture-highlight.webp"
 
 const HomePage = () => {
   useEffect(() => {
@@ -92,27 +97,27 @@ const HomePage = () => {
           <HighlightCard
             title="Collectables"
             link="/shop/collectables"
-            image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
+            image={collectablesHighlight}
           />
           <HighlightCard
             title="Outdoor & Sport"
             link="/shop/outdoor-sport"
-            image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
+            image={sportHighlight}
           />
           <HighlightCard
             title="Health & Beauty"
             link="/shop/health-beauty"
-            image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
+            image={beautyHighlight}
           />
           <HighlightCard
             title="Home Electrical"
             link="/shop/electrical"
-            image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
+            image={electricalHighlight}
           />
           <HighlightCard
             title="Furniture"
             link="/shop/furniture"
-            image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
+            image={furnitureHighlight}
           />
         </div>
       </div>
