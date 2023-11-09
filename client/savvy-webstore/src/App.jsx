@@ -23,6 +23,15 @@ import ShopPage from "./pages/Shop";
 import WomensPage from "./pages/Shop/Womens";
 import MensPage from "./pages/Shop/Mens";
 import KidsPage from "./pages/Shop/Kids";
+import EntertainmentPage from "./pages/Shop/Entertainment";
+import BeautyPage from "./pages/Shop/Beauty";
+import BooksPage from "./pages/Shop/Books";
+import CollectablesPage from "./pages/Shop/Collectables";
+import ElectricalPage from "./pages/Shop/Electrical";
+import FurniturePage from "./pages/Shop/Furniture";
+import SportPage from "./pages/Shop/Sport";
+import ToysPage from "./pages/Shop/Toys";
+
 import ItemInfo from "./pages/Shop/ItemInfo";
 
 // PROFILE PAGE
