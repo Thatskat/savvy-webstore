@@ -111,3 +111,11 @@ globalStyle(`${bottomFooter} h5`, {
     fontWeight: root.fontWeights.extraBold,
     fontSize: root.fontSizes["1x"]
 })
+
+globalStyle(`${bottomFooter} a`, {
+  paddingTop: root.spacing["3x"],
+  fontWeight: root.fontWeights.extraBold,
+  fontSize: root.fontSizes["1x"],
+  textDecoration: "none",
+  color: root.colours.brand
+})
