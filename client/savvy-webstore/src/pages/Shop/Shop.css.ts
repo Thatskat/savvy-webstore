@@ -35,6 +35,27 @@ export const electricalsHeader = style( {
   background: "url('/shopHeader/electricals-shop-header.webp') no-repeat center",
   backgroundSize: "cover"
 });
+
+export const entertainmentHeader = style( {
+  background: "url('/shopHeader/entertainment-shop-header.webp') no-repeat center",
+  backgroundSize: "cover"
+});
+export const furnitureHeader = style( {
+  background: "url('/shopHeader/furniture-shop-header.webp') no-repeat center",
+  backgroundSize: "cover"
+});
+export const homewaresHeader = style( {
+  background: "url('/shopHeader/homewares-shop-header.webp') no-repeat center",
+  backgroundSize: "cover"
+});
+export const sportsHeader = style( {
+  background: "url('/shopHeader/sports-shop-header.webp') no-repeat center",
+  backgroundSize: "cover"
+});
+export const toysHeader = style( {
+  background: "url('/shopHeader/toys-shop-header.webp') no-repeat center",
+  backgroundSize: "cover"
+});
 globalStyle(`${shopHeader} .heading`, {
   padding: `${root.spacing["9x"]} 200px`,
 });
