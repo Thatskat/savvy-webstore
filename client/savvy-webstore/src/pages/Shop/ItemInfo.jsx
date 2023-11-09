@@ -81,13 +81,13 @@ const ItemInfo = () => {
       <Helmet>
         <title>{`${itemName} | Savvy WebStore`}</title>
       </Helmet>
-      <Link to="/">Back to All Products</Link>
+      <Link to="/shop" className="allProductsLink">Back to All Products</Link>
       <div className="mainGrid">
         <div>
           <img src={image} alt={`${itemName}`} />
         </div>
         <div className="itemDetails">
-          <Link to="/stores/location">{storeLocation}</Link>
+          <Link to="/stores/location" className="storeLocation">{storeLocation}</Link>
           <h1>{itemName}</h1>
           <p className="sku">SKU: {sku}</p>
           <p className="description">{description}</p>
