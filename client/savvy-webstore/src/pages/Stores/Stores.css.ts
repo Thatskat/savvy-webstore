@@ -62,3 +62,17 @@ globalStyle(`${stores} .browseByRegion .byAlphabet button`, {
 globalStyle(`${stores} .browseByRegion .byAlphabet button:hover`, {
   textDecoration: "underline",
 });
+
+globalStyle(`${stores} .browseByRegion .cardGrid`, {
+  display: "grid",
+  gridTemplateColumns: "repeat(4, 1fr)",
+  gap: "2rem",
+});
+export const card = style({
+  background: root.colours.primary,
+  borderRadius: 10,
+  boxShadow: "  -2px 9px 41px -4px rgba(81,81,81,0.75)",
+  padding: root.spacing["5x"],
+  margin: `${root.spacing["4x"]} auto`,
+});
+

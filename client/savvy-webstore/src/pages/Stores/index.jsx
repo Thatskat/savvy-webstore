@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet";
 import * as styles from "./Stores.css";
+import {Link} from "react-router-dom"
 const StoresPage = () => {
   return (
     <div className={styles.stores}>
@@ -60,6 +61,14 @@ const StoresPage = () => {
           <button>X</button>
           <button>Y</button>
           <button>Z</button>
+        </div>
+        <div className="cardGrid">
+      <div className={styles.card}>
+        <h3>Moorabbin</h3>
+        <p>Address</p>
+        <p><span>Phone: </span>(03) 9372 9172</p>
+        <Link><button>View Store</button></Link>
+      </div>
         </div>
       </div>
     </div>
