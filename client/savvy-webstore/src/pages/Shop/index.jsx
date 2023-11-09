@@ -61,7 +61,7 @@ const ShopPage = () => {
       </div>
       <SearchBar />
       <p className={styles.itemShow}>
-        Showing <span>#</span> out of {data.length}
+        Showing <span>{data.length}</span> out of {data.length}
       </p>
       <div className={styles.itemsGrid}>
         {data &&

@@ -31,3 +31,10 @@ export const optionsBar = style({
     display: "grid",
     gridTemplateColumns: "repeat(2, 1fr)",
   })
+
+  globalStyle(`${optionsBar} .salesShuffle button`, {
+    background: "none",
+    border: "none",
+    fontWeight: root.fontWeights.bold,
+    color: root.colours.secondary
+  })
