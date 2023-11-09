@@ -27,11 +27,13 @@ globalStyle(`${account} .btn`, {
   border: "none",
   borderRadius: 60,
   padding: root.spacing["2x"],
-  width: "10rem",
+  width: "20rem",
   transition: "all ease-in-out 1s",
   cursor: "pointer",
   textDecoration: "none",
-  display: "block"
+  display: "block",
+  textAlign: "center",
+  margin: `${root.spacing["1x"]} 0`,
 });
 
 globalStyle(`${account} .btn:hover`, {
@@ -39,5 +41,14 @@ globalStyle(`${account} .btn:hover`, {
 });
 
 globalStyle(`${account} .adminBtn`, {
- 
+  background: root.colours.primary,
+  borderRadius: 10,
+  boxShadow: "  -2px 9px 41px -4px rgba(81,81,81,0.75)",
+  padding: root.spacing["5x"],
+  margin: `${root.spacing["5x"]} 0`,
+});
+
+globalStyle(`${account} .mt-3`, {
+  marginTop: root.spacing["3x"],
+  fontWeight: "bold"
 })

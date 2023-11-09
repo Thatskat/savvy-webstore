@@ -46,6 +46,14 @@ globalStyle(`${productPage} input:focus`, {
   outline: "none",
 });
 
+globalStyle(`${productPage} input`, {
+  borderRadius: 30,
+  padding: root.spacing["1x"],
+  color: root.colours.secondary,
+  fontFamily: root.fonts.body,
+  borderColor: root.colours.secondary,
+});
+
 export const show = style({
   display: "block !important",
 });

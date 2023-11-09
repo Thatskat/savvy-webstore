@@ -15,8 +15,11 @@ const Account = () => {
         <div className="userInfo">
           <h1>My Account</h1>
           <p>Welcome back, {user?.firstName}!</p>
+          <p className="mt-3">What are you looking for today?</p>
         </div>
         <div className="adminBtn">
+          <h2>Dashboard</h2>
+          <p>Manage your Savvy Webstore account here:</p>
           {user?.isAdmin === true ? (
             <Link to="/account/products/overview" className="btn">
               Product Overview

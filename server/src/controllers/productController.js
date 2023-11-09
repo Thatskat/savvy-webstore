@@ -14,7 +14,10 @@ module.exports = {
   async getAllProducts(req, res, next) {
     try {
       const productRef = database.collection("storeItems");
-      const snapshot = await productRef.orderBy("itemName", "desc").get();
+      const snapshot = await productRef
+        .orderBy("itemName", "asc")
+        .orderBy("price", "asc")
+        .get();
       if (snapshot.empty) {
         return next(
           ErrorsApi.badRequest(`The products you were looking for do no exist`)

@@ -52,7 +52,7 @@ globalStyle(`${info} .mainGrid .itemDetails button`, {
   fontSize: root.fontSizes["4x"],
   margin: `${root.spacing["3x"]} 0`,
   fontFamily: root.fonts.body,
-  background: "none"
+  background: "none",
 });
 
 globalStyle(`${info} .mainGrid .itemDetails .blue`, {
@@ -66,9 +66,17 @@ globalStyle(`${info} .mainGrid .itemDetails .blue`, {
 });
 
 globalStyle(`${info} .mainGrid .itemDetails .blue svg`, {
-color: root.colours.brand,
+  color: root.colours.brand,
 });
 
+globalStyle(`${info} .mainGrid .itemDetails .wishlist`, {
+  borderRadius: 100,
+  border: `${root.colours.secondary} solid 1px`
+});
+
+globalStyle(`${info} .mainGrid .itemDetails .wishlist svg`, {
+  color: root.colours.brand
+})
 
 globalStyle(`${info} .mainGrid .itemDetails .productOverview`, {
   background: root.colours.primary,
