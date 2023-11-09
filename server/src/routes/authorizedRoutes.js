@@ -16,5 +16,9 @@ module.exports = () => {
     authorizationPolicies.validateAuthorization,
     authorizationController.loginUser
   );
+  router.post(
+    "/login/username",
+    authorizationPolicies.validateAuthorization,
+    authorizationController.usernameLogin  );
   return router;
 };

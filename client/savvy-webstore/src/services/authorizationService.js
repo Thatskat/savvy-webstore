@@ -9,9 +9,15 @@ async function loginUser(user) {
   return res;
 }
 
+async function loginUserUsername(user) {
+  const res = await apiInstance.post("/auth/login/username", user);
+  return res;
+}
+
 const authorizationServices = {
   registerUser,
   loginUser,
+  loginUserUsername
 };
 
 export default authorizationServices;

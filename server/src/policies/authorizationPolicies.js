@@ -4,12 +4,10 @@ const ErrorsApi = require("../utilities/errorsApi");
 module.exports = {
   validateAuthorization(req, res, next) {
     const schema = Joi.object({
-      email: Joi.string()
-        .email({
-          minDomainSegments: 2,
-          tlds: { allow: ["com", "net"] },
-        })
-        .required(),
+      email: Joi.string().email({
+        minDomainSegments: 2,
+        tlds: { allow: ["com", "net"] },
+      }),
       firstName: Joi.string().min(2).max(30).trim().lowercase(),
       lastName: Joi.string().min(2).max(30).trim().lowercase(),
       password: Joi.string()

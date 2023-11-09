@@ -5,7 +5,7 @@ const PrivateRoutes = () => {
   const { getCurrentUserFromLocal } = useAuth();
   const location = useLocation();
   return !getCurrentUserFromLocal() ? (
-    <Navigate to="/" state={{ frome: location }} replace />
+    <Navigate to="/" state={{ from: location }} replace />
   ) : (
     <Outlet />
   );

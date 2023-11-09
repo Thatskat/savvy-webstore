@@ -16,11 +16,31 @@ const UsernameModal = ({
 }) => {
   const { loginSaveUser } = useAuth();
   const navigate = useNavigate();
+  const [user, setUser] = useState({ username: "", password: "" });
+  const [loading, setLoading] = useState(false);
+  const { username, password } = user;
+
+  const handleTextChange = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const res = await authorizationServices.loginUserUsername(user);
+      console.log(res.data.token);
+      loginSaveUser(res.data)
+      navigate("/");
+    } catch (err) {
+      console.error(err?.response);
+      setTimeout(() => setLoading(false), 500);
+    }
+  };
   
   return (
     <Modal
       isOpen={modalIsOpen}
-      // onAfterOpen={afterOpenModal}
       onRequestClose={closeModal}
       contentLabel="Login with Username Modal"
       className={styles.modal}
@@ -32,13 +52,15 @@ const UsernameModal = ({
       <button onClick={openEmailModal} className="subTextButton">
         Login with your email?
       </button>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="username">Username</label>
         <input
           type="text"
           id="username"
           name="username"
           placeholder="Username"
+          onChange={handleTextChange}
+          value={username}
         />
         <label htmlFor="password">Password</label>
         <input
@@ -46,6 +68,8 @@ const UsernameModal = ({
           id="password"
           name="password"
           placeholder="Password"
+          onChange={handleTextChange}
+          value={password}
         />
         <button type="submit" className="btn-small">Login</button>
       </form>

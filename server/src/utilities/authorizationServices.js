@@ -25,6 +25,25 @@ module.exports = {
     const userMatch = users.filter((user) => email === user.email);
     return userMatch;
   },
+  async findUserUsername(username) {
+    const userRef = database.collection("users");
+    const snapshot = await userRef.get();
+
+    let users = [];
+    snapshot.forEach((document) => {
+      users.push({
+        id: document.id,
+        email: document.data().email,
+        firstName: document.data().firstName,
+        isAdmin: document.data().isAdmin,
+        lastName: document.data().lastName,
+        password: document.data().password,
+        username: document.data().username,
+      });
+    });
+    const userMatch = users.filter((user) => username === user.username);
+    return userMatch;
+  },
   async encryptedPassword(password) {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);

@@ -7,6 +7,7 @@ const {
   compareHashedPasswords,
   convertUserDetailsToJson,
   jsonWebTokenSignUser,
+  findUserUsername
 } = require("../utilities/authorizationServices");
 
 module.exports = {
@@ -78,7 +79,7 @@ module.exports = {
       if (userMatch.length === 0 || userMatch.length < 1) {
         return next(
           ErrorsApi.badRequest(
-            "The details entered are not correct. (HINT USERNAME/EMAIL)"
+            "The details entered are not correct. (HINT EMAIL)"
           )
         );
       }
@@ -94,9 +95,50 @@ module.exports = {
       }
 
       const userJson = await convertUserDetailsToJson(userMatch[0].id);
-      console.log(userJson)
-      res.send({
 
+      console.log(userJson);
+
+      res.send({
+        token: jsonWebTokenSignUser(userJson),
+      });
+    } catch (err) {
+      return next(
+        ErrorsApi.internalError(
+          "Your profile could not be logged into at this time.",
+          err
+        )
+      );
+    }
+  },
+  async usernameLogin(req, res, next) {
+    try {
+      const { username, password } = req.body;
+
+      const userMatch = await findUserUsername(username);
+
+      if (userMatch.length === 0 || userMatch.length < 1) {
+        return next(
+          ErrorsApi.badRequest(
+            "The details entered are not correct. (HINT USERNAME)"
+          )
+        );
+      }
+
+      const matchPasswords = await compareHashedPasswords(userMatch, password);
+
+      if (!matchPasswords) {
+        return next(
+          ErrorsApi.badRequest(
+            "The details entered are not correct. (HINT PASSWORD)"
+          )
+        );
+      }
+
+      const userJson = await convertUserDetailsToJson(userMatch[0].id);
+
+      console.log(userJson);
+
+      res.send({
         token: jsonWebTokenSignUser(userJson),
       });
     } catch (err) {
