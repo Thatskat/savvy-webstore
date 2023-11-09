@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 const BeautyPage = () => {
   return (
     <div>
-      <Helmet>Shop Beauty | Savvy WebStore</Helmet>
+      <Helmet><title>Shop Beauty | Savvy WebStore</title></Helmet>
     </div>
   );
 };

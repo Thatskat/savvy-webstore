@@ -4,7 +4,9 @@ import { Helmet } from "react-helmet";
 const SportPage = () => {
   return (
     <div>
-      <Helmet>Shop Sport | Savvy WebStore</Helmet>
+      <Helmet>
+        <title>Shop Sport | Savvy WebStore</title>
+      </Helmet>
     </div>
   );
 };

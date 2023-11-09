@@ -1,14 +1,14 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-const BooksPage = () => {
+const HomewaresPage = () => {
   return (
     <div>
       <Helmet>
-        <title>Shop Books | Savvy WebStore</title>
+        <title>Shop Homewares | Savvy WebStore</title>
       </Helmet>
     </div>
   );
 };
 
-export default BooksPage;
+export default HomewaresPage;

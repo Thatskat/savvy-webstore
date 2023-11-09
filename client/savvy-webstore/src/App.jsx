@@ -31,6 +31,7 @@ import ElectricalPage from "./pages/Shop/Electrical";
 import FurniturePage from "./pages/Shop/Furniture";
 import SportPage from "./pages/Shop/Sport";
 import ToysPage from "./pages/Shop/Toys";
+import HomewaresPage from "./pages/Shop/Homewares";
 
 import ItemInfo from "./pages/Shop/ItemInfo";
 
@@ -69,7 +70,15 @@ function App() {
           <Route path="womens" element={<WomensPage />} />
           <Route path="mens" element={<MensPage />} />
           <Route path="kids" element={<KidsPage />} />
-          {/* <Route path="entertainment" element={<ItemInfo />} /> */}
+          <Route path="entertainment" element={<EntertainmentPage />} />
+          <Route path="health-beauty" element={<BeautyPage />} />
+          <Route path="books" element={<BooksPage />} />
+          <Route path="collectables" element={<CollectablesPage />} />
+          <Route path="electrical" element={<ElectricalPage />} />
+          <Route path="furniture" element={<FurniturePage />} />
+          <Route path="homewares" element={<HomewaresPage />} />
+          <Route path="outdoor-sport" element={<SportPage />} />
+          <Route path="toys" element={<ToysPage />} />
           <Route path=":id" element={<ItemInfo />} />
         </Route>
         <Route path="account" element={<PrivateRoutes />}>

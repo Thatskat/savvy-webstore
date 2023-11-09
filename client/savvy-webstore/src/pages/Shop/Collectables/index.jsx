@@ -4,7 +4,9 @@ import { Helmet } from "react-helmet";
 const CollectablesPage = () => {
   return (
     <div>
-      <Helmet>Shop Collectables | Savvy WebStore</Helmet>
+      <Helmet>
+        <title>Shop Collectables | Savvy WebStore</title>
+      </Helmet>
     </div>
   );
 };
