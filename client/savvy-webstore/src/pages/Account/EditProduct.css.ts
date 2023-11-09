@@ -41,5 +41,23 @@ globalStyle(`${card} h2`, {
 });
 
 globalStyle(`${card} .btn`, {
+  fontFamily: root.fonts.body,
+  fontWeight: root.fontWeights.bold,
+  fontSize: root.fontSizes["2x"],
+  color: root.colours.primary,
+  background: root.colours.brand,
+  border: "none",
+  borderRadius: 60,
+  padding: root.spacing["1x"],
+  width: "10rem",
+  transition: "all ease-in-out 1s",
+  cursor: "pointer",
   textDecoration: "none",
+  display: "block",
+  textAlign: "center",
+  margin: `${root.spacing["1x"]} auto !important`,
+});
+
+globalStyle(`${card} .btn:hover`, {
+  background: root.colours.darkBrand,
 });

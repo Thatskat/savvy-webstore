@@ -171,6 +171,7 @@ const AddProduct = () => {
               name="sku"
               placeholder="SKU"
               value={sku}
+              className="d-none"
             />
             <label htmlFor="storeLocation">Store Location</label>
             <input
@@ -231,7 +232,7 @@ const AddProduct = () => {
             <option value={false}>False</option>
             <option value={true}>True</option>
           </select>
-          <button type="submit">Add Product</button>
+          <button type="submit" className="btn">Add Product</button>
         </form>
       </div>
     </div>
