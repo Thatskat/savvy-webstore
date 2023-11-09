@@ -52,6 +52,7 @@ export const formBox = style({
   padding: root.spacing["5x"],
   margin: `${root.spacing["4x"]} auto`,
   width: "80%",
+  height: "95vh"
 });
 
 globalStyle(`${formBox} h2`, {
@@ -76,5 +77,41 @@ globalStyle(`${formBox} .applyNow img`, {
 });
 
 export const button = style({
+  fontFamily: root.fonts.body,
+  fontWeight: root.fontWeights.bold,
+  fontSize: root.fontSizes["2x"],
+  color: root.colours.primary,
+  background: root.colours.brand,
+  border: "none",
+  borderRadius: 60,
+  padding: root.spacing["1x"],
+  width: "10rem",
+  transition: "all ease-in-out 1s",
+  cursor: "pointer",
+  textDecoration: "none",
+  display: "block",
+  textAlign: "center",
+  marginTop: root.spacing["2x"]
+})
+export const savvyWantTo = style({
+  width: "9rem",
+  marginBottom: "-1.7rem"
+})
 
+globalStyle(`${formBox} label`, {
+  display: "none"
+})
+
+globalStyle(`${formBox} input`, {
+  borderRadius: 30,
+  padding: root.spacing["1x"],
+  color: root.colours.secondary,
+  fontFamily: root.fonts.body,
+  borderColor: root.colours.secondary,
+  width: "100%",
+  margin: `0.2rem auto`
+})
+
+globalStyle(`${formBox} input:focus`, {
+  outline: "none",
 })

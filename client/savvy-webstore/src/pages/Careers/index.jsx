@@ -52,12 +52,12 @@ const CareersPage = () => {
             <img src={savvyJoin} alt="Join our friendly team" />
             <h2>Apply Now</h2>
             <p>Click below to see our current position vacancies.</p>
-            <a href="#" target="_blank" rel="noreferrer" className={styles.button}>
+            <a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer" className={styles.button} title="Apply Now">
               Apply Now
             </a>
           </div>
           <div>
-            <img src={savvyWantTo} alt="Want to" />
+            <img src={savvyWantTo} alt="Want to" className={styles.savvyWantTo} />
             <h2>Find out more?</h2>
             <p>
               If you&apos;re interested in learning more about working at Savvy
@@ -81,6 +81,7 @@ const CareersPage = () => {
               />
               <label htmlFor="email">Email</label>
               <input type="email" id="email" name="email" placeholder="Email" />
+              <button type="submit" className={styles.button}>Submit</button>
             </form>
           </div>
         </div>
