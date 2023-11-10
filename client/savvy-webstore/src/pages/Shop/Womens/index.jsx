@@ -24,13 +24,17 @@ const WomansPage = () => {
 
   async function fetchProducts() {
     try {
-      const res = await productService.getItemByCategory('womens');
+      const res = await productService.getItemByCategory('Womens');
       const data = await res.data;
       setData(data);
       console.log(data)
     } catch (err) {
       setError(true);
+      console.error(err?.response)
     }
+  }
+  if(loading){
+    return <h1 className="loading">Loading...</h1>
   }
   return (
     <div>
@@ -45,9 +49,11 @@ const WomansPage = () => {
       </div>
       <SearchBar />
       <p className={styles.itemShow}>
-        Showing <span>#</span> out of #{" "}
+        Showing <span>{data.length}</span> out of {data.length}
       </p>
-      <div className={styles.itemsGrid}></div>
+      <div className={styles.itemsGrid}>
+        {data ? data.map((product) => (<ItemCard key={product.id} product={product} link={`/shop/${product.id}`}/>)) : <p>No Items </p>}
+      </div>
     </div>
   );
 };
