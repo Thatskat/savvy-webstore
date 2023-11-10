@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import * as styles from "./Stores.css";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
+
 const StoresPage = () => {
   return (
     <div className={styles.stores}>
@@ -9,9 +10,14 @@ const StoresPage = () => {
       </Helmet>
       <h1>Find a store near you</h1>
       <form>
-      <label htmlFor="searchStore">Search for a store</label>
-      <input type="text" name="searchStore" id="searchStore" placeholder="Enter an address or suburb" />
-      <button type="submit">Search</button>
+        <label htmlFor="searchStore">Search for a store</label>
+        <input
+          type="text"
+          name="searchStore"
+          id="searchStore"
+          placeholder="Enter an address or suburb"
+        />
+        <button type="submit">Search</button>
       </form>
 
       <div className={styles.storeOfferings}>
@@ -19,7 +25,7 @@ const StoresPage = () => {
           <h3>What our stores </h3>
         </div>
       </div>
-      
+
       <div className="browseByRegion">
         <h2>Browse by region</h2>
         <div className="stateButton">
@@ -63,12 +69,16 @@ const StoresPage = () => {
           <button>Z</button>
         </div>
         <div className="cardGrid">
-      <div className={styles.card}>
-        <h3>Moorabbin</h3>
-        <p>Address</p>
-        <p><span>Phone: </span>(03) 9372 9172</p>
-        <Link to="moorabbin"><button>View Store</button></Link>
-      </div>
+          <div className={styles.card}>
+            <h3>Moorabbin</h3>
+            <p>Address</p>
+            <p>
+              <span>Phone: </span>(03) 9372 9172
+            </p>
+            <Link to="moorabbin">
+              <button>View Store</button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

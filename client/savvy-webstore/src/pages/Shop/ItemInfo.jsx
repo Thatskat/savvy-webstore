@@ -87,7 +87,7 @@ const ItemInfo = () => {
           <img src={image} alt={`${itemName}`} />
         </div>
         <div className="itemDetails">
-          <Link to="/stores/location" className="storeLocation">{storeLocation}</Link>
+          <Link to={`/stores/${storeLocation}`} className="storeLocation">{storeLocation}</Link>
           <h1>{itemName}</h1>
           <p className="sku">SKU: {sku}</p>
           <p className="description">{description}</p>
