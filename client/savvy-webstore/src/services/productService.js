@@ -8,6 +8,10 @@ function getById(id) {
   return apiInstance.get(`/products/${id}`);
 }
 
+function getItemByCategory(itemType) {
+  return apiInstance.get(`/products/find/${itemType}`);
+}
+
 function postProduct(data) {
   const formData = prepareFormData(data);
   return apiInstance.post("/products", formData, formConfig);
@@ -56,6 +60,7 @@ const productService = {
   postProduct,
   putProduct,
   deleteProduct,
+  getItemByCategory
 };
 
 export default productService;

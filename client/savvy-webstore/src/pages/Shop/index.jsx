@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Helmet } from "react-helmet";
 
-import useAuth from "../../hooks/useAuth";
 import productService from "../../services/productService";
 
 import ItemCard from "../../components/common/ItemCard";
@@ -10,7 +9,6 @@ import shopSVG from "../../assets/savvy-shop.svg";
 import * as styles from "./Shop.css";
 
 const ShopPage = () => {
-  const { user } = useAuth();
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);

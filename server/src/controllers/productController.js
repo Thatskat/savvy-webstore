@@ -117,10 +117,9 @@ module.exports = {
   async getItemByCategory(req, res, next) {
     try {
       const productRef = database.collection("storeItems");
-      const snapshot = await productRef
-        .where(req.params.type, "==", req.body.itemType)
-        .limit(20)
-        .get();
+
+      const snapshot = await productRef.where("itemType", "==", req.params.itemType).get();
+
       if (snapshot.empty) {
         return next(
           ErrorsApi.badRequest("The items of that type could not be found.")
