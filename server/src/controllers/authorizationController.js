@@ -7,7 +7,7 @@ const {
   compareHashedPasswords,
   convertUserDetailsToJson,
   jsonWebTokenSignUser,
-  findUserUsername
+  findUserUsername,
 } = require("../utilities/authorizationServices");
 
 module.exports = {
@@ -145,6 +145,25 @@ module.exports = {
       return next(
         ErrorsApi.internalError(
           "Your profile could not be logged into at this time.",
+          err
+        )
+      );
+    }
+  },
+  async editAccount(req, res, next) {
+    try {
+      const userRef = database.collection("users").doc(req.params.id);
+      const res = await userRef.update({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        username: req.body.username,
+        email: req.body.email,
+      });
+      res.send(res);
+    } catch (err) {
+      return next(
+        ErrorsApi.internalError(
+          "Your request to edit could not be processed during this time.",
           err
         )
       );

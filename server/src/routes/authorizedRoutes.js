@@ -19,6 +19,13 @@ module.exports = () => {
   router.post(
     "/login/username",
     authorizationPolicies.validateAuthorization,
-    authorizationController.usernameLogin  );
+    authorizationController.usernameLogin
+  );
+
+  router.put(
+    "/edit/:id",
+    authorizationPolicies.validateAuthorization,
+    authorizationController.editAccount
+  );
   return router;
 };

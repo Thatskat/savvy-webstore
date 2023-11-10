@@ -14,10 +14,16 @@ async function loginUserUsername(user) {
   return res;
 }
 
+async function editUser(id) {
+  const res = await apiInstance.put(`/auth/edit/${id}`);
+  return res;
+}
+
 const authorizationServices = {
   registerUser,
   loginUser,
-  loginUserUsername
+  loginUserUsername,
+  editUser
 };
 
 export default authorizationServices;
