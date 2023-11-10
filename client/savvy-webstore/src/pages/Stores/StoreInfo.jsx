@@ -1,4 +1,5 @@
 import { Link, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { useEffect, useRef, useState } from "react";
 import storeService from "../../services/storeService";
 
@@ -35,8 +36,14 @@ const StoreInfo = () => {
     return <h1 className="loading">Loading...</h1>;
   }
   return (
-    <div>StroreInfo</div>
-  )
-}
+    <div>
+      <Helmet>
+        <title>{`${data[0]?.storeName} Store | Savvy WebStore`}</title>
+      </Helmet>
+      <h1>{data[0]?.storeName} Store</h1>
+      <p>{data[0]?.storeDescription}</p>
+    </div>
+  );
+};
 
-export default StoreInfo
+export default StoreInfo;
