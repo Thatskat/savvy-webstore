@@ -3,6 +3,7 @@ const router = express.Router();
 
 const authorizedRoutes = require("./authorizedRoutes");
 const productRoutes = require("./productRoutes");
+const storeRoutes = require("./storeRoutes");
 
 module.exports = () => {
   router.get("/", (req, res, next) => {
@@ -12,6 +13,8 @@ module.exports = () => {
   router.use("/auth", authorizedRoutes());
 
   router.use("/products", productRoutes());
+
+  router.use("/stores", storeRoutes());
 
   return router;
 };

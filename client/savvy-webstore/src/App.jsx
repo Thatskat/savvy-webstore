@@ -56,7 +56,7 @@ function App() {
         {/* STATIC PAGES */}
         <Route path="stores">
           <Route index element={<StoresPage />} />
-          <Route path=":id" element={<StoreInfo />} />
+          <Route path=":name" element={<StoreInfo />} />
         </Route>
         <Route path="/careers" element={<CareersPage />} />
         <Route path="/about" element={<AboutUsPage />} />

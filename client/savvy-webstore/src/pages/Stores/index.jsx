@@ -67,7 +67,7 @@ const StoresPage = () => {
         <h3>Moorabbin</h3>
         <p>Address</p>
         <p><span>Phone: </span>(03) 9372 9172</p>
-        <Link><button>View Store</button></Link>
+        <Link to="moorabbin"><button>View Store</button></Link>
       </div>
         </div>
       </div>

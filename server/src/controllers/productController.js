@@ -20,7 +20,7 @@ module.exports = {
         .get();
       if (snapshot.empty) {
         return next(
-          ErrorsApi.badRequest(`The products you were looking for do no exist`)
+          ErrorsApi.badRequest(`The products you were looking for do not exist`)
         );
       } else {
         let docs = [];

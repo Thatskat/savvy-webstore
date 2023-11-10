@@ -53,8 +53,20 @@ const ToysPage = () => {
         Showing <span>{data.length}</span> out of {data.length}
       </p>
       <div className={styles.itemsGrid}>
-      {data && data.map((product) => (<ItemCard key={product.id} product={product} link={`/shop/${product.id}`}/>))}
-      {data.length === 0 && <p>Looks like there&apos;s no items in this category. Return to <Link to="/shop">All Categories</Link>.</p>}
+        {data &&
+          data.map((product) => (
+            <ItemCard
+              key={product.id}
+              product={product}
+              link={`/shop/${product.id}`}
+            />
+          ))}
+        {data.length === 0 && (
+          <p>
+            Looks like there&apos;s no items in this category. Return to{" "}
+            <Link to="/shop">All Categories</Link>.
+          </p>
+        )}
       </div>
     </div>
   );
