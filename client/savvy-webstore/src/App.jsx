@@ -40,6 +40,7 @@ import Account from "./pages/Account";
 import AddProduct from "./pages/Account/AddProduct";
 import EditProduct from "./pages/Account/EditProduct";
 import Edit from "./pages/Account/Edit";
+import EditAccount from "./pages/Account/EditAccount";
 
 // PAGE NOT FOUND
 import PageNotFound from "./pages/NotFound";
@@ -83,10 +84,12 @@ function App() {
         </Route>
         <Route path="account" element={<PrivateRoutes />}>
           <Route index element={<Account />} />
+          <Route path="edit" element={<EditAccount />}/>
           <Route path="products">
             <Route path="add" element={<AddProduct />} />
             <Route path="overview" element={<EditProduct />} />
             <Route path="edit/:id" element={<Edit />} />
+            
           </Route>
         </Route>
         {/* PAGE NOT FOUND */}

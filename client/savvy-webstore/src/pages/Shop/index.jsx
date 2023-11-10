@@ -53,7 +53,7 @@ const ShopPage = () => {
       <Helmet>
         <title>Shop All Categories | Savvy WebStore</title>
       </Helmet>
-      <div className={styles.shopHeader}>
+      <div className={`${styles.shopHeader} ${styles.allItemsHeader}`}>
         <div className="heading">
           <img src={shopSVG} alt="Shop" />
           <h1>All Categories</h1>

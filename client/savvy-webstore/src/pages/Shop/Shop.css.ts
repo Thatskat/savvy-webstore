@@ -56,6 +56,10 @@ export const toysHeader = style( {
   background: "url('/shopHeader/toys-shop-header.webp') no-repeat center",
   backgroundSize: "cover"
 });
+export const allItemsHeader = style( {
+  background: "url('/shopHeader/allitems-shop-header.png') no-repeat center",
+  backgroundSize: "cover"
+});
 globalStyle(`${shopHeader} .heading`, {
   padding: `${root.spacing["9x"]} 200px`,
 });
