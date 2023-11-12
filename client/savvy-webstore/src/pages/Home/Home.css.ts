@@ -4,8 +4,9 @@ import { root } from "../../styles/themes.css";
 export const header = style({
   fontSize: root.fontSizes["7x"],
   background:
-    "url('https://images.unsplash.com/photo-1682695797221-8164ff1fafc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')",
+    "url('/homePageAssets/home-header.webp') no-repeat center top",
   height: "77vh",
+  backgroundSize: "cover",
   marginBottom: "90px",
 });
 

@@ -22,7 +22,12 @@ import collectablesHighlight from "../../assets/highlights/collectables-highligh
 import sportHighlight from "../../assets/highlights/sport-highlight.webp";
 import beautyHighlight from "../../assets/highlights/beauty-highlight.webp";
 import electricalHighlight from "../../assets/highlights/electrical-highlight.webp";
-import furnitureHighlight from "../../assets/highlights/furniture-highlight.webp"
+import furnitureHighlight from "../../assets/highlights/furniture-highlight.webp";
+
+// TAB IMAGES
+import womensTab from "../../assets/tab/womens-tab.webp";
+import mensTab from "../../assets/tab/mens-tab.webp";
+import kidsTab from "../../assets/tab/kids-tab.webp"
 
 const HomePage = () => {
   useEffect(() => {
@@ -43,17 +48,17 @@ const HomePage = () => {
         <Card
           title="Womens"
           link="/shop/womens"
-          image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
+          image={womensTab}
         />
         <Card
           title="Mens"
           link="/shop/mens"
-          image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
+          image={mensTab}
         />
         <Card
           title="Kids"
           link="/shop/kids"
-          image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
+          image={kidsTab}
         />
       </div>
       <div className={styles.byCategory}>
