@@ -79,7 +79,7 @@ globalStyle(`${modal} .noAccount button`, {
   cursor: "pointer"
   });
 
-  globalStyle(`${modal }.btn-small`, {
+  globalStyle(`${modal} .btn-small`, {
     fontFamily: root.fonts.body,
     fontWeight: root.fontWeights.bold,
     fontSize: root.fontSizes["2x"],

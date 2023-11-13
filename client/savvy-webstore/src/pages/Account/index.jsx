@@ -31,11 +31,6 @@ const Account = () => {
               Add Product
             </Link>
           ) : null}
-          {user && (
-            <Link to="/account/edit" className="btn">
-              Edit Account
-            </Link>
-          )}
         </div>
       </div>
     </div>

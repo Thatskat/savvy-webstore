@@ -89,7 +89,7 @@ globalStyle(`${catchPhrase} p`, {
 });
 
 export const reviewHighlight = style({
-  background: "url(highlight-image-home.webp) center blue",
+  background: "url('/homePageAssets/home-subHeader.webp') center blue",
   backgroundSize: "cover",
   height: "65vh",
 });
@@ -100,7 +100,9 @@ globalStyle(`${reviewHighlight} div`, {
   width: "40%",
   margin: `0 200px`,
   padding: root.spacing["4x"],
-  borderRadius: 10
+  borderRadius: 10,
+  display: "absolute",
+  top: "10rem"
 });
 
 globalStyle(`${reviewHighlight} h3`, {
