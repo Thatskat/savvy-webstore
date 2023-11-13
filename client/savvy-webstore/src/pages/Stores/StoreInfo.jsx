@@ -3,6 +3,8 @@ import { Helmet } from "react-helmet";
 import { useEffect, useRef, useState } from "react";
 import storeService from "../../services/storeService";
 
+import * as styles from "./StoreInfo.css"
+
 const StoreInfo = () => {
   const { name } = useParams();
   const [data, setData] = useState([]);
@@ -35,13 +37,23 @@ const StoreInfo = () => {
   if (loading) {
     return <h1 className="loading">Loading...</h1>;
   }
+  if(error){
+    return <h1 className="loading">Error</h1>
+  }
   return (
-    <div>
+    <div className={styles.info}>
       <Helmet>
         <title>{`${data[0]?.storeName} Store | Savvy WebStore`}</title>
       </Helmet>
       <h1>{data[0]?.storeName} Store</h1>
-      <p>{data[0]?.storeDescription}</p>
+    <div className={styles.grid}>
+    <p>{data[0]?.storeDescription}</p>
+    <div className="contactInfo">
+      <p><span>Store Address:</span> {data[0]?.address}</p>
+      <p><span>Store Phone:</span> {data[0]?.phoneNumber}</p>
+    </div>
+    </div>
+      
     </div>
   );
 };

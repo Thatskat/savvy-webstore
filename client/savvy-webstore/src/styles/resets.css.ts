@@ -21,3 +21,12 @@ globalStyle(".loading", {
 globalStyle(".d-none", {
   display: "none",
 });
+
+globalStyle("a", {
+  color: root.colours.brand,
+  textDecoration: "none",
+});
+
+globalStyle("a:hover", {
+  color: root.colours.darkBrand
+})

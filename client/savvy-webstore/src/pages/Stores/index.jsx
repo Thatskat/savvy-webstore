@@ -1,8 +1,44 @@
 import { Helmet } from "react-helmet";
 import * as styles from "./Stores.css";
 import { Link } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import storeService from "../../services/storeService";
 
 const StoresPage = () => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  const hasRun = useRef(false);
+  useEffect(() => {
+    window.scroll(0, 0);
+    if (hasRun.current === false) {
+      fetchStores();
+      setLoading(false);
+      return () => {
+        hasRun.current = true;
+      };
+    }
+  }, []);
+
+  async function fetchStores() {
+    try {
+      const res = await storeService.getAll();
+      const data = await res.data;
+      setData(data);
+    } catch (err) {
+      setError(true);
+      console.error(err?.response);
+    }
+  }
+
+  if (loading) {
+    return <h1 className="loading">Loading...</h1>;
+  }
+
+  if (error) {
+    return <h1 className="loading">Error</h1>;
+  }
   return (
     <div className={styles.stores}>
       <Helmet>
@@ -17,14 +53,10 @@ const StoresPage = () => {
           id="searchStore"
           placeholder="Enter an address or suburb"
         />
-        <button type="submit">Search</button>
+        <button type="submit" className="btn">
+          Search
+        </button>
       </form>
-
-      <div className={styles.storeOfferings}>
-        <div>
-          <h3>What our stores </h3>
-        </div>
-      </div>
 
       <div className="browseByRegion">
         <h2>Browse by region</h2>
@@ -69,16 +101,19 @@ const StoresPage = () => {
           <button>Z</button>
         </div>
         <div className="cardGrid">
-          <div className={styles.card}>
-            <h3>Moorabbin</h3>
-            <p>Address</p>
-            <p>
-              <span>Phone: </span>(03) 9372 9172
-            </p>
-            <Link to="moorabbin">
-              <button>View Store</button>
-            </Link>
-          </div>
+          {data &&
+            data.map((store) => (
+              <div className={styles.card} key={store.id}>
+                <h3>{store.storeName}</h3>
+                <p><span>Address:</span> {store.address}</p>
+                <p>
+                  <span>Phone: </span> {store.phoneNumber}
+                </p>
+                <Link to={store.storeName}>
+                  <button className="btn">View Store</button>
+                </Link>
+              </div>
+            ))}
         </div>
       </div>
     </div>
