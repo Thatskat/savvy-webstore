@@ -25,3 +25,5 @@
 - Responsive styling. Savvy WebStore looks great on a desktop, not so much on a mobile or tablet. Responsive will come, I promise 😅
 
 
+# Credits
+It's no suprise that I got the design inspiration for this project from [Salvos Stores](https://www.salvosstores.com.au/).
