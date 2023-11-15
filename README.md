@@ -1,2 +1,3 @@
-# savvy-webstore
- A FERN Stack Webstore for all you second-hand clothing and entertainment needs.
+<h1 align="center">Savvy Webstore</h1>
+
+<p align="center">A webstore developed using the FERN stack. Inspired by <a href="https://www.salvosstores.com.au/">Salvos Stores</a>.</p>
