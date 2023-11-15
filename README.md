@@ -14,4 +14,14 @@
 🌐 [#](#)
 
 ## Savvy WebStore Features
-- 
+- Sign up and Login to your Savvy WebStore Account 💁
+- Admin users of Savvy WebStore will have the ability to add more products, edit product descriptions as well as delete any unwanted products 🧮
+- Sort items into appropriate categories. This will make it easier for you to find the product of your dreams! 😄
+- Find your closest Savvy WebStore location. Search our stores to find your perfect location ✈️
+
+## Future Features
+- Use a search bar to search for projects. This will match a product's key words 😏
+- Functional cart and wishlist. Save your items for later or maybe it's time to spend some 🤑
+- Responsive styling. Savvy WebStore looks great on a desktop, not so much on a mobile or tablet. Responsive will come, I promise 😅
+
+
