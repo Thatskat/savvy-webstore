@@ -19,7 +19,7 @@
     "dotenv": "^16.3.1",
     "express": "^4.19.2",
     "express-fileupload": "^1.4.1",
-    "firebase-admin": "^11.10.1",
+    "firebase-admin": "^12.1.0",
     "helmet": "^7.0.0",
     "joi": "^17.10.2",
     "jsonwebtoken": "^9.0.2",
